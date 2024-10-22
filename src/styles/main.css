@@ -8,15 +8,6 @@ html {
   box-sizing: inherit;
 }
 
-body {
-  background-image: url("/src/img/fondo.jpg");
-  background-size: cover;
-  background-repeat: no-repeat;
-  background-position: center;
-  height: 100vh; /* Asegura que el body ocupe toda la altura de la ventana */
-  margin: 0;
-}
-
 /*COMPONENTS*/
 @font-face {
   font-family: "letras-grandes";
@@ -43,7 +34,7 @@ body {
   }
 }
 .container-fluid {
-  background-color: rgb(71, 2, 71);
+  background-color: rgba(124, 33, 160, 0.863);
 }
 
 .custom-toggler.navbar-toggler {
@@ -101,11 +92,12 @@ body {
 
 /*LOGIN BUTTON*/
 .login-button {
-  background: linear-gradient(to left, rgb(111, 1, 161), rgb(83, 41, 235));
+  background: linear-gradient(to left, rgb(111, 1, 161), rgb(141, 41, 235));
   color: white;
   font-size: 14px;
   padding: 6px 18px;
-  border-radius: 10px;
+  border-radius: 20px;
+  border: 2px solid rgb(185, 41, 185);
   text-decoration: none;
   transition: all 400ms ease-out;
 }

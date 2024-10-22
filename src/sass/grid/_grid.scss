@@ -1,0 +1,27 @@
+@media (max-width: 991px) {
+    footer{
+        font-size: 12px;
+    }
+
+    #navbarNav {
+        display: none; /* Oculta el menú en pantallas pequeñas */
+    }
+    
+    .navbar-toggler {
+        display: block; /* Muestra el botón de toggler en pantallas pequeñas */
+    }
+}
+
+@media (min-width: 992px) {
+    footer{
+        font-size: 15px;
+    }
+
+    #navbarNav {
+        display: flex; /* Muestra el menú en pantallas grandes */
+    }
+
+    .navbar-toggler {
+        display: none; /* Oculta el botón de toggler en pantallas grandes */
+    }
+}

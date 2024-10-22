@@ -1,0 +1,15 @@
+html{
+    box-sizing: border-box;
+}
+*,*::after, *::before{
+    box-sizing: inherit;
+}
+
+body{
+    background-image: url('/src/img/fondo.jpg');
+    background-size: cover;
+    background-repeat: no-repeat; 
+    background-position: center; 
+    height: 100vh; /* Asegura que el body ocupe toda la altura de la ventana */
+    margin: 0;
+}

@@ -1,0 +1,16 @@
+
+
+/*LOGIN BUTTON*/
+.login-button {
+    background: linear-gradient(to left, rgb(111, 1, 161), rgb(83, 41, 235));
+    color: white;
+    font-size: 14px;
+    padding: 6px 18px;
+    border-radius: 10px;
+    text-decoration: none;
+    transition: all 400ms ease-out;
+
+    &:hover{
+        transform: translateY(-3%);
+    }
+}

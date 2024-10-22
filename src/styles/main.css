@@ -1,0 +1,116 @@
+@charset "UTF-8";
+/*BASE*/
+html {
+  box-sizing: border-box;
+}
+
+*, *::after, *::before {
+  box-sizing: inherit;
+}
+
+body {
+  background-image: url("/src/img/fondo.jpg");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  height: 100vh; /* Asegura que el body ocupe toda la altura de la ventana */
+  margin: 0;
+}
+
+/*COMPONENTS*/
+@font-face {
+  font-family: "letras-grandes";
+  src: url("/src/fonts/Arima/Arima-VariableFont_wght.ttf");
+}
+@font-face {
+  font-family: "letras-grandes";
+  src: url("/src/fonts/Arima/Arima-VariableFont_wght.ttf");
+}
+@media (max-width: 991px) {
+  #navbarNav {
+    display: none; /* Oculta el menú en pantallas pequeñas */
+  }
+  .navbar-toggler {
+    display: block; /* Muestra el botón de toggler en pantallas pequeñas */
+  }
+}
+@media (min-width: 992px) {
+  #navbarNav {
+    display: flex; /* Muestra el menú en pantallas grandes */
+  }
+  .navbar-toggler {
+    display: none; /* Oculta el botón de toggler en pantallas grandes */
+  }
+}
+.container-fluid {
+  background-color: rgb(71, 2, 71);
+}
+
+.custom-toggler.navbar-toggler {
+  border-color: 0;
+}
+
+.custom-toggler .navbar-toggler-icon {
+  background-image: url("https://img.icons8.com/?size=100&id=STOBCZbtLToI&format=png&color=000000");
+}
+
+.navbar-toggler {
+  border: none;
+  font-size: 1.25rem;
+}
+.navbar-toggler:focus {
+  box-shadow: none;
+  outline: none;
+}
+
+.nav-link {
+  font-family: "letras-grandes";
+  position: relative;
+  color: white;
+}
+.nav-link:hover {
+  color: rgb(255, 124, 174);
+}
+.nav-link::before {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 0;
+  height: 2px;
+  background-color: rgb(255, 124, 174);
+  visibility: hidden;
+  transition: 0.3s ease-in-out;
+}
+.nav-link:hover::before {
+  width: 100%;
+  visibility: visible;
+}
+
+#title {
+  margin-right: 1em;
+  color: white;
+  font-family: "letras-grandes";
+}
+
+.modal-content {
+  background-color: rgb(128, 0, 128);
+  color: white;
+}
+
+/*LOGIN BUTTON*/
+.login-button {
+  background: linear-gradient(to left, rgb(111, 1, 161), rgb(83, 41, 235));
+  color: white;
+  font-size: 14px;
+  padding: 6px 18px;
+  border-radius: 10px;
+  text-decoration: none;
+  transition: all 400ms ease-out;
+}
+.login-button:hover {
+  transform: translateY(-3%);
+}
+
+/*# sourceMappingURL=main.css.map */

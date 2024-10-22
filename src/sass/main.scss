@@ -1,4 +1,8 @@
-//base
-@import "./base";
-//componentes
-@import "./componentes/buttons"
+/*BASE*/
+@import "base";
+
+
+/*COMPONENTS*/
+@import "./componentes/fonts";
+@import "./componentes/nav";
+@import "./componentes/buttons";

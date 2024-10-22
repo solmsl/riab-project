@@ -1,5 +1,5 @@
 @import './fonts';
-$color-link: rgb(255, 124, 174);
+$color-link: rgb(0, 0, 0);
 
 
 @media (max-width: 991px) {
@@ -79,8 +79,7 @@ $color-link: rgb(255, 124, 174);
     font-family: 'letras-grandes';
 }
 
-.modal-content {
+.offcanvas{
     background-color: rgb(128, 0, 128);
     color: white; 
 }
-

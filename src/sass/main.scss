@@ -1,9 +1,15 @@
-/*BASE*/
+/* BASE */
 @import "base";
+@import "./base/fonts";
 
 
-/*COMPONENTS*/
-@import "./componentes/fonts";
+/* GRID */
+@import "./grid/grid";
+
+/* COMPONENTS */
 @import "./componentes/nav";
 @import "./componentes/buttons";
 @import "./componentes/footer";
+
+/* PAGES */
+@import "./pages/mascotas";

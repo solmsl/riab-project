@@ -1,5 +1,5 @@
 @charset "UTF-8";
-/*BASE*/
+/* BASE */
 html {
   box-sizing: border-box;
   margin: 0;
@@ -14,25 +14,39 @@ html {
 body {
   background-image: url("/src/img/fondo.jpg");
   background-size: cover;
-  background-repeat: no-repeat;
-  background-position: center;
+  background-repeat: repeat;
+  background-position: top left;
   height: 100vh; /* Asegura que el body ocupe toda la altura de la ventana */
-  flex-direction: column;
 }
 
-main {
-  flex: 1;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  margin-top: 60px;
-}
-
-/*COMPONENTS*/
 @font-face {
   font-family: "letras-grandes";
   src: url("/src/fonts/Arima/Arima-VariableFont_wght.ttf");
 }
+/* GRID */
+@media (max-width: 991px) {
+  footer {
+    font-size: 12px;
+  }
+  #navbarNav {
+    display: none; /* Oculta el menú en pantallas pequeñas */
+  }
+  .navbar-toggler {
+    display: block; /* Muestra el botón de toggler en pantallas pequeñas */
+  }
+}
+@media (min-width: 992px) {
+  footer {
+    font-size: 15px;
+  }
+  #navbarNav {
+    display: flex; /* Muestra el menú en pantallas grandes */
+  }
+  .navbar-toggler {
+    display: none; /* Oculta el botón de toggler en pantallas grandes */
+  }
+}
+/* COMPONENTS */
 @font-face {
   font-family: "letras-grandes";
   src: url("/src/fonts/Arima/Arima-VariableFont_wght.ttf");
@@ -157,14 +171,13 @@ main {
 }
 footer {
   color: white;
-  position: fixed;
+  display: flexbox;
   bottom: 0;
   left: 0;
   right: 0;
-  background-image: url("/src/img/pngwing.com.png");
   border: none;
   min-height: 100px;
-  padding: 20px 50px;
+  padding: 20px;
   text-align: center;
 }
 
@@ -174,6 +187,11 @@ footer {
 }
 .paginas_footer a:hover {
   color: rgb(26, 3, 44);
+}
+
+/* PAGES */
+.cuadro {
+  position: relative;
 }
 
 /*# sourceMappingURL=main.css.map */

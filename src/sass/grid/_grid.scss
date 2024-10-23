@@ -10,6 +10,7 @@
     .navbar-toggler {
         display: block; /* Muestra el botón de toggler en pantallas pequeñas */
     }
+
 }
 
 @media (min-width: 992px) {
@@ -24,4 +25,5 @@
     .navbar-toggler {
         display: none; /* Oculta el botón de toggler en pantallas grandes */
     }
+
 }

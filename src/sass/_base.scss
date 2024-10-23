@@ -11,16 +11,7 @@ html{
 body{
     background-image: url('/src/img/fondo.jpg');
     background-size: cover;
-    background-repeat: no-repeat; 
-    background-position: center; 
+    background-repeat: repeat; 
+    background-position: top left; 
     height: 100vh; /* Asegura que el body ocupe toda la altura de la ventana */
-    flex-direction: column;
-}
-
-main{
-    flex: 1;
-    display: flex; 
-    justify-content: center; 
-    align-items: center;
-    margin-top: 60px;
 }

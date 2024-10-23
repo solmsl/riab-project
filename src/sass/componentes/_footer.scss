@@ -2,15 +2,15 @@
 
 footer{
     color: white;
-    position: fixed;
+    display: flexbox;
     bottom: 0; 
     left: 0;
     right: 0; 
-    background-image: url('/src/img/pngwing.com.png');
     border: none;
     min-height: 100px;
-    padding: 20px 50px;
+    padding: 20px;
     text-align: center;
+    
 }
 
 .paginas_footer{

@@ -8,6 +8,15 @@ html {
   box-sizing: inherit;
 }
 
+body {
+  background-image: url("/src/img/fondo.jpg");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  height: 100vh; /* Asegura que el body ocupe toda la altura de la ventana */
+  margin: 0;
+}
+
 /*COMPONENTS*/
 @font-face {
   font-family: "letras-grandes";
@@ -34,7 +43,7 @@ html {
   }
 }
 .container-fluid {
-  background-color: rgba(124, 33, 160, 0.863);
+  background-color: rgba(187, 104, 255, 0.863);
 }
 
 .custom-toggler.navbar-toggler {

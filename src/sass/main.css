@@ -128,16 +128,6 @@ body {
   outline: none;
 }
 
-.offcanvas-half {
-  width: 50vw; /* Ocupa la mitad del ancho de la ventana */
-  height: 100vh; /* Ocupa toda la altura de la ventana */
-  overflow-y: auto; /* Permite desplazamiento si el contenido excede la altura */
-  position: fixed; /* Mantiene el offcanvas fijo */
-  top: 0; /* Inicia desde la parte superior */
-  left: 0; /* Inicia desde la parte izquierda */
-  z-index: 1050; /* Asegúrate de que esté por encima de otros elementos */
-}
-
 .nav-link {
   font-family: "letras-grandes";
   position: relative;
@@ -235,6 +225,7 @@ footer {
   min-height: 100px;
   padding: 20px;
   text-align: center;
+  position: absolute;
 }
 
 .paginas_footer a {
@@ -441,6 +432,4 @@ article {
   background-color: rgba(128, 0, 128, 0.568);
   color: white;
   font-family: "letras-grandes";
-}
-
-/*# sourceMappingURL=main.css.map */
+}/*# sourceMappingURL=main.css.map */

@@ -42,13 +42,12 @@ document.addEventListener('DOMContentLoaded', () => {
 
     form.addEventListener('submit', async (event) => {
         event.preventDefault();
-        const mascotaData = getMascotaData();
         
         try {
             const response = await fetch('http://localhost:3000/mascotas', {
                 method: 'POST',
                 headers: { 'Content-Type': 'application/json' },
-                body: JSON.stringify(mascotaData)
+                body: JSON.stringify(getMascotaData())
             });
             const data = await response.json();
 

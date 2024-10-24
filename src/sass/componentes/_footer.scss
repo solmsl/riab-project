@@ -1,0 +1,25 @@
+@import "../grid/grid";
+
+footer{
+    color: white;
+    display: flexbox;
+    bottom: 0; 
+    left: 0;
+    right: 0; 
+    border: none;
+    min-height: 100px;
+    padding: 20px;
+    text-align: center;
+    
+}
+
+.paginas_footer{
+    a{
+        text-decoration: none;
+        color: white;
+
+        &:hover{
+            color: rgb(26, 3, 44);
+        }
+    }
+}

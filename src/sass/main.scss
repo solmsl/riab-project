@@ -1,4 +1,17 @@
-//base
-@import "./base";
-//componentes
-@import "./componentes/buttons"
+/* BASE */
+@import "base";
+@import "./base/fonts";
+
+
+/* GRID */
+@import "./grid/grid";
+
+/* COMPONENTS */
+@import "./componentes/nav";
+@import "./componentes/buttons";
+@import "./componentes/footer";
+@import "./componentes/letrero";
+
+/* PAGES */
+@import "./pages/mascotas";
+@import "./pages/inicio";

@@ -1,0 +1,67 @@
+@import '../base/fonts';
+@import '../grid/grid';
+
+$color-link: rgb(26, 3, 44);
+
+.container-fluid{
+    background-color: rgba(187, 104, 255, 0.863);
+    border-radius: 10px;
+    z-index: 1000;
+}
+
+.custom-toggler.navbar-toggler {
+    border-color: 0;
+  }
+
+.custom-toggler .navbar-toggler-icon {
+    background-image: url("https://img.icons8.com/?size=100&id=STOBCZbtLToI&format=png&color=000000");
+}
+
+.navbar-toggler {
+    border: none;
+    font-size: 1.25rem;
+
+    &:focus{
+        box-shadow: none;
+        outline: none;
+    }
+}
+
+.nav-link {
+    font-family: 'letras-grandes';
+    position: relative;
+    color: white;
+
+    &:hover{
+        color: $color-link;
+    }
+
+    &::before{
+        content: "";
+        position: absolute;
+        bottom: 0;
+        left: 50%;
+        transform: translateX(-50%);
+        width: 0;
+        height: 2px;
+        background-color: $color-link;
+        visibility: hidden;
+        transition: 0.3s ease-in-out;
+    }
+
+    &:hover::before{
+        width: 100%;
+        visibility: visible;
+    }
+}
+
+#title{
+    margin-right: 1em;
+    color: white;
+    font-family: 'letras-grandes';
+}
+
+.offcanvas{
+    background-color: rgb(128, 0, 128);
+    color: white; 
+}

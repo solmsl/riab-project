@@ -13,7 +13,7 @@ html {
 }
 
 body {
-  background-image: url("../img/fondou-init.jpg");
+  background-image: url("../img/fondo_degradado.jpg");
   background-size: cover;
   background-repeat: repeat;
   background-position: top left;
@@ -417,20 +417,20 @@ article {
   font-family: "letras-grandes";
   src: url("/src/fonts/Arima/Arima-VariableFont_wght.ttf");
 }
-.item {
-  position: absolute;
-  font-size: 15px;
-  width: 212px;
-  height: 310px;
-  text-align: justify;
-  background-color: rgb(28, 2, 31);
-  color: white;
-  border-radius: 10px;
-  padding: 10px;
-  transition: 0.5s;
-  left: calc(50% - 110px);
-  top: 0;
+.mx-3 {
   justify-content: center;
+  margin-top: 67px;
+}
+.mx-3 h4 {
+  color: white;
+  text-align: center;
+}
+
+.accordion-item, .accordion-button {
+  border: none;
+  background-color: rgba(128, 0, 128, 0.568);
+  color: white;
+  font-family: "letras-grandes";
 }
 
 /*# sourceMappingURL=main.css.map */

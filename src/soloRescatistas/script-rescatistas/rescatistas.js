@@ -1,12 +1,11 @@
 const token = localStorage.getItem("token"); 
 
-// const dni = getDniFromToken(token); 
 const app = "http://localhost:3000";
 
 function verificar(){
     if (!token) {
         alert("Acceso Denegado. Inicia Sesión para acceder a esta ruta.");
-        window.location.href = '../pages/login.html'; //redirige a la página de inicio de sesión
+        window.location.href = 'https://riab-project.vercel.app';
         return;
     }
 

@@ -19,11 +19,11 @@ document.addEventListener('DOMContentLoaded', () => {
         };
 
         try { //luego cambiar el localhost a project-riab.vercel.app, por el momento dejarlo asi
-            const response = await fetch('https://riab-api.vercel.app/rescatistas/login', {
+            const response = await fetch('http://localhost:3000/rescatistas/login', {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json',
-                    "Access-Control-Allow-Origin": "https://project-riab.vercel.app",
+                    // "Access-Control-Allow-Origin": "https://project-riab.vercel.app",
                     "Access-Control-Allow-Credentials": true,
                 },
                 body: JSON.stringify(rescatistaData),
@@ -38,7 +38,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
                 form.reset();
 
-                window.location.href = 'https://project-riab.vercel.app/soloRescatistas/inicio-res.html';
+                window.location.href = 'https://riab-project.vercel.app/src/soloRescatistas/inicio-res.html';
         
             } else {
                 alert('Error: ' + data.error || 'Error al iniciar sesion.');

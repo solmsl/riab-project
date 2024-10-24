@@ -37,6 +37,13 @@ body {
   .navbar-toggler {
     display: block; /* Muestra el botón de toggler en pantallas pequeñas */
   }
+  #next, #prev {
+    left: 50px;
+  }
+  #next {
+    left: unset;
+    right: 50px;
+  }
 }
 @media (min-width: 992px) {
   footer {
@@ -47,6 +54,13 @@ body {
   }
   .navbar-toggler {
     display: none; /* Oculta el botón de toggler en pantallas grandes */
+  }
+  #next, #prev {
+    left: 400px;
+  }
+  #next {
+    left: unset;
+    right: 400px;
   }
 }
 /* COMPONENTS */
@@ -64,6 +78,13 @@ body {
   .navbar-toggler {
     display: block; /* Muestra el botón de toggler en pantallas pequeñas */
   }
+  #next, #prev {
+    left: 50px;
+  }
+  #next {
+    left: unset;
+    right: 50px;
+  }
 }
 @media (min-width: 992px) {
   footer {
@@ -74,6 +95,13 @@ body {
   }
   .navbar-toggler {
     display: none; /* Oculta el botón de toggler en pantallas grandes */
+  }
+  #next, #prev {
+    left: 400px;
+  }
+  #next {
+    left: unset;
+    right: 400px;
   }
 }
 .container-fluid {
@@ -161,6 +189,13 @@ body {
   .navbar-toggler {
     display: block; /* Muestra el botón de toggler en pantallas pequeñas */
   }
+  #next, #prev {
+    left: 50px;
+  }
+  #next {
+    left: unset;
+    right: 50px;
+  }
 }
 @media (min-width: 992px) {
   footer {
@@ -171,6 +206,13 @@ body {
   }
   .navbar-toggler {
     display: none; /* Oculta el botón de toggler en pantallas grandes */
+  }
+  #next, #prev {
+    left: 400px;
+  }
+  #next {
+    left: unset;
+    right: 400px;
   }
 }
 footer {
@@ -183,8 +225,6 @@ footer {
   min-height: 100px;
   padding: 20px;
   text-align: center;
-  position: relative;
-  margin-top: auto;
 }
 
 .paginas_footer a {
@@ -269,6 +309,42 @@ article {
   font-family: "letras-grandes";
   src: url("/src/fonts/Arima/Arima-VariableFont_wght.ttf");
 }
+@media (max-width: 991px) {
+  footer {
+    font-size: 12px;
+  }
+  #navbarNav {
+    display: none; /* Oculta el menú en pantallas pequeñas */
+  }
+  .navbar-toggler {
+    display: block; /* Muestra el botón de toggler en pantallas pequeñas */
+  }
+  #next, #prev {
+    left: 50px;
+  }
+  #next {
+    left: unset;
+    right: 50px;
+  }
+}
+@media (min-width: 992px) {
+  footer {
+    font-size: 15px;
+  }
+  #navbarNav {
+    display: flex; /* Muestra el menú en pantallas grandes */
+  }
+  .navbar-toggler {
+    display: none; /* Oculta el botón de toggler en pantallas grandes */
+  }
+  #next, #prev {
+    left: 400px;
+  }
+  #next {
+    left: unset;
+    right: 400px;
+  }
+}
 .inicio {
   justify-content: center;
   align-items: center;
@@ -319,15 +395,9 @@ article {
   color: rgb(255, 167, 255);
   background-color: transparent;
   border: none;
-  font-size: xx-large;
+  font-size: xxx-large;
   font-family: monospace;
   font-weight: bold;
-  left: 50px;
-}
-
-#next {
-  left: unset;
-  right: 50px;
 }
 
 /*ACORDEON DE CARDS*/

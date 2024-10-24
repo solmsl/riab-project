@@ -11,6 +11,14 @@
         display: block; /* Muestra el botón de toggler en pantallas pequeñas */
     }
 
+    #next, #prev{
+        left: 50px;
+    }
+    #next{
+        left: unset;
+        right: 50px;
+    }
+
 }
 
 @media (min-width: 992px) {
@@ -26,4 +34,11 @@
         display: none; /* Oculta el botón de toggler en pantallas grandes */
     }
 
+    #next, #prev{
+        left: 400px;
+    }
+    #next{
+        left: unset;
+        right: 400px;
+    }
 }

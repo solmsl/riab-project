@@ -144,12 +144,26 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 
     function getMascotaData() {
+        const nombreApodo = document.getElementById('nombreApodo');
+        const especie = document.getElementById('especie');
+        const raza = document.getElementById('raza');
+        const color = document.getElementById('color');
+        const anioNacimiento = document.getElementById('anio_nacimiento');
+    
+        console.log({
+            nombreApodo: nombreApodo?.value,
+            especie: especie?.value,
+            raza: raza?.value,
+            color: color?.value,
+            anioNacimiento: anioNacimiento?.value
+        });
+    
         return {
-            nombreApodo: document.getElementById('nombreApodo').value,
-            especie: document.getElementById('especie').value,
-            raza: document.getElementById('raza').value,
-            color: document.getElementById('color').value,
-            anioNacimiento: document.getElementById('anio_nacimiento').value
+            nombreApodo: nombreApodo.value,
+            especie: especie.value,
+            raza: raza.value,
+            color: color.value,
+            anioNacimiento: anioNacimiento.value
         };
-    }
+    }    
 });

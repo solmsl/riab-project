@@ -2,7 +2,7 @@
 
 footer{
     color: white;
-    display: flexbox;
+    display: block;
     bottom: 0; 
     left: 0;
     right: 0; 
@@ -10,7 +10,6 @@ footer{
     min-height: 100px;
     padding: 20px;
     text-align: center;
-    position: relative;
 }
 
 .paginas_footer{

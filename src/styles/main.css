@@ -13,7 +13,7 @@ html {
 }
 
 body {
-  background-image: url("/src/img/fondo.jpg");
+  background-image: url("../img/fondou-init.jpg");
   background-size: cover;
   background-repeat: repeat;
   background-position: top left;
@@ -412,45 +412,6 @@ article {
   background-color: rgba(128, 0, 128, 0.568);
   color: white;
   font-family: "letras-grandes";
-}
-
-@font-face {
-  font-family: "letras-grandes";
-  src: url("/src/fonts/Arima/Arima-VariableFont_wght.ttf");
-}
-.requisitos_container {
-  width: 100%;
-  max-width: 1200px;
-  height: 430px;
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-}
-.requisitos_container .requisitos_card {
-  background-color: rgb(156, 64, 129);
-  color: white;
-  width: 330px;
-  height: 430px;
-  border-radius: 28px;
-  box-shadow: 0 2px 2px rgb(181, 63, 205);
-  overflow: hidden;
-  margin: 30px;
-  text-align: center;
-  font-family: "letras-grandes";
-  transition: 0.5s;
-}
-.requisitos_container .requisitos_card:hover {
-  transform: translateY(-9px);
-  box-shadow: 0 12px 16px rgba(124, 6, 75, 0.377);
-}
-.requisitos_container .requisitos_card img {
-  width: 330px;
-  height: 220px;
-}
-.requisitos_container .requisitos_card p {
-  padding: 0 1rem;
-  font-size: 14px;
-  font-weight: 300;
 }
 
 /*# sourceMappingURL=main.css.map */

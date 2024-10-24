@@ -145,7 +145,7 @@ body {
   color: white;
 }
 .nav-link:hover {
-  color: rgb(26, 3, 44);
+  color: rgb(223, 117, 233);
 }
 .nav-link::before {
   content: "";
@@ -155,7 +155,7 @@ body {
   transform: translateX(-50%);
   width: 0;
   height: 2px;
-  background-color: rgb(26, 3, 44);
+  background-color: rgb(223, 117, 233);
   visibility: hidden;
   transition: 0.3s ease-in-out;
 }
@@ -252,6 +252,7 @@ footer {
   src: url("/src/fonts/Arima/Arima-VariableFont_wght.ttf");
 }
 article {
+  margin-top: 40px;
   justify-content: center;
 }
 
@@ -442,6 +443,76 @@ article {
   background-color: rgba(128, 0, 128, 0.568);
   color: white;
   font-family: "letras-grandes";
+}
+
+@font-face {
+  font-family: "letras-grandes";
+  src: url("/src/fonts/Arima/Arima-VariableFont_wght.ttf");
+}
+article {
+  margin-top: 40px;
+  justify-content: center;
+}
+
+.container {
+  padding: 10px 0;
+}
+
+.wrapper {
+  padding: 10px 10%;
+}
+
+.card_area {
+  display: grid;
+  margin-top: 50px;
+  grid-gap: 20px;
+  grid-template-columns: repeat(auto-fit, minmax(210px, 1fr));
+}
+
+.card {
+  position: relative;
+  border-radius: 10px;
+  box-shadow: 5px 5px 15px rgb(49, 17, 49);
+  overflow: hidden;
+  border: none;
+}
+.card img {
+  height: 350px;
+  width: 100%;
+  display: block;
+  transition: transform 0.5s;
+}
+
+.overlay {
+  height: 0;
+  width: 100%;
+  position: absolute;
+  display: flex;
+  overflow: hidden;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  left: 0;
+  bottom: 0;
+  border-radius: 10px;
+  background: linear-gradient(transparent, rgba(56, 23, 46, 0.479) 60%);
+  padding: 0 50px;
+  text-align: center;
+  font-size: 15px;
+  transition: height 0.5s;
+  font-family: "letras-grandes";
+  color: white;
+}
+.overlay h3 {
+  margin-top: 55%;
+  margin-bottom: 5px;
+  font-size: 30px;
+  font-weight: 500;
+  letter-spacing: 2px;
+}
+
+.card:hover .overlay {
+  height: 100%;
 }
 
 /*# sourceMappingURL=main.css.map */

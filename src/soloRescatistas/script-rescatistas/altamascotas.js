@@ -52,6 +52,7 @@ document.addEventListener('DOMContentLoaded', () => {
             const data = await response.json();
 
             if (response.ok) {
+                console.log(data.message);
                 alert(data.message);
                 form.reset();
                 window.location.href = './soloRescatistas/inicio-res.html'; 

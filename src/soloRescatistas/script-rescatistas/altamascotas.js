@@ -71,9 +71,9 @@ document.addEventListener('DOMContentLoaded', () => {
             await eliminarMascota(id);
         }
     });
-
+    
     document.getElementById('btn-actualizar').addEventListener('click', async () => {
-        window.location.href = './soloRescatistas/script-rescatistas/rutas-mascotas/actualizar.html'; 
+        window.location.href = './script/script-mascotas/rutas-mascotas/actualizar.html'; 
         // const id = prompt('Ingrese el ID de la mascota a actualizar:');
         // if (id) {
         //     const mascotaData = getMascotaData();

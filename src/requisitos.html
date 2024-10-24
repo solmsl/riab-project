@@ -9,7 +9,6 @@
 </head>
 <body> 
   <header> 
-
     <nav class="navbar navbar-expand-lg fixed-top shadow-lg">
       <div class="container-fluid"> 
         <button class="navbar-toggler custom-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasNavbar" aria-controls="offcanvasNavbar" aria-label="Toggle navigation">
@@ -25,10 +24,10 @@
                 <a class="nav-link mx-lg-2" aria-current="page" href="https://riab-project.vercel.app">Inicio</a>
               </li>
               <li class="nav-item">
-                <a class="nav-link mx-lg-2" href="mascotas.html">Mascotass</a>
+                <a class="nav-link mx-lg-2" href="./src/mascotas.html">Mascotas</a>
               </li>
               <li class="nav-item">
-                <a class="nav-link mx-lg-2" href="requisitos.html">Requisitos</a>
+                <a class="nav-link mx-lg-2" href="./src/requisitos.html">Requisitos</a>
               </li>
               <li class="nav-item">
                 <a class="nav-link mx-lg-2" href="centros.html">Centros</a>
@@ -40,25 +39,90 @@
           </div>
         </div>
         <a class="navbar-brand" id="title">RIAB</a>
-        <a href="../pages-rescatistas/login.html" class="login-button">Iniciar Sesión</a>
+        <a href="login.html" class="login-button">Iniciar Sesión</a>
       </div>
     </nav>
   </header>
-
+  
   <section>
-    <h1>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Veritatis ad fugiat dignissimos consequatur voluptates impedit repellendus sit modi! Sit adipisci eveniet, similique quod quidem sint fugiat necessitatibus iusto maiores doloribus.</h1>
-  </section>
 
-  <hr class="linea-divisor">
+    <article class="mx-3">
+      <h4>COMO AYUDAR A LOS ANIMALES DE LA CALLE ABANDONADOS</h4>
+      <div class="accordion shadow-lg rounded-2" id="accordionExample">
+        <div class="accordion-item">
+          <h2 class="accordion-header">
+            <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+              Sácalo del ambiente nocivo
+            </button>
+          </h2>
+          <div id="collapseOne" class="accordion-collapse collapse show" data-bs-parent="#accordionExample">
+            <div class="accordion-body">
+              Acércate con cuidado y deja que el animal se acostumbre a ti. Un buen truco es ofrecerle comida o estirar tu mano para que la huelan (en el caso de los perros). Si estuvieras en una vía muy transitada, pide ayuda de un amigo o de un transeúnte para proteger al animal de los carros. En las carreteras puedes pedir ayuda a la Policía, que pueden tener equipos especiales para rescatar a los animales con mayor seguridad.
+            </div>
+          </div>
+        </div>
+        <div class="accordion-item">
+          <h2 class="accordion-header">
+            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+              Hogar, dulce hogar
+            </button>
+          </h2>
+          <div id="collapseTwo" class="accordion-collapse collapse" data-bs-parent="#accordionExample">
+            <div class="accordion-body">
+              La mejor opción es llevar al animal a tu casa. La mayoría de refugios y ONGs enfrentan sobrepoblación, falta de recursos, y difícilmente podrán cuidarlo tan bien como tú. Si no pudieras quedarte con el perro o el gato, habla con tu familia y amigos. Explícales que es temporal, solo hasta encontrarle un hogar definitivo, y que pueden compartir los gastos y hasta alternar hogares para el animal.
+            </div>
+          </div>
+        </div>
+        <div class="accordion-item">
+          <h2 class="accordion-header">
+            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+              Comida y cuidados simples
+            </button>
+          </h2>
+          <div id="collapseThree" class="accordion-collapse collapse" data-bs-parent="#accordionExample">
+            <div class="accordion-body">
+              Un hogar provisional no tiene que ser perfecto o espacioso. Basta tener un área de servicio o una esquina en el patio, en donde el animal pueda resguardarse del frío y del calor. Improvisa una cama con un cobertor o una sábana vieja. Lo ideal es darle alimento empacado. Si no tuvieses cómo comprarlo, puedes combinar temporalmente comidas caseras como arroz, pollo, papas o legumbres cocinadas. No utilices sal ni aceite. Para los gatos, dales carne en trozos pequeños, como pescado, pollo carne molida.
+            </div>
+          </div>
+        </div>
+        <div class="accordion-item">
+          <h2 class="accordion-header">
+            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseFour" aria-expanded="false" aria-controls="collapseFour">
+              ¿Alguien perdió un animalito?
+            </button>
+          </h2>
+          <div id="collapseFour" class="accordion-collapse collapse" data-bs-parent="#accordionExample">
+            <div class="accordion-body">
+              No todo animal en la calle fue abandonado, y es especialmente notorio cuando un animal está bien entrenado, bien alimentado o con collar. Asegúrate de que no está solo perdido. Conversa con los vecinos, pregunta en los comercios cercanos y pregunta por los dueños en redes sociales o en sitios especializados en Internet.
+            </div>
+          </div>
+        </div>
+        <div class="accordion-item">
+          <h2 class="accordion-header">
+            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseFive" aria-expanded="false" aria-controls="collapseFive">
+              Utiliza las redes
+            </button>
+          </h2>
+          <div id="collapseFive" class="accordion-collapse collapse" data-bs-parent="#accordionExample">
+            <div class="accordion-body">
+              Esta es la mejor manera para encontrar un dueño, antiguo o nuevo. Utiliza tu perfil en las redes sociales, sea Facebook, Twitter, Instagram o sitios de adopción de animales. ¡Lo importante es hacerte escuchar!  
+
+              Tómale una foto, cuenta cómo encontraste al animal y brinda detalles de su personalidad. ¿Es muy dócil? ¿Juguetón? ¿Le gusta que le acaricien el cuello, o detrás de las orejas? Esto ayuda a que las personas creen un vínculo emocional con el animalito y quieran adoptarlo. Detalla también su tamaño y edad aproximada, y no olvides de poner público el álbum de fotos, para que sea fácil de compartir, de etiquetar a amigos, divulgar en páginas, etc.
+            </div>
+          </div>
+        </div>
+      </div>
+    </article>
+  </section>
 
   <footer>
 
     <div class="paginas_footer">
       <a href="/index.html">Inicio</a> &nbsp; &nbsp; 
-      <a href="mascotas.html">Mascotas</a> &nbsp;  &nbsp; 
-      <a href="requisitos.html">Requisitos</a> &nbsp;  &nbsp; 
-      <a href="centros.html">Centros</a> &nbsp;  &nbsp; 
-      <a href="adoptar.html">¿Cómo Adoptar?</a> 
+      <a href="./src/mascotas.html">Mascotas</a> &nbsp;  &nbsp; 
+      <a href="./src/requisitos.html">Requisitos</a> &nbsp;  &nbsp; 
+      <a href="./src/centros.html">Centros</a> &nbsp;  &nbsp; 
+      <a href="./src/adoptar.html">¿Cómo Adoptar?</a> 
     </div> <br>
 
       2024 &nbsp; &nbsp; | &nbsp; &nbsp; Todos los derechos reservados
@@ -66,5 +130,7 @@
   </footer>
 
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+  <script src="./src/scripts/carousel.js"></script>
+  <script src="./src/scripts/texto.js"></script>
 </body>
 </html>

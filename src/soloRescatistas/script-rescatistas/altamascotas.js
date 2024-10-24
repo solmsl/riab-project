@@ -44,7 +44,7 @@ document.addEventListener('DOMContentLoaded', () => {
         event.preventDefault();
         
         try {
-            const response = await fetch('http://localhost:3000/mascotas', {
+            const response = await fetch('http://localhost:3000/mascotas/registro', {
                 method: 'POST',
                 headers: { 'Content-Type': 'application/json' },
                 body: JSON.stringify(getMascotaData())

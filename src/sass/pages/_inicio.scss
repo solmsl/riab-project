@@ -3,19 +3,23 @@
 .inicio{
     justify-content: center;
     align-items: center;
-    bottom: 0; 
-    left: 0;
-    right: 0;   
-    margin: 100px 10px;
+  
+    margin: 64px 10px;
     min-height: 100px;
     text-align: center;
     font-family: 'letras-grandes';
     background-color: white;
     border-radius: 10px;
     box-shadow: 4px 4px rgb(178, 114, 231);
+    transition: all 400ms ease-out;
+    cursor:auto;
     
     h4{
         padding: 23px;
     }
 
+    &:hover{
+        transform: translateY(-1%);
+    }
+    
 }

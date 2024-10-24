@@ -8,16 +8,19 @@
 <body>
     <div>
         <h1>Actualizar Mascota</h1>
-        <p>Ingrese el ID de la mascota:</p><br>
-        <input id="id-input" type="number" placeholder="inserte el id (solo numeros sin espacios)">    
+        <p>Ingrese el ID de la mascota:</p>
+        <input id="id-input" type="number" placeholder="(solo numeros sin espacios)">
+        <button id="btnActu">confirmar</button>  
     </div>
     <script>
         const idActu = document.getElementById('id-input');
-        // const id = prompt('Ingrese el ID de la mascota a actualizar:');
+
+        document.getElementById('btnActu').addEventListener('click', async () => {
         if (idActu) {
             const mascotaData = getMascotaData();
             await actualizarMascota(id, mascotaData);
-        }
+            }
+        });
     </script>
 </body>
 </html>

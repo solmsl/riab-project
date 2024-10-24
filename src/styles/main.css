@@ -349,5 +349,22 @@ article {
   justify-content: center;
   margin: auto;
 }
+.requisitos_container .requisitos_card {
+  width: 330px;
+  height: 430px;
+  border-radius: 28px;
+  box-shadow: 0 2px 2px peru;
+  overflow: hidden;
+  margin: 20px;
+  text-align: center;
+  transition: 0.5s;
+}
+.requisitos_container .requisitos_card:hover {
+  transform: translateY(-15px);
+  box-shadow: 0 12px 16px red;
+}
+.requisitos_container .requisitos_card img {
+  width: 330px;
+}
 
 /*# sourceMappingURL=main.css.map */

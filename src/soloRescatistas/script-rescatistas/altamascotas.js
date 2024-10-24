@@ -47,7 +47,7 @@ document.addEventListener('DOMContentLoaded', () => {
         const especie = document.getElementById('especie').value;
         const raza = document.getElementById('raza').value;
         const color = document.getElementById('color').value;
-        const anioNacimiento = document.getElementById('anio_nacimiento').value;
+        const anioNacimiento = document.getElementById('anioNacimiento').value;
 
         const mascotasData = {
             nombreApodo,

@@ -55,7 +55,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 console.log(data.message);
                 alert(data.message);
                 form.reset();
-                window.location.href = './soloRescatistas/inicio-res.html'; 
+                window.location.href = './soloRescatistas/añadirMascotas.html'; 
             } else {
                 alert('Error: ' + (data.message || 'Error en el registro.'));
             }
@@ -73,11 +73,12 @@ document.addEventListener('DOMContentLoaded', () => {
     });
 
     document.getElementById('btn-actualizar').addEventListener('click', async () => {
-        const id = prompt('Ingrese el ID de la mascota a actualizar:');
-        if (id) {
-            const mascotaData = getMascotaData();
-            await actualizarMascota(id, mascotaData);
-        }
+        window.location.href = './soloRescatistas/script-rescatistas/rutas-mascotas/actualizar.html'; 
+        // const id = prompt('Ingrese el ID de la mascota a actualizar:');
+        // if (id) {
+        //     const mascotaData = getMascotaData();
+        //     await actualizarMascota(id, mascotaData);
+        // }
     });
 
     document.getElementById('btn-buscar').addEventListener('click', async () => {

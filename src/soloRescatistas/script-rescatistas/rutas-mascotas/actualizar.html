@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>RIAB</title>
+</head>
+<body>
+    <div>
+        <h1>Actualizar Mascota</h1>
+        <p>Ingrese el ID de la mascota:</p><br>
+        <input id="id-input" type="number" placeholder="inserte el id (solo numeros sin espacios)">    
+    </div>
+
+    <script>
+        const idActu = document.getElementById('id-input');
+        // const id = prompt('Ingrese el ID de la mascota a actualizar:');
+        if (idActu) {
+            const mascotaData = getMascotaData();
+            await actualizarMascota(id, mascotaData);
+        }
+    </script>
+</body>
+</html>

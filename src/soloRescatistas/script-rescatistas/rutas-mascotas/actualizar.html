@@ -109,13 +109,13 @@
             const color = document.getElementById('color');
             const anioNacimiento = document.getElementById('anio_nacimiento');
         
-            // console.log({
-            //     nombreApodo: nombreApodo?.value,
-            //     especie: especie?.value,
-            //     raza: raza?.value,
-            //     color: color?.value,
-            //     anioNacimiento: anioNacimiento?.value
-            // });
+            console.log({
+                nombreApodo: nombreApodo?.value,
+                especie: especie?.value,
+                raza: raza?.value,
+                color: color?.value,
+                anioNacimiento: anioNacimiento?.value
+            });
         
             return {
                 nombreApodo: nombreApodo.value,
@@ -142,7 +142,7 @@
                     form.reset();
                     window.location.href = './soloRescatistas/añadirMascotas.html'; 
                 } else {
-                    mensajeActualizacion.textContent = 'Error: ' + (data.message || 'Error en la actualización.');
+                    mensajeActualizacion.textContent = 'Error: ' + (data.message || 'Deben de ingresarse todos los datos');
                 }
             } catch (error) {
                 console.error('Error al actualizar la mascota:', error);

@@ -1,4 +1,5 @@
 @import "../base/fonts";
+@import "../grid/grid";
 
 .inicio{
     justify-content: center;
@@ -55,15 +56,9 @@
     color: rgb(255, 167, 255);
     background-color: transparent;
     border: none;
-    font-size: xx-large;
+    font-size:xxx-large;
     font-family: monospace;
     font-weight: bold;
-    left: 50px;
-}
-
-#next{
-    left: unset;
-    right: 50px;
 }
 
 /*ACORDEON DE CARDS*/

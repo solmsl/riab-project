@@ -73,7 +73,7 @@ document.addEventListener('DOMContentLoaded', () => {
     });
     
     document.getElementById('btn-actualizar').addEventListener('click', async () => {
-        window.location.href = './script-mascotas/rutas-mascotas/actualizar.html'; 
+        window.location.href = './script/script-mascotas/rutas-mascotas/actualizar.html'; 
         // const id = prompt('Ingrese el ID de la mascota a actualizar:');
         // if (id) {
         //     const mascotaData = getMascotaData();

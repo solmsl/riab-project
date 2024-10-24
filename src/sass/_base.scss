@@ -3,13 +3,14 @@ html{
     margin: 0;
     padding: 0;
     height: 100%;
+    position: relative;
 }
 *,*::after, *::before{
     box-sizing: inherit;
 }
 
 body{
-    background-image: url('/src/img/fondo.jpg');
+    background-image: url('../img/fondou-init.jpg');
     background-size: cover;
     background-repeat: repeat; 
     background-position: top left; 

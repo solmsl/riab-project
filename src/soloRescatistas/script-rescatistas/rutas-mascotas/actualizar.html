@@ -115,6 +115,7 @@
                 const data = await response.json();
 
                 if (response.ok) {
+                    document.write("La mascota se cargó con exito");
                     mensajeActualizacion.textContent = data.message;
                     form.reset();
                     window.location.href = './soloRescatistas/añadirMascotas.html'; 

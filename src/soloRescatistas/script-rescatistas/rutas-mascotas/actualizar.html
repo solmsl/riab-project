@@ -6,7 +6,11 @@
     <title>RIAB</title>
 </head>
 <body>
-    <div><h1>Actualizar Mascota</h1></div> 
+    <div>
+        <h1>Actualizar Mascota</h1>
+        <h2>Se deben llenar todos los campos</h2>
+    </div>
+
     <form id="mascotasForm">
         <div>
             <label for="id">Id: </label><br>
@@ -137,12 +141,12 @@
                 const data = await response.json();
 
                 if (response.ok) {
-                    document.write("La mascota se cargó con exito");
+                    document.write("La mascota se actualizó con exito");
                     mensajeActualizacion.textContent = data.message;
                     form.reset();
-                    window.location.href = './soloRescatistas/añadirMascotas.html'; 
+                    window.location.href = '../soloRescatistas/añadirMascotas.html'; 
                 } else {
-                    mensajeActualizacion.textContent = 'Error: ' + (data.message || 'Deben de ingresarse todos los datos');
+                    mensajeActualizacion.textContent = 'Error: ' + (data.message || 'Error en la actualización.');
                 }
             } catch (error) {
                 console.error('Error al actualizar la mascota:', error);

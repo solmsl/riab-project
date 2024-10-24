@@ -38,7 +38,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
                 form.reset();
 
-                window.location.href = 'https://riab-project.vercel.app/soloRescatistas/inicio-res.html';
+                window.location.href = 'https://riab-project.vercel.app/src/soloRescatistas/inicio-res.html';
         
             } else {
                 alert('Error: ' + data.error || 'Error al iniciar sesion.');

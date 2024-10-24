@@ -283,4 +283,17 @@ article {
   transform: translateY(-1%);
 }
 
+/*ACORDEON DE CARDS*/
+.mx-5 h4 {
+  color: white;
+  text-align: center;
+}
+
+.accordion-item, .accordion-button {
+  border: none;
+  background-color: rgba(128, 0, 128, 0.568);
+  color: white;
+  font-family: "letras-grandes";
+}
+
 /*# sourceMappingURL=main.css.map */

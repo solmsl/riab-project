@@ -8,34 +8,26 @@
 </head>
 <body> 
   <header>
-      <div><a>RIAB</a><div>
-        <ul>
-          <li>
-            <a aria-current="page" href="inicio-res.html">Inicio</a>
-          </li>
-          <li>
-            <a href="mascotas.html">Mascotas</a>
-          </li>
-          <li>
-            <a href="centros.html">Centros</a>
-          </li>
-          <li>
-            <a href="añadirMascotas.html">Añadir Mascotas</a>
-          </li>
-          <li>
-            <a href="adopcion.html">Crear Adopción</a>
-          </li>
-          <li>
-            <a href="cerrarsesion.html">Cerrar Sesión</a>
-          </li>
-        </ul>
+    <div><a>RIAB</a></div>
+    <ul>
+      <li><a aria-current="page" href="inicio-res.html">Inicio</a></li>
+      <li><a href="mascotas.html">Mascotas</a></li>
+      <li><a href="centros.html">Centros</a></li>
+      <li><a href="añadirMascotas.html">Añadir Mascotas</a></li>
+      <li><a href="adopcion.html">Crear Adopción</a></li>
+      <li><a href="cerrarsesion.html">Cerrar Sesión</a></li>
+    </ul>
   </header>
 
   <form id="mascota-form">
-    <h3>🐾FORMULARIO DE MASCOTAS 🐾</h3> <br>
+    <h3>🐾 FORMULARIO DE MASCOTAS 🐾</h3> <br>
+    
     <div>
       <label for="nombreApodo">Nombre/Apodo: </label><br>
       <input id="nombreApodo" type="text" placeholder="Ingrese Nombre o Apodo" required><br>
+    </div>
+
+    <div>
       <label for="especie">Especie:</label><br>
       <select id="especie" name="especie" required>
         <option value="">Seleccione una especie</option>
@@ -52,10 +44,9 @@
 
     <div>
       <label for="raza">Raza:</label>
-        <select class="form-control" id="raza" name="raza" required>
-          <option value="">Seleccione una raza</option>
-          <!-- Opciones de razas se llenarán dinámicamente -->
-        </select>
+      <select class="form-control" id="raza" name="raza" required>
+        <option value="">Seleccione una raza</option>
+      </select>
       <span class="text-danger" id="error_raza"></span>
     </div>
 
@@ -73,7 +64,7 @@
     </div>
 
     <div>
-      <label for="anioNacimiento">Año de Nacimiento:</label>
+      <label for="anio_nacimiento">Año de Nacimiento:</label>
       <select id="anio_nacimiento" name="anio_nacimiento" required>
         <option value="">Seleccione un rango de años</option>
         <option value="2000-2003">2000-2003</option>
@@ -86,7 +77,12 @@
       </select>
       <span id="error_anio_nacimiento"></span>
     </div>
+    
     <button id="btn-confirmar" type="submit">Registrar Mascota</button>
+    <button id="btn-eliminar" type="button">Eliminar Mascota</button>
+    <button id="btn-actualizar" type="button">Actualizar Mascota</button>
+    <button id="btn-buscar" type="button">Buscar Mascota</button>
+    <button id="btn-ver-todas" type="button">Ver Todas las Mascotas</button>
   </form>
   
   <footer>
@@ -94,6 +90,5 @@
   </footer>
 
   <script src="./script-rescatistas/altamascotas.js"></script>
-
 </body>
 </html>

@@ -42,34 +42,18 @@ document.addEventListener('DOMContentLoaded', () => {
 
     form.addEventListener('submit', async (event) => {
         event.preventDefault();
-
-        const nombreApodo = document.getElementById('nombreApodo').value;
-        const especie = document.getElementById('especie').value;
-        const raza = document.getElementById('raza').value;
-        const color = document.getElementById('color').value;
-        const anioNacimiento = document.getElementById('anioNacimiento').value;
-
-        const mascotasData = {
-            nombreApodo,
-            especie,
-            raza,
-            color,
-            anioNacimiento
-        };
-
+        const mascotaData = getMascotaData();
+        
         try {
             const response = await fetch('http://localhost:3000/mascotas', {
                 method: 'POST',
-                headers: {
-                    'Content-Type': 'application/json',
-                },
-                body: JSON.stringify(mascotasData),
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify(mascotaData)
             });
-
             const data = await response.json();
 
-            if (response.ok && data.success) {
-                alert('Registro exitoso: ' + data.message);
+            if (response.ok) {
+                alert(data.message);
                 form.reset();
                 window.location.href = './soloRescatistas/inicio-res.html'; 
             } else {
@@ -80,4 +64,92 @@ document.addEventListener('DOMContentLoaded', () => {
             alert('Error en el registro. Por favor, inténtelo de nuevo más tarde.');
         }
     });
+
+    document.getElementById('btn-eliminar').addEventListener('click', async () => {
+        const id = prompt('Ingrese el ID de la mascota a eliminar:');
+        if (id) {
+            await eliminarMascota(id);
+        }
+    });
+
+    document.getElementById('btn-actualizar').addEventListener('click', async () => {
+        const id = prompt('Ingrese el ID de la mascota a actualizar:');
+        if (id) {
+            const mascotaData = getMascotaData();
+            await actualizarMascota(id, mascotaData);
+        }
+    });
+
+    document.getElementById('btn-buscar').addEventListener('click', async () => {
+        const id = prompt('Ingrese el ID de la mascota a buscar:');
+        if (id) {
+            await buscarMascota(id);
+        }
+    });
+
+    document.getElementById('btn-ver-todas').addEventListener('click', async () => {
+        await verTodasLasMascotas();
+    });
+
+    async function eliminarMascota(id) {
+        try {
+            const response = await fetch(`http://localhost:3000/mascotas/${id}`, { method: 'DELETE' });
+            const data = await response.json();
+            alert(data.message);
+        } catch (error) {
+            console.error('Error al eliminar la mascota:', error);
+            alert('Error al eliminar la mascota. Inténtelo de nuevo más tarde.');
+        }
+    }
+
+    async function actualizarMascota(id, data) {
+        try {
+            const response = await fetch(`http://localhost:3000/mascotas/${id}`, {
+                method: 'PUT',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify(data)
+            });
+            const responseData = await response.json();
+            alert(responseData.message);
+        } catch (error) {
+            console.error('Error al actualizar la mascota:', error);
+            alert('Error al actualizar la mascota. Inténtelo de nuevo más tarde.');
+        }
+    }
+
+    async function buscarMascota(id) {
+        try {
+            const response = await fetch(`http://localhost:3000/mascotas/${id}`);
+            const data = await response.json();
+            if (data) {
+                alert(`Mascota encontrada: ${JSON.stringify(data)}`);
+            } else {
+                alert('Mascota no encontrada.');
+            }
+        } catch (error) {
+            console.error('Error al buscar la mascota:', error);
+            alert('Error al buscar la mascota. Inténtelo de nuevo más tarde.');
+        }
+    }
+
+    async function verTodasLasMascotas() {
+        try {
+            const response = await fetch('http://localhost:3000/mascotas');
+            const data = await response.json();
+            alert(`Mascotas: ${JSON.stringify(data)}`);
+        } catch (error) {
+            console.error('Error al obtener todas las mascotas:', error);
+            alert('Error al obtener las mascotas. Inténtelo de nuevo más tarde.');
+        }
+    }
+
+    function getMascotaData() {
+        return {
+            nombreApodo: document.getElementById('nombreApodo').value,
+            especie: document.getElementById('especie').value,
+            raza: document.getElementById('raza').value,
+            color: document.getElementById('color').value,
+            anioNacimiento: document.getElementById('anio_nacimiento').value
+        };
+    }
 });

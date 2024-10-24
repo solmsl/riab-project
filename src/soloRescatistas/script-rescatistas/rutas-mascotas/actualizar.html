@@ -10,7 +10,7 @@
     <form id="mascotasForm">
         <div>
             <label for="id">Id: </label><br>
-            <input id="id-input" type="text" placeholder="Ingrese el id (solo numeros)"><br>
+            <input id="id-input" type="text" placeholder="Ingrese el id (solo numeros)" required><br>
         </div>
             
         <div>
@@ -125,7 +125,7 @@
         event.preventDefault();
         
         try {
-            const response = await fetch('http://localhost:3000/mascotas/registro', {
+            const response = await fetch('http://localhost:3000/mascotas/:id', {
                 method: 'POST',
                 headers: { 'Content-Type': 'application/json' },
                 body: JSON.stringify(getMascotaData())

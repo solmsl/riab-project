@@ -102,6 +102,29 @@
             }
         });
 
+        function getMascotaData() {
+            const nombreApodo = document.getElementById('nombreApodo');
+            const especie = document.getElementById('especie');
+            const raza = document.getElementById('raza');
+            const color = document.getElementById('color');
+            const anioNacimiento = document.getElementById('anio_nacimiento');
+        
+            console.log({
+                nombreApodo: nombreApodo?.value,
+                especie: especie?.value,
+                raza: raza?.value,
+                color: color?.value,
+                anioNacimiento: anioNacimiento?.value
+            });
+        
+            return {
+                nombreApodo: nombreApodo.value,
+                especie: especie.value,
+                raza: raza.value,
+                color: color.value,
+                anioNacimiento: anioNacimiento.value
+            };
+        } 
         form.addEventListener('submit', async (event) => {
             event.preventDefault();
             const id = idActu.value;
@@ -131,6 +154,5 @@
             form.dispatchEvent(new Event('submit'));
         });
     </script>
-     <script src="../altamascotas.js"></script>
 </body>
 </html>

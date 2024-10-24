@@ -18,7 +18,7 @@ body {
   background-position: top left;
   height: 100vh; /* Asegura que el body ocupe toda la altura de la ventana */
   justify-content: center;
-  align-items: center;
+  margin: 0;
 }
 
 @font-face {
@@ -36,6 +36,13 @@ body {
   .navbar-toggler {
     display: block; /* Muestra el botón de toggler en pantallas pequeñas */
   }
+  #next, #prev {
+    left: 50px;
+  }
+  #next {
+    left: unset;
+    right: 50px;
+  }
 }
 @media (min-width: 992px) {
   footer {
@@ -46,6 +53,13 @@ body {
   }
   .navbar-toggler {
     display: none; /* Oculta el botón de toggler en pantallas grandes */
+  }
+  #next, #prev {
+    left: 400px;
+  }
+  #next {
+    left: unset;
+    right: 400px;
   }
 }
 /* COMPONENTS */
@@ -63,6 +77,13 @@ body {
   .navbar-toggler {
     display: block; /* Muestra el botón de toggler en pantallas pequeñas */
   }
+  #next, #prev {
+    left: 50px;
+  }
+  #next {
+    left: unset;
+    right: 50px;
+  }
 }
 @media (min-width: 992px) {
   footer {
@@ -73,6 +94,13 @@ body {
   }
   .navbar-toggler {
     display: none; /* Oculta el botón de toggler en pantallas grandes */
+  }
+  #next, #prev {
+    left: 400px;
+  }
+  #next {
+    left: unset;
+    right: 400px;
   }
 }
 .container-fluid {
@@ -160,6 +188,13 @@ body {
   .navbar-toggler {
     display: block; /* Muestra el botón de toggler en pantallas pequeñas */
   }
+  #next, #prev {
+    left: 50px;
+  }
+  #next {
+    left: unset;
+    right: 50px;
+  }
 }
 @media (min-width: 992px) {
   footer {
@@ -170,6 +205,13 @@ body {
   }
   .navbar-toggler {
     display: none; /* Oculta el botón de toggler en pantallas grandes */
+  }
+  #next, #prev {
+    left: 400px;
+  }
+  #next {
+    left: unset;
+    right: 400px;
   }
 }
 footer {
@@ -182,6 +224,7 @@ footer {
   min-height: 100px;
   padding: 20px;
   text-align: center;
+  position: absolute;
 }
 
 .paginas_footer a {
@@ -266,6 +309,42 @@ article {
   font-family: "letras-grandes";
   src: url("/src/fonts/Arima/Arima-VariableFont_wght.ttf");
 }
+@media (max-width: 991px) {
+  footer {
+    font-size: 12px;
+  }
+  #navbarNav {
+    display: none; /* Oculta el menú en pantallas pequeñas */
+  }
+  .navbar-toggler {
+    display: block; /* Muestra el botón de toggler en pantallas pequeñas */
+  }
+  #next, #prev {
+    left: 50px;
+  }
+  #next {
+    left: unset;
+    right: 50px;
+  }
+}
+@media (min-width: 992px) {
+  footer {
+    font-size: 15px;
+  }
+  #navbarNav {
+    display: flex; /* Muestra el menú en pantallas grandes */
+  }
+  .navbar-toggler {
+    display: none; /* Oculta el botón de toggler en pantallas grandes */
+  }
+  #next, #prev {
+    left: 400px;
+  }
+  #next {
+    left: unset;
+    right: 400px;
+  }
+}
 .inicio {
   justify-content: center;
   align-items: center;
@@ -316,15 +395,9 @@ article {
   color: rgb(255, 167, 255);
   background-color: transparent;
   border: none;
-  font-size: xx-large;
+  font-size: xxx-large;
   font-family: monospace;
   font-weight: bold;
-  left: 50px;
-}
-
-#next {
-  left: unset;
-  right: 50px;
 }
 
 /*ACORDEON DE CARDS*/
@@ -340,6 +413,10 @@ article {
   font-family: "letras-grandes";
 }
 
+@font-face {
+  font-family: "letras-grandes";
+  src: url("/src/fonts/Arima/Arima-VariableFont_wght.ttf");
+}
 .requisitos_container {
   width: 100%;
   max-width: 1200px;
@@ -347,24 +424,32 @@ article {
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
-  margin: auto;
 }
 .requisitos_container .requisitos_card {
+  background-color: rgb(156, 64, 129);
+  color: white;
   width: 330px;
   height: 430px;
   border-radius: 28px;
-  box-shadow: 0 2px 2px peru;
+  box-shadow: 0 2px 2px rgb(181, 63, 205);
   overflow: hidden;
-  margin: 20px;
+  margin: 30px;
   text-align: center;
+  font-family: "letras-grandes";
   transition: 0.5s;
 }
 .requisitos_container .requisitos_card:hover {
-  transform: translateY(-15px);
-  box-shadow: 0 12px 16px red;
+  transform: translateY(-9px);
+  box-shadow: 0 12px 16px rgba(124, 6, 75, 0.377);
 }
 .requisitos_container .requisitos_card img {
   width: 330px;
+  height: 220px;
+}
+.requisitos_container .requisitos_card p {
+  padding: 0 1rem;
+  font-size: 14px;
+  font-weight: 300;
 }
 
 /*# sourceMappingURL=main.css.map */

@@ -79,6 +79,7 @@ body {
   background-color: rgba(187, 104, 255, 0.863);
   border-radius: 10px;
   z-index: 1000;
+  height: 50px;
 }
 
 .custom-toggler.navbar-toggler {
@@ -191,20 +192,6 @@ footer {
   color: rgb(26, 3, 44);
 }
 
-@font-face {
-  font-family: "letras-grandes";
-  src: url("/src/fonts/Arima/Arima-VariableFont_wght.ttf");
-}
-#letrero {
-  justify-content: center;
-  align-items: center;
-  margin: 64px 10px 10px 20px;
-  min-height: 100px;
-  text-align: center;
-  font-family: "letras-grandes";
-  color: white;
-}
-
 /* PAGES */
 @font-face {
   font-family: "letras-grandes";
@@ -282,8 +269,7 @@ article {
 .inicio {
   justify-content: center;
   align-items: center;
-  margin-top: 10px;
-  margin: 10px;
+  margin: 67px 10px;
   min-height: 100px;
   text-align: center;
   font-family: "letras-grandes";
@@ -352,6 +338,16 @@ article {
   background-color: rgba(128, 0, 128, 0.568);
   color: white;
   font-family: "letras-grandes";
+}
+
+.requisitos_container {
+  width: 100%;
+  max-width: 1200px;
+  height: 430px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  margin: auto;
 }
 
 /*# sourceMappingURL=main.css.map */

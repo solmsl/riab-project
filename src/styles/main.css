@@ -388,7 +388,7 @@ article {
   font-family: "letras-grandes";
   background-color: white;
   border-radius: 10px;
-  box-shadow: 15px 15px rgb(164, 105, 212);
+  box-shadow: 15px 15px rgb(128, 79, 168);
   transition: all 400ms ease-out;
   cursor: auto;
 }

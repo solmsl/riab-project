@@ -182,7 +182,7 @@ body {
   font-size: 14px;
   padding: 6px 18px;
   border-radius: 20px;
-  border: 2px solid rgb(36, 2, 36);
+  border: none;
   text-decoration: none;
   transition: all 400ms ease-out;
 }
@@ -360,7 +360,7 @@ article {
 .inicio {
   justify-content: center;
   align-items: center;
-  margin: 80px 20px;
+  margin: 80px 15px;
   min-height: 100px;
   text-align: center;
   font-family: "letras-grandes";

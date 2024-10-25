@@ -38,6 +38,11 @@
     border: none;
     text-decoration: none;
     transition: all 400ms ease-out;
+    
+    a{
+        text-decoration: none;
+        color: white;
+    }
 
     &:hover{
         transform: translateY(-3%);

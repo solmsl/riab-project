@@ -208,6 +208,10 @@ body {
   text-decoration: none;
   transition: all 400ms ease-out;
 }
+.login-button a {
+  text-decoration: none;
+  color: white;
+}
 .login-button:hover {
   transform: translateY(-3%);
 }

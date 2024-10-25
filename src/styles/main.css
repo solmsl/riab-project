@@ -199,7 +199,7 @@ body {
 
 /*INICIAR SESIÓN BUTTON*/
 .login-button {
-  background: linear-gradient(to left, rgb(111, 1, 161), rgb(141, 41, 235));
+  background: linear-gradient(to left, rgb(111, 1, 161), rgb(62, 5, 116));
   color: white;
   font-size: 14px;
   padding: 6px 18px;

@@ -18,25 +18,41 @@
         </div>
         <button id="btnBuscar" type="button">Buscar Mascota</button>
         <div id="mensajeActualizacion"></div>
+        <ul id="mascotaInfo"></ul>
     </form>
     
     <script>
         const idInput = document.getElementById('id-input');
         const mensajeActualizacion = document.getElementById('mensajeActualizacion');
+        const mascotaInfo = document.getElementById('mascotaInfo');
 
         async function buscarMascota(id) {
             try {
                 const response = await fetch(`http://localhost:3000/mascotas/${id}`);
                 const data = await response.json();
                 if (response.ok && data) {
-                    mensajeActualizacion.textContent = `Mascota encontrada: ${JSON.stringify(data)}`;
+                    mostrarMascota(data);
+                    mensajeActualizacion.textContent = 'Mascota encontrada';
                 } else {
                     mensajeActualizacion.textContent = 'Mascota no encontrada.';
+                    mascotaInfo.innerHTML = '';
                 }
             } catch (error) {
                 console.error('Error al buscar la mascota:', error);
                 mensajeActualizacion.textContent = 'Error al buscar la mascota. Inténtelo de nuevo más tarde.';
+                mascotaInfo.innerHTML = '';
             }
+        }
+
+        function mostrarMascota(mascota) {
+            mascotaInfo.innerHTML = `
+                <li><strong>ID:</strong> ${mascota.id}</li>
+                <li><strong>Nombre/Apodo:</strong> ${mascota.nombreApodo}</li>
+                <li><strong>Especie:</strong> ${mascota.especie}</li>
+                <li><strong>Raza:</strong> ${mascota.raza}</li>
+                <li><strong>Color:</strong> ${mascota.color}</li>
+                <li><strong>Año de Nacimiento:</strong> ${mascota.anioNacimiento}</li>
+            `;
         }
 
         document.getElementById('btnBuscar').addEventListener('click', () => {
@@ -45,10 +61,9 @@
                 buscarMascota(id);
             } else {
                 mensajeActualizacion.textContent = 'Por favor, ingrese un ID válido.';
+                mascotaInfo.innerHTML = '';
             }
         });
     </script>
 </body>
 </html>
-
-

@@ -26,24 +26,6 @@
         const mensajeActualizacion = document.getElementById('mensajeActualizacion');
         const mascotaInfo = document.getElementById('mascotaInfo');
 
-        async function buscarMascota(id) {
-            try {
-                const response = await fetch(`http://localhost:3000/mascotas/${id}`);
-                const data = await response.json();
-                if (response.ok && data) {
-                    mostrarMascota(data);
-                    mensajeActualizacion.textContent = 'Mascota encontrada';
-                } else {
-                    mensajeActualizacion.textContent = 'Mascota no encontrada.';
-                    mascotaInfo.innerHTML = '';
-                }
-            } catch (error) {
-                console.error('Error al buscar la mascota:', error);
-                mensajeActualizacion.textContent = 'Error al buscar la mascota. Inténtelo de nuevo más tarde.';
-                mascotaInfo.innerHTML = '';
-            }
-        }
-
         function mostrarMascota(mascota) {
             mascotaInfo.innerHTML = `
                 <li><strong>ID:</strong> ${mascota.id}</li>
@@ -64,6 +46,24 @@
                 mascotaInfo.innerHTML = '';
             }
         });
+        
+        async function buscarMascota(id) {
+            try {
+                const response = await fetch(`http://localhost:3000/mascotas/${id}`);
+                const data = await response.json();
+                if (response.ok && data) {
+                    mostrarMascota(data);
+                    mensajeActualizacion.textContent = 'Mascota encontrada';
+                } else {
+                    mensajeActualizacion.textContent = 'Mascota no encontrada.';
+                    mascotaInfo.innerHTML = '';
+                }
+            } catch (error) {
+                console.error('Error al buscar la mascota:', error);
+                mensajeActualizacion.textContent = 'Error al buscar la mascota. Inténtelo de nuevo más tarde.';
+                mascotaInfo.innerHTML = '';
+            }
+        }
     </script>
 </body>
 </html>

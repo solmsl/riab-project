@@ -110,31 +110,31 @@ document.addEventListener('DOMContentLoaded', () => {
     //     }
     // }
 
-    async function buscarMascota(id) {
-        try {
-            const response = await fetch(`http://localhost:3000/mascotas/${id}`);
-            const data = await response.json();
-            if (data) {
-                alert(`Mascota encontrada: ${JSON.stringify(data)}`);
-            } else {
-                alert('Mascota no encontrada.');
-            }
-        } catch (error) {
-            console.error('Error al buscar la mascota:', error);
-            alert('Error al buscar la mascota. Inténtelo de nuevo más tarde.');
-        }
-    }
+    // async function buscarMascota(id) {
+    //     try {
+    //         const response = await fetch(`http://localhost:3000/mascotas/${id}`);
+    //         const data = await response.json();
+    //         if (data) {
+    //             alert(`Mascota encontrada: ${JSON.stringify(data)}`);
+    //         } else {
+    //             alert('Mascota no encontrada.');
+    //         }
+    //     } catch (error) {
+    //         console.error('Error al buscar la mascota:', error);
+    //         alert('Error al buscar la mascota. Inténtelo de nuevo más tarde.');
+    //     }
+    // }
 
-    async function verTodasLasMascotas() {
-        try {
-            const response = await fetch('http://localhost:3000/mascotas');
-            const data = await response.json();
-            alert(`Mascotas: ${JSON.stringify(data)}`);
-        } catch (error) {
-            console.error('Error al obtener todas las mascotas:', error);
-            alert('Error al obtener las mascotas. Inténtelo de nuevo más tarde.');
-        }
-    }
+    // async function verTodasLasMascotas() {
+    //     try {
+    //         const response = await fetch('http://localhost:3000/mascotas');
+    //         const data = await response.json();
+    //         alert(`Mascotas: ${JSON.stringify(data)}`);
+    //     } catch (error) {
+    //         console.error('Error al obtener todas las mascotas:', error);
+    //         alert('Error al obtener las mascotas. Inténtelo de nuevo más tarde.');
+    //     }
+    // }
 
     function getMascotaData() {
         const nombreApodo = document.getElementById('nombreApodo');

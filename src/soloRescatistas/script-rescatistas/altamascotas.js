@@ -74,19 +74,10 @@ document.addEventListener('DOMContentLoaded', () => {
     
     document.getElementById('btn-actualizar').addEventListener('click', async () => {
         window.location.href = './script-rescatistas/rutas-mascotas/actualizar.html'; 
-        // const id = prompt('Ingrese el ID de la mascota a actualizar:');
-        // if (id) {
-        //     const mascotaData = getMascotaData();
-        //     await actualizarMascota(id, mascotaData);
-        // }
     });
 
     document.getElementById('btn-buscar').addEventListener('click', async () => {
         window.location.href = './script-rescatistas/rutas-mascotas/buscar.html'; 
-        // const id = prompt('Ingrese el ID de la mascota a buscar:');
-        // if (id) {
-        //     await buscarMascota(id);
-        // }
     });
 
     document.getElementById('btn-ver-todas').addEventListener('click', async () => {
@@ -104,20 +95,20 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     }
 
-    async function actualizarMascota(id, data) {
-        try {
-            const response = await fetch(`http://localhost:3000/mascotas/${id}`, {
-                method: 'PUT',
-                headers: { 'Content-Type': 'application/json' },
-                body: JSON.stringify(data)
-            });
-            const responseData = await response.json();
-            alert(responseData.message);
-        } catch (error) {
-            console.error('Error al actualizar la mascota:', error);
-            alert('Error al actualizar la mascota. Inténtelo de nuevo más tarde.');
-        }
-    }
+    // async function actualizarMascota(id, data) {
+    //     try {
+    //         const response = await fetch(`http://localhost:3000/mascotas/${id}`, {
+    //             method: 'PUT',
+    //             headers: { 'Content-Type': 'application/json' },
+    //             body: JSON.stringify(data)
+    //         });
+    //         const responseData = await response.json();
+    //         alert(responseData.message);
+    //     } catch (error) {
+    //         console.error('Error al actualizar la mascota:', error);
+    //         alert('Error al actualizar la mascota. Inténtelo de nuevo más tarde.');
+    //     }
+    // }
 
     async function buscarMascota(id) {
         try {

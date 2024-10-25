@@ -82,14 +82,15 @@ document.addEventListener('DOMContentLoaded', () => {
     });
 
     document.getElementById('btn-buscar').addEventListener('click', async () => {
-        const id = prompt('Ingrese el ID de la mascota a buscar:');
-        if (id) {
-            await buscarMascota(id);
-        }
+        window.location.href = './script-rescatistas/rutas-mascotas/buscar.html'; 
+        // const id = prompt('Ingrese el ID de la mascota a buscar:');
+        // if (id) {
+        //     await buscarMascota(id);
+        // }
     });
 
     document.getElementById('btn-ver-todas').addEventListener('click', async () => {
-        await verTodasLasMascotas();
+        window.location.href = './script-rescatistas/mascotas.html'; 
     });
 
     async function eliminarMascota(id) {

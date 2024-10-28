@@ -33,6 +33,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
             if (response.ok && data.success) {
                 alert(data.message);
+                document.cookie=`userInfo=; expires=Thu, 01 Jan 1970 00:00:00 UTC;`;
                 document.cookie=`userInfo=${data.data.token}`;
                 // localStorage.setItem('token', data.data.token);
 

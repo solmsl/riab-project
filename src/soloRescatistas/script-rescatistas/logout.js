@@ -1,6 +1,11 @@
 const btn = document.getElementById('btn-logout');
-const token = document.cookie
-console.log(token); 
+function getCookie(name) {
+    const value = `; ${document.cookie}`;
+    const parts = value.split(`; ${name}=`);
+    if (parts.length === 2) return parts.pop().split(';').shift();
+  }
+const token=getCookie(userInfo);
+console.log(token);
 // const token = localStorage();
 const app = "https://riab-api.vercel.app";
 

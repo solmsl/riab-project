@@ -1,6 +1,6 @@
 const btn = document.getElementById('btn-logout');
 const token = localStorage.getItem("token"); 
-const app = "http://localhost:3000";
+const app = "https://riab-api.vercel.app";
 
 function verificar(){
     if (!token) {

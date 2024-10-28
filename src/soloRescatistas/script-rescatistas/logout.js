@@ -1,5 +1,5 @@
 const btn = document.getElementById('btn-logout');
-// const token = document.cookie; 
+const token = document.cookie; 
 const app = "https://riab-api.vercel.app";
 
 function verificar(){
@@ -15,7 +15,7 @@ function verificar(){
 
 async function logout() {
     try { //luego cambiar el localhost a riab-api.vercel.app, por el momento dejarlo asi
-        const response = await fetch(`${app}/rescatistas/logout`, {
+        const response = await fetch(`https://riab-api.vercel.app/rescatistas/logout`, {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json',

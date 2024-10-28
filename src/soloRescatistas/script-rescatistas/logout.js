@@ -32,7 +32,7 @@ async function logout() {
 
         const data = await response.json();
         alert(data.message);
-        console.log(data.message);
+        console.log(data.message, "aca se borra");
         document.cookie=`userInfo=; expires=Thu, 01 Jan 1970 00:00:00 UTC;`;
         // localStorage.removeItem('token');
         window.location.href = 'https://riab-project.vercel.app';

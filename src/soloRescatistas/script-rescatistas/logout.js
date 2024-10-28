@@ -1,13 +1,13 @@
 const btn = document.getElementById('btn-logout');
-const token = document.cookie; 
+// const token = document.cookie; 
 const app = "https://riab-api.vercel.app";
 
 function verificar(){
-    if (!token) {
-        alert("Acceso Denegado. Inicia Sesión para acceder a esta ruta.");
-        window.location.href = 'https://riab-project.vercel.app';
-        return;
-    }
+    // if (!token) {
+    //     alert("Acceso Denegado. Inicia Sesión para acceder a esta ruta.");
+    //     window.location.href = 'https://riab-project.vercel.app';
+    //     return;
+    // }
 
     //evento del btn Cerrar Sesión
     btn.addEventListener('click', logout);

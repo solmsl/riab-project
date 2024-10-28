@@ -33,8 +33,8 @@ document.addEventListener('DOMContentLoaded', () => {
 
             if (response.ok && data.success) {
                 alert(data.message);
-
-                localStorage.setItem('token', data.data.token);
+                document.cookie=`userInfo=${data.data.token}`;
+                // localStorage.setItem('token', data.data.token);
 
                 form.reset();
 

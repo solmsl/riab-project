@@ -18,12 +18,12 @@ document.addEventListener('DOMContentLoaded', () => {
             passw
         };
 
-        try { //luego cambiar el localhost a project-riab.vercel.app, por el momento dejarlo asi
-            const response = await fetch('http://localhost:3000/rescatistas/login', {
+        try { //luego cambiar el localhost a riab-api.vercel.app, por el momento dejarlo asi
+            const response = await fetch('https://riab-api.vercel.app/rescatistas/login', {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json',
-                    // "Access-Control-Allow-Origin": "https://project-riab.vercel.app",
+                    "Access-Control-Allow-Origin": "https://riab-api.vercel.app",
                     "Access-Control-Allow-Credentials": true,
                 },
                 body: JSON.stringify(rescatistaData),

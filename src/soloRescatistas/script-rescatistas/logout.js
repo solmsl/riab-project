@@ -4,7 +4,7 @@ function getCookie(name) {
     const parts = value.split(`; ${name}=`);
     if (parts.length === 2) return parts.pop().split(';').shift();
   }
-const token=getCookie(userInfo);
+const token=getCookie("userInfo");
 console.log(token);
 // const token = localStorage();
 const app = "https://riab-api.vercel.app";

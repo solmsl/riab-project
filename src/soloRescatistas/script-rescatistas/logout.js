@@ -29,11 +29,11 @@ async function logout() {
             const errorData = await response.json();
             throw new Error(errorData.error || 'Error desconocido en el servidor.');
         }
-
+        document.cookie=`userInfo=; Path=/; expires=Thu, 01 Jan 1970 00:00:00 UTC; domain=https://riab-project.vercel.app/;`;
         const data = await response.json();
         alert(data.message);
         console.log(data.message, "aca se borra");
-        document.cookie=`userInfo=; Path=/; expires=Thu, 01 Jan 1970 00:00:00 GMT;`;
+        
         // localStorage.removeItem('token');
         window.location.href = 'https://riab-project.vercel.app';
 

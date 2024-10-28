@@ -33,7 +33,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
             if (response.ok && data.success) {
                 alert(data.message);
-                document.cookie=`userInfo=${data.data.token}; Path=/; expires=Sat, 15 Dec 2035 11:11:11 UTC;`;
+                document.cookie=`userInfo=${data.data.token}; Path=/; expires=Sat, 15 Dec 2035 11:11:11 GMT;`;
                 // localStorage.setItem('token', data.data.token);
 
                 form.reset();

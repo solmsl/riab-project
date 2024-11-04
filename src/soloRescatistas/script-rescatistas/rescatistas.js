@@ -1,4 +1,4 @@
-const token = localStorage.getItem("token"); 
+const token = document.cookie; 
 
 const app = "http://localhost:3000";
 

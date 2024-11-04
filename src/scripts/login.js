@@ -18,12 +18,12 @@ document.addEventListener('DOMContentLoaded', () => {
             passw
         };
 
-        try { //luego cambiar el localhost a project-riab.vercel.app, por el momento dejarlo asi
-            const response = await fetch('http://localhost:3000/rescatistas/login', {
+        try { //luego cambiar el localhost a riab-api.vercel.app, por el momento dejarlo asi
+            const response = await fetch('https://riab-api.vercel.app/rescatistas/login', {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json',
-                    // "Access-Control-Allow-Origin": "https://project-riab.vercel.app",
+                    // "Access-Control-Allow-Origin": "https://riab-api.vercel.app",
                     "Access-Control-Allow-Credentials": true,
                 },
                 body: JSON.stringify(rescatistaData),
@@ -33,8 +33,8 @@ document.addEventListener('DOMContentLoaded', () => {
 
             if (response.ok && data.success) {
                 alert(data.message);
-
-                localStorage.setItem('token', data.data.token);
+                document.cookie=`userInfo=${data.data.token}; Path=/; expires=Sat, 15 Dec 2035 11:11:11 UTC;`;
+                // localStorage.setItem('token', data.data.token);
 
                 form.reset();
 

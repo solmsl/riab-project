@@ -18,6 +18,10 @@
         }
     }
 
+    .btn-confirmar{
+        @extend .btn;
+    }
+
     .btn-volver{
         @extend .btn;
         a{
@@ -46,5 +50,24 @@
 
     &:hover{
         transform: translateY(-3%);
+    }
+}
+
+/*BOTON DE CERRAR SESIÓN*/
+.btn-cerrar{
+    padding: 6px 18px;
+    margin-bottom: 20px;
+    background: white;
+    border: none;
+    outline: none;
+    border-radius: 20px;
+    box-shadow: 0 0 10px rgb(109, 59, 138);
+    cursor: pointer;
+    font-size: 16px;
+    color: #ffffff;
+    background-color: rgb(87, 9, 117);
+    a{
+        text-decoration: none;
+        color: #fffcfc
     }
 }

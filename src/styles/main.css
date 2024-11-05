@@ -259,7 +259,7 @@ body {
   font-weight: 600;
 }
 /* ACTUALIZAR */
-#btnActu {
+#btnActu, #btnBuscar {
   width: 100%;
   height: 45px;
   background: white;
@@ -723,6 +723,14 @@ article {
   top: 50%;
   transform: translateY(-50%);
   font-size: 20px;
+}
+
+.formularioBusc {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  margin-top: 0 auto;
 }
 
 /*# sourceMappingURL=main.css.map */

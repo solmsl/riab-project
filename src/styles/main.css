@@ -241,6 +241,23 @@ body {
   color: #fffcfc;
 }
 
+.botones {
+  justify-content: center;
+  text-align: center;
+}
+.botones #btn-eliminar, .botones #btn-ver-todas, .botones #btn-buscar, .botones #btn-actualizar {
+  width: 20%;
+  height: 45px;
+  background: rgb(20, 2, 49);
+  border: none;
+  outline: none;
+  border-radius: 40px;
+  box-shadow: 0 0 10px rgb(85, 70, 95);
+  cursor: pointer;
+  font-size: 16px;
+  color: #ffffff;
+  font-weight: 600;
+}
 @media (max-width: 991px) {
   footer {
     font-size: 12px;
@@ -637,7 +654,7 @@ article {
   justify-content: center;
   align-items: center;
   min-height: 100vh;
-  margin-top: 38px;
+  margin-top: 72px;
 }
 
 .wrapper {
@@ -669,7 +686,7 @@ article {
   border: 2px solid grey;
   border-radius: 20px;
   font-size: 16px;
-  color: grey;
+  color: rgb(51, 50, 50);
   padding: 20px 45px 20px 20px;
 }
 .wrapper .input-box input:hover {
@@ -682,7 +699,7 @@ article {
   border: 2px solid grey;
   border-radius: 20px;
   font-size: 16px;
-  color: grey;
+  color: rgb(51, 50, 50);
   padding: 10px;
 }
 .wrapper .input-box i {

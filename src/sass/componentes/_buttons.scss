@@ -77,12 +77,13 @@
     text-align: center;
     
     #btn-eliminar{
-        width: 20%;
+        width: 70%;
+        margin-top: 15px;
         height: 45px;
         background: rgb(20, 2, 49);
         border: none;
         outline: none;
-        border-radius: 40px;
+        border-radius: 20px;
         box-shadow: 0 0 10px rgb(85, 70, 95);
         cursor: pointer;
         font-size: 16px;
@@ -120,5 +121,5 @@
 }
 
 #btnBuscar{
-    @extend #btnActu;
+    @extend #btnActu
 }

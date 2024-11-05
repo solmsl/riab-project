@@ -447,8 +447,7 @@ article {
 
 .accordion-item, .accordion-button {
   border: none;
-  background-color: rgba(201, 113, 161, 0.568);
-  color: white;
+  color: rgb(255, 255, 255);
   font-family: "letras-grandes";
 }
 

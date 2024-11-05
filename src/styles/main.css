@@ -43,6 +43,9 @@ body {
     left: unset;
     right: 50px;
   }
+  .image-res {
+    width: 80%; /* Reduce el tamaño al 80% del contenedor en pantallas pequeñas */
+  }
 }
 @media (min-width: 992px) {
   footer {
@@ -83,6 +86,9 @@ body {
   #next {
     left: unset;
     right: 50px;
+  }
+  .image-res {
+    width: 80%; /* Reduce el tamaño al 80% del contenedor en pantallas pequeñas */
   }
 }
 @media (min-width: 992px) {
@@ -233,6 +239,9 @@ body {
     left: unset;
     right: 50px;
   }
+  .image-res {
+    width: 80%; /* Reduce el tamaño al 80% del contenedor en pantallas pequeñas */
+  }
 }
 @media (min-width: 992px) {
   footer {
@@ -364,6 +373,9 @@ article {
     left: unset;
     right: 50px;
   }
+  .image-res {
+    width: 80%; /* Reduce el tamaño al 80% del contenedor en pantallas pequeñas */
+  }
 }
 @media (min-width: 992px) {
   footer {
@@ -447,7 +459,8 @@ article {
 
 .accordion-item, .accordion-button {
   border: none;
-  color: rgb(255, 255, 255);
+  background-color: rgba(49, 3, 28, 0.568);
+  color: white;
   font-family: "letras-grandes";
 }
 

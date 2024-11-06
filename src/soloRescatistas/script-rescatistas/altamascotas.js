@@ -1,112 +1,55 @@
-document.addEventListener("DOMContentLoaded", () => {
-    const especieSelect = document.getElementById('especie');
-    const razaSelect = document.getElementById('raza');
-    const form = document.getElementById('mascota-form');
-    const submitButton = document.getElementById('btn-confirmar');
-
-    const razasPermitidas = {
-        perro: ['labrador', 'bulldog', 'beagle', 'poodle', 'chihuahua', 'otro'],
-        gato: ['persa', 'siamés', 'bengalí', 'maine coon', 'cruza', 'otro'],
-        loro: ['cacatúa', 'loro gris', 'amazonas', 'agaporni', 'loro de sol', 'otro'],
-        tortuga: ['tortuga de tierra', 'tortuga de agua', 'tortuga de estanque', 'tortuga gigante', 'otro'],
-        conejo: ['holland lop', 'rex', 'angora', 'mini rex', 'lionhead', 'otro'],
-        pato: ['pato pekinés', 'pato muscovy', 'pato rizado', 'pato cayuga', 'pato rouen', 'otro']
-    };
-
-    especieSelect.addEventListener('change', () => {
-        const especie = especieSelect.value;
-        razaSelect.innerHTML = '<option value="">Seleccione una raza</option>';
-        
-        if (especie && razasPermitidas[especie]) {
-            razasPermitidas[especie].forEach(raza => {
-                const option = document.createElement('option');
-                option.value = raza;
-                option.textContent = raza;
-                razaSelect.appendChild(option);
-            });
-        }
-    });
-
-    form.addEventListener('input', () => {
-        const isValid = form.checkValidity();
-        submitButton.disabled = !isValid;
-
-        Array.from(form.elements).forEach(input => {
-            if (input.type !== "submit" && !input.checkValidity()) {
-                input.classList.add('is-invalid');
-            } else {
-                input.classList.remove('is-invalid');
-            }
+document.addEventListener('DOMContentLoaded', function() {
+    const form = document.getElementById('form-login'); // Obtener el formulario
+  
+    form.addEventListener('submit', async function(event) {
+      event.preventDefault(); // Prevenir el envío del formulario por defecto
+  
+      // Obtener los valores de los campos del formulario
+      const nombreApodo = document.getElementById('nombreApodo').value;
+      const especie = document.getElementById('especie').value;
+      const raza = document.getElementById('raza').value;
+      const color = document.getElementById('color').value;
+      const anioNacimiento = document.getElementById('anio_nacimiento').value;
+  
+      // Validar que todos los campos estén completos
+      if (!nombreApodo || !especie || !raza || !color || !anioNacimiento) {
+        alert('Por favor, complete todos los campos del formulario.');
+        return;
+      }
+  
+      // Crear el objeto con los datos del formulario
+      const mascotaData = {
+        nombreApodo: nombreApodo,
+        especie: especie,
+        raza: raza,
+        color: color,
+        anioNacimiento: anioNacimiento
+      };
+  
+      // Enviar los datos al servidor utilizando fetch
+      try {
+        const response = await fetch('http://localhost:3000/mascotas/registro', {
+          method: 'POST', // Método para enviar los datos
+          headers: {
+            'Content-Type': 'application/json' // Especificamos que los datos están en formato JSON
+          },
+          body: JSON.stringify(mascotaData) // Convertir el objeto a JSON
         });
-    });
-
-    form.addEventListener('submit', async (event) => {
-        event.preventDefault();
-        
-        try {
-            const response = await fetch('http://localhost:3000/mascotas/registro', {
-                method: 'POST',
-                headers: { 'Content-Type': 'application/json' },
-                body: JSON.stringify(getMascotaData())
-            });
-            const data = await response.json();
-
-            if (response.ok) {
-                alert(data.message);
-                form.reset();
-                window.location.href = './soloRescatistas/añadirMascotas.html'; 
-            } else {
-                alert('Error: ' + (data.message || 'Error en el registro.'));
-            }
-        } catch (error) {
-            console.error('Error al registrar la mascota:', error);
-            alert('Error en el registro. Por favor, inténtelo de nuevo más tarde.');
+  
+        // Manejar la respuesta del servidor
+        if (response.ok) {
+          const result = await response.json();
+          alert('Mascota registrada exitosamente');
+          // Opcional: Redirigir a otra página o limpiar el formulario
+          form.reset();
+        } else {
+          const error = await response.json();
+          alert(`Error: ${error.message}`);
         }
+      } catch (error) {
+        console.error('Error al enviar los datos:', error);
+        alert('Hubo un problema al registrar la mascota.');
+      }
     });
-
-    document.getElementById('btn-eliminar').addEventListener('click', async () => {
-        const id = prompt('Ingrese el ID de la mascota a eliminar:');
-        if (id) {
-            await eliminarMascota(id);
-        }
-    });
-    
-    document.getElementById('btn-actualizar').addEventListener('click', () => {
-        window.location.href = './script-rescatistas/rutas-mascotas/actualizarMascotas.html'; 
-    });
-
-    document.getElementById('btn-buscar').addEventListener('click', () => {
-        window.location.href = './script-rescatistas/rutas-mascotas/buscarMascotas.html'; 
-    });
-
-    document.getElementById('btn-ver-todas').addEventListener('click', () => {
-        window.location.href = './script-rescatistas/mascotas.html'; 
-    });
-
-    async function eliminarMascota(id) {
-        try {
-            const response = await fetch(`http://localhost:3000/mascotas/${id}`, { method: 'DELETE' });
-            const data = await response.json();
-            alert(data.message);
-        } catch (error) {
-            console.error('Error al eliminar la mascota:', error);
-            alert('Error al eliminar la mascota. Inténtelo de nuevo más tarde.');
-        }
-    }
-
-    function getMascotaData() {
-        const nombreApodo = document.getElementById('nombreApodo');
-        const especie = document.getElementById('especie');
-        const raza = document.getElementById('raza');
-        const color = document.getElementById('color');
-        const anioNacimiento = document.getElementById('anio_nacimiento');
-    
-        return {
-            nombreApodo: nombreApodo?.value || '',
-            especie: especie?.value || '',
-            raza: raza?.value || '',
-            color: color?.value || '',
-            anioNacimiento: anioNacimiento?.value || ''
-        };
-    }    
-});
+  });
+  

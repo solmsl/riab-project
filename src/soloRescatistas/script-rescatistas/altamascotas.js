@@ -1,38 +1,38 @@
-const razasPermitidas = {
-    perro: ['labrador', 'bulldog', 'beagle', 'poodle', 'chihuahua', 'otro'],
-    gato: ['persa', 'siamés', 'bengalí', 'maine coon', 'cruza', 'otro'],
-    loro: ['cacatúa', 'loro gris', 'amazonas', 'agaporni', 'loro de sol', 'otro'],
-    tortuga: ['tortuga de tierra', 'tortuga de agua', 'tortuga de estanque', 'tortuga gigante', 'otro'],
-    conejo: ['holland lop', 'rex', 'angora', 'mini rex', 'lionhead', 'otro'],
-    pato: ['pato pekinés', 'pato muscovy', 'pato rizado', 'pato cayuga', 'pato rouen', 'otro']
-};
-
-const especieSelect = document.getElementById('especie');
-const razaSelect = document.getElementById('raza');
-
-especieSelect.addEventListener('change', function() {
-    const especie = this.value;
-    razaSelect.innerHTML = '<option value="">Seleccione una raza</option>';
-    if (especie) {
-        razasPermitidas[especie].forEach(raza => {
-            const option = document.createElement('option');
-            option.value = raza;
-            option.textContent = raza;
-            razaSelect.appendChild(option);
-        });
-    }
-});
-
-document.addEventListener('DOMContentLoaded', () => {
+document.addEventListener("DOMContentLoaded", () => {
+    const especieSelect = document.getElementById('especie');
+    const razaSelect = document.getElementById('raza');
     const form = document.getElementById('mascota-form');
     const submitButton = document.getElementById('btn-confirmar');
+
+    const razasPermitidas = {
+        perro: ['labrador', 'bulldog', 'beagle', 'poodle', 'chihuahua', 'otro'],
+        gato: ['persa', 'siamés', 'bengalí', 'maine coon', 'cruza', 'otro'],
+        loro: ['cacatúa', 'loro gris', 'amazonas', 'agaporni', 'loro de sol', 'otro'],
+        tortuga: ['tortuga de tierra', 'tortuga de agua', 'tortuga de estanque', 'tortuga gigante', 'otro'],
+        conejo: ['holland lop', 'rex', 'angora', 'mini rex', 'lionhead', 'otro'],
+        pato: ['pato pekinés', 'pato muscovy', 'pato rizado', 'pato cayuga', 'pato rouen', 'otro']
+    };
+
+    especieSelect.addEventListener('change', () => {
+        const especie = especieSelect.value;
+        razaSelect.innerHTML = '<option value="">Seleccione una raza</option>';
+        
+        if (especie && razasPermitidas[especie]) {
+            razasPermitidas[especie].forEach(raza => {
+                const option = document.createElement('option');
+                option.value = raza;
+                option.textContent = raza;
+                razaSelect.appendChild(option);
+            });
+        }
+    });
 
     form.addEventListener('input', () => {
         const isValid = form.checkValidity();
         submitButton.disabled = !isValid;
 
         Array.from(form.elements).forEach(input => {
-            if (!input.checkValidity()) {
+            if (input.type !== "submit" && !input.checkValidity()) {
                 input.classList.add('is-invalid');
             } else {
                 input.classList.remove('is-invalid');
@@ -52,7 +52,6 @@ document.addEventListener('DOMContentLoaded', () => {
             const data = await response.json();
 
             if (response.ok) {
-                console.log(data.message);
                 alert(data.message);
                 form.reset();
                 window.location.href = './soloRescatistas/añadirMascotas.html'; 
@@ -72,15 +71,15 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     });
     
-    document.getElementById('btn-actualizar').addEventListener('click', async () => {
-        window.location.href = './script-rescatistas/rutas-mascotas/actualizar.html'; 
+    document.getElementById('btn-actualizar').addEventListener('click', () => {
+        window.location.href = './script-rescatistas/rutas-mascotas/actualizarMascotas.html'; 
     });
 
-    document.getElementById('btn-buscar').addEventListener('click', async () => {
-        window.location.href = './script-rescatistas/rutas-mascotas/buscar.html'; 
+    document.getElementById('btn-buscar').addEventListener('click', () => {
+        window.location.href = './script-rescatistas/rutas-mascotas/buscarMascotas.html'; 
     });
 
-    document.getElementById('btn-ver-todas').addEventListener('click', async () => {
+    document.getElementById('btn-ver-todas').addEventListener('click', () => {
         window.location.href = './script-rescatistas/mascotas.html'; 
     });
 
@@ -95,47 +94,6 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     }
 
-    // async function actualizarMascota(id, data) {
-    //     try {
-    //         const response = await fetch(`http://localhost:3000/mascotas/${id}`, {
-    //             method: 'PUT',
-    //             headers: { 'Content-Type': 'application/json' },
-    //             body: JSON.stringify(data)
-    //         });
-    //         const responseData = await response.json();
-    //         alert(responseData.message);
-    //     } catch (error) {
-    //         console.error('Error al actualizar la mascota:', error);
-    //         alert('Error al actualizar la mascota. Inténtelo de nuevo más tarde.');
-    //     }
-    // }
-
-    // async function buscarMascota(id) {
-    //     try {
-    //         const response = await fetch(`http://localhost:3000/mascotas/${id}`);
-    //         const data = await response.json();
-    //         if (data) {
-    //             alert(`Mascota encontrada: ${JSON.stringify(data)}`);
-    //         } else {
-    //             alert('Mascota no encontrada.');
-    //         }
-    //     } catch (error) {
-    //         console.error('Error al buscar la mascota:', error);
-    //         alert('Error al buscar la mascota. Inténtelo de nuevo más tarde.');
-    //     }
-    // }
-
-    // async function verTodasLasMascotas() {
-    //     try {
-    //         const response = await fetch('http://localhost:3000/mascotas');
-    //         const data = await response.json();
-    //         alert(`Mascotas: ${JSON.stringify(data)}`);
-    //     } catch (error) {
-    //         console.error('Error al obtener todas las mascotas:', error);
-    //         alert('Error al obtener las mascotas. Inténtelo de nuevo más tarde.');
-    //     }
-    // }
-
     function getMascotaData() {
         const nombreApodo = document.getElementById('nombreApodo');
         const especie = document.getElementById('especie');
@@ -143,20 +101,12 @@ document.addEventListener('DOMContentLoaded', () => {
         const color = document.getElementById('color');
         const anioNacimiento = document.getElementById('anio_nacimiento');
     
-        console.log({
-            nombreApodo: nombreApodo?.value,
-            especie: especie?.value,
-            raza: raza?.value,
-            color: color?.value,
-            anioNacimiento: anioNacimiento?.value
-        });
-    
         return {
-            nombreApodo: nombreApodo.value,
-            especie: especie.value,
-            raza: raza.value,
-            color: color.value,
-            anioNacimiento: anioNacimiento.value
+            nombreApodo: nombreApodo?.value || '',
+            especie: especie?.value || '',
+            raza: raza?.value || '',
+            color: color?.value || '',
+            anioNacimiento: anioNacimiento?.value || ''
         };
     }    
 });

@@ -17,7 +17,6 @@ document.addEventListener('DOMContentLoaded', function() {
         return;
       }
   
-      // Crear el objeto con los datos del formulario
       const mascotaData = {
         nombreApodo: nombreApodo,
         especie: especie,
@@ -26,21 +25,19 @@ document.addEventListener('DOMContentLoaded', function() {
         anioNacimiento: anioNacimiento
       };
   
-      // Enviar los datos al servidor utilizando fetch
       try {
         const response = await fetch('http://localhost:3000/mascotas/registro', {
-          method: 'POST', // Método para enviar los datos
+          method: 'POST',
           headers: {
-            'Content-Type': 'application/json' // Especificamos que los datos están en formato JSON
+            'Content-Type': 'application/json'
           },
-          body: JSON.stringify(mascotaData) // Convertir el objeto a JSON
+          body: JSON.stringify(mascotaData)
         });
   
-        // Manejar la respuesta del servidor
+
         if (response.ok) {
           const result = await response.json();
           alert('Mascota registrada exitosamente');
-          // Opcional: Redirigir a otra página o limpiar el formulario
           form.reset();
         } else {
           const error = await response.json();

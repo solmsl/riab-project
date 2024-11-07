@@ -1,19 +1,5 @@
 document.addEventListener('DOMContentLoaded', function () {
-    const form = document.getElementById('form-adopciones');
-    // const especieSelect = document.getElementById("especie");
-    // const razaSelect = document.getElementById("raza");
-  
-    // especieSelect.addEventListener("change", function () {
-    //   const especieSeleccionada = especieSelect.value;
-    //   const razas = razasPorEspecie[especieSeleccionada] || ["Otro"];
-    //   razaSelect.innerHTML = '<option value="">Seleccione una raza</option>';
-    //   razas.forEach((raza) => {
-    //     const option = document.createElement("option");
-    //     option.value = raza.toLowerCase();
-    //     option.textContent = raza;
-    //     razaSelect.appendChild(option);
-    //   });
-    // });
+    const form = document.querySelector('.formularioAdop')
   
     form.addEventListener('submit', async function (event) {
       event.preventDefault();
@@ -25,7 +11,7 @@ document.addEventListener('DOMContentLoaded', function () {
       const genero = document.getElementById('genero').value;
       const email = document.getElementById('email').value;
       const id_mascota = document.getElementById('id_mascota').value;
-      const dni_rescatistas = document.getElementById('dni_rescatistas').value;
+      const dni_rescatistas = document.getElementById('dni_rescatista').value;
   
       if (!dni || !nombre || !apellido || !telefono|| !direccion || !genero || !email || !id_mascota || !dni_rescatistas ) {
         alert('Por favor, complete todos los campos del formulario.');

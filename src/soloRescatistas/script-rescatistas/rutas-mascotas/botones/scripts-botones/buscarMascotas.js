@@ -8,7 +8,7 @@ async function buscarMascota(id) {
         const response = await fetch(`https://riab-api.vercel.app/mascotas/${id}`);
         const data = await response.json();
 
-        console.log(data); // Para verificar la respuesta de la API
+        console.log('Datos de la mascota:', data);
 
         if (response.ok && data) {
             mostrarMascota(data);
@@ -19,19 +19,23 @@ async function buscarMascota(id) {
             mensajeActualizacion.textContent = 'Mascota no encontrada.';
             mensajeActualizacion.classList.remove('text-success');
             mensajeActualizacion.classList.add('text-danger');
-            mascotaInfo.innerHTML = ''; // Limpia la lista de información
+            mascotaInfo.innerHTML = ''; // Limpia cualquier dato previo
         }
     } catch (error) {
         console.error('Error al buscar la mascota:', error);
         mensajeActualizacion.textContent = 'Error al buscar la mascota. Inténtelo de nuevo más tarde.';
         mensajeActualizacion.classList.remove('text-success');
         mensajeActualizacion.classList.add('text-danger');
-        mascotaInfo.innerHTML = ''; // Limpia la lista de información
+        mascotaInfo.innerHTML = ''; // Limpia cualquier dato previo
     }
 }
 
 // Función para mostrar la información de la mascota
 function mostrarMascota(mascota) {
+    // Muestra los datos de la mascota en la consola para depurar
+    console.log('Datos de la mascota a mostrar:', mascota);
+
+    // Accede a las propiedades correctamente
     const id = mascota.id || 'No especificado';
     const nombreApodo = mascota.nombreApodo || 'No especificado';
     const especie = mascota.especie || 'No especificado';
@@ -39,7 +43,7 @@ function mostrarMascota(mascota) {
     const color = mascota.color || 'No especificado';
     const anioNacimiento = mascota.anioNacimiento || 'No especificado';
 
-    // Muestra la información de la mascota en la lista
+    // Limpia el contenido previo antes de agregar nuevos datos
     mascotaInfo.innerHTML = `
         <li><strong>ID:</strong> ${id}</li>
         <li><strong>Nombre/Apodo:</strong> ${nombreApodo}</li>
@@ -53,11 +57,10 @@ function mostrarMascota(mascota) {
 // Maneja el evento del botón de búsqueda cuando se hace clic
 document.getElementById('btnBuscar').addEventListener('click', () => {
     const id = idInput.value.trim();
-    
     if (id && /^\d+$/.test(id)) { // Verifica si el ID es válido (solo números)
         buscarMascota(id);
     } else {
-        mensajeActualizacion.textContent = 'Por favor, ingrese un ID válido (solo números).';
+        mensajeActualizacion.textContent = 'Por favor, ingrese un ID válido.';
         mensajeActualizacion.classList.remove('text-success');
         mensajeActualizacion.classList.add('text-danger');
         mascotaInfo.innerHTML = ''; // Limpia la lista de información

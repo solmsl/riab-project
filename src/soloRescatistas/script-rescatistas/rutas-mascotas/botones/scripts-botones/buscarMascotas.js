@@ -30,8 +30,9 @@ async function buscarMascota(id) {
     }
 }
 
-// Función para mostrar la información de la mascota
 function mostrarMascota(mascota) {
+    console.log('Datos de la mascota:', mascota); // Verifica que los datos estén correctamente pasados
+
     const id = mascota.id || 'No especificado';
     const nombreApodo = mascota.nombreApodo || 'No especificado';
     const especie = mascota.especie || 'No especificado';
@@ -49,6 +50,7 @@ function mostrarMascota(mascota) {
         <li><strong>Año de Nacimiento:</strong> ${anioNacimiento}</li>
     `;
 }
+
 
 // Maneja el evento del botón de búsqueda cuando se hace clic
 document.getElementById('btnBuscar').addEventListener('click', () => {

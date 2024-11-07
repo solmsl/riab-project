@@ -10,7 +10,7 @@ document.addEventListener('DOMContentLoaded', () => {
       const id = idMascota.value;
       if (id) {
         try {
-          const response = await fetch(`http://localhost:3000/mascotas/${id}`);
+          const response = await fetch(`https://riab-api.vercel.app/mascotas/${id}`);
           const data = await response.json();
           if (data) {
             document.getElementById('nombreApodo').value = data.nombreApodo;

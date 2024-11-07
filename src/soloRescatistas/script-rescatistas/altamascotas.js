@@ -26,7 +26,7 @@ document.addEventListener('DOMContentLoaded', function() {
       };
   
       try {
-        const response = await fetch('http://localhost:3000/mascotas/registro', {
+        const response = await fetch('https://riab-api.vercel.app/mascotas/registro', {
           method: 'POST',
           headers: {
             'Content-Type': 'application/json'

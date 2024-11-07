@@ -1,11 +1,9 @@
 document.addEventListener('DOMContentLoaded', function () {
-    // Obtener las mascotas desde la API (la URL es un ejemplo, usa la de tu servidor)
-    fetch('https://tu-api.com/api/mascotas')
+    fetch('https://riab-api.vercel.app/mascotas/registro')
         .then(response => response.json())
         .then(mascotas => {
             const mascotasContainer = document.getElementById('mascotas-container');
 
-            // Iterar sobre cada mascota y crear una tarjeta de Bootstrap para mostrarla
             mascotas.forEach(mascota => {
                 const tarjeta = document.createElement('div');
                 tarjeta.classList.add('col-md-4', 'mb-4');

@@ -45,6 +45,10 @@
                 color: rgb(71, 2, 73);
             }
 
+            &::placeholder{
+                color: rgb(59, 5, 50);;
+            }
+
         }
 
         select{
@@ -81,4 +85,9 @@
 
 .formularioEliminar{
     @extend .formularioBusc;
+}
+
+.formularioAdop{
+    @extend .formularioBusc;
+    margin-top: 5em;
 }

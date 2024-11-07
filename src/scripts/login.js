@@ -1,6 +1,12 @@
 document.addEventListener('DOMContentLoaded', () => {
     const form = document.getElementById('form-login');
     const submitButton = form.querySelector('button[type="submit"]');
+    const volverBtn = form.querySelector('.btn-volver');
+
+    volverBtn.addEventListener('click', (event) => {
+        event.preventDefault();
+        window.location.href = 'https://riab-project.vercel.app';
+    });
 
     form.addEventListener('input', () => {
         const isValid = form.checkValidity();

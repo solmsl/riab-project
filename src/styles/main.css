@@ -129,7 +129,6 @@ body {
   border: none;
   font-size: 1.25rem;
 }
-
 .navbar-toggler:focus {
   box-shadow: none;
   outline: none;
@@ -150,11 +149,9 @@ body {
   position: relative;
   color: white;
 }
-
 .nav-link:hover {
   color: rgb(223, 117, 233);
 }
-
 .nav-link::before {
   content: "";
   position: absolute;
@@ -167,7 +164,6 @@ body {
   visibility: hidden;
   transition: 0.3s ease-in-out;
 }
-
 .nav-link:hover::before {
   width: 100%;
   visibility: visible;
@@ -198,12 +194,10 @@ body {
   color: #333;
   font-weight: 600;
 }
-
 .wrapper .btn a, .wrapper #btnEliminar a, .wrapper .btn-volver a, .wrapper .btn-confirmar a {
   text-decoration: none;
   color: #333;
 }
-
 .wrapper .btn-volver a {
   text-decoration: none;
   color: #333;
@@ -220,12 +214,10 @@ body {
   text-decoration: none;
   transition: all 400ms ease-out;
 }
-
 .login-button a {
   text-decoration: none;
   color: white;
 }
-
 .login-button:hover {
   transform: translateY(-3%);
 }
@@ -244,7 +236,6 @@ body {
   color: #ffffff;
   background-color: rgb(87, 9, 117);
 }
-
 .btn-cerrar a {
   text-decoration: none;
   color: #fffcfc;
@@ -320,7 +311,6 @@ footer {
   text-decoration: none;
   color: white;
 }
-
 .paginas_footer a:hover {
   color: rgb(26, 3, 44);
 }
@@ -357,7 +347,6 @@ article {
   overflow: hidden;
   border: none;
 }
-
 .card img {
   height: 350px;
   width: 100%;
@@ -385,7 +374,6 @@ article {
   font-family: "letras-grandes";
   color: white;
 }
-
 .overlay h3 {
   margin-top: 55%;
   margin-bottom: 5px;
@@ -455,11 +443,9 @@ article {
   transition: all 400ms ease-out;
   cursor: auto;
 }
-
 .inicio h4 {
   padding: 23px;
 }
-
 .inicio:hover {
   transform: translateY(-1%);
 }
@@ -472,7 +458,6 @@ article {
   overflow: hidden;
   justify-content: center;
 }
-
 .slider .item {
   position: absolute;
   font-size: 15px;
@@ -521,7 +506,6 @@ article {
   justify-content: center;
   margin-top: 86px;
 }
-
 .mx-3 h4 {
   color: white;
   text-align: center;
@@ -565,7 +549,6 @@ article {
   overflow: hidden;
   border: none;
 }
-
 .card img {
   height: 350px;
   width: 100%;
@@ -593,7 +576,6 @@ article {
   font-family: "letras-grandes";
   color: white;
 }
-
 .overlay h3 {
   margin-top: 55%;
   margin-bottom: 5px;
@@ -616,6 +598,7 @@ article {
   justify-content: center;
   align-items: center;
   min-height: 100vh;
+  margin-top: 20px;
 }
 
 .wrapper {
@@ -624,25 +607,21 @@ article {
   border: 2px solid rgba(255, 255, 255, 0.2);
   border-radius: 10px;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
-  -webkit-backdrop-filter: blur(20px);
   backdrop-filter: blur(20px);
   padding: 30px 40px;
   font-family: "letras-grandes";
 }
-
 .wrapper h1 {
   font-size: 36px;
   text-align: center;
   color: white;
 }
-
 .wrapper .input-box {
   position: relative;
   width: 100%;
   height: 50px;
   margin: 30px 0;
 }
-
 .wrapper .input-box input {
   width: 100%;
   height: 100%;
@@ -654,11 +633,9 @@ article {
   color: white;
   padding: 20px 45px 20px 20px;
 }
-
 .wrapper .input-box input:hover {
   color: white;
 }
-
 .wrapper .input-box i {
   position: absolute;
   right: 20px;
@@ -693,25 +670,21 @@ article {
   border: 2px solid rgba(50, 4, 61, 0.26);
   border-radius: 3px;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
-  -webkit-backdrop-filter: blur(20px);
   backdrop-filter: blur(20px);
   padding: 30px 40px;
   font-family: "letras-grandes";
 }
-
 .wrapper h1 {
   font-size: 36px;
   text-align: center;
   color: white;
 }
-
 .wrapper .input-box {
   position: relative;
   width: 100%;
   height: 50px;
   margin: 30px 0;
 }
-
 .wrapper .input-box input {
   width: 100%;
   height: 100%;
@@ -723,19 +696,12 @@ article {
   color: rgb(59, 5, 50);
   padding: 20px 45px 20px 20px;
 }
-
 .wrapper .input-box input:hover {
   color: rgb(71, 2, 73);
 }
-
-.wrapper .input-box input::-moz-placeholder {
-  color: rgb(59, 5, 50);
-}
-
 .wrapper .input-box input::placeholder {
   color: rgb(59, 5, 50);
 }
-
 .wrapper .input-box select {
   width: 100%;
   height: 100%;
@@ -746,7 +712,6 @@ article {
   color: rgb(71, 2, 73);
   padding: 10px;
 }
-
 .wrapper .input-box i {
   position: absolute;
   right: 20px;
@@ -765,6 +730,6 @@ article {
 
 .formularioAdop {
   margin-top: 5em;
-} 
+}
 
 /*# sourceMappingURL=main.css.map */

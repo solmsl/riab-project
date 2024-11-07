@@ -647,7 +647,7 @@ article {
   font-family: "letras-grandes";
   src: url("/src/fonts/Arima/Arima-VariableFont_wght.ttf");
 }
-.formulario, #form-eliminar {
+.formulario {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -708,7 +708,7 @@ article {
   font-size: 20px;
 }
 
-.formularioBusc {
+.formularioBusc, .formularioEliminar {
   display: flex;
   justify-content: center;
   align-items: center;

@@ -8,24 +8,30 @@ async function buscarMascota(id) {
         const response = await fetch(`https://riab-api.vercel.app/mascotas/${id}`);
         const data = await response.json();
 
+        console.log(data); // Para verificar la respuesta de la API
+
         if (response.ok && data) {
-            mostrarMascota(data); 
+            mostrarMascota(data);
             mensajeActualizacion.textContent = 'Mascota encontrada';
+            mensajeActualizacion.classList.remove('text-danger');
+            mensajeActualizacion.classList.add('text-success');
         } else {
             mensajeActualizacion.textContent = 'Mascota no encontrada.';
-            mascotaInfo.innerHTML = ''; 
+            mensajeActualizacion.classList.remove('text-success');
+            mensajeActualizacion.classList.add('text-danger');
+            mascotaInfo.innerHTML = ''; // Limpia la lista de información
         }
     } catch (error) {
-        // Si ocurre un error en la solicitud, muestra un mensaje de error
         console.error('Error al buscar la mascota:', error);
         mensajeActualizacion.textContent = 'Error al buscar la mascota. Inténtelo de nuevo más tarde.';
+        mensajeActualizacion.classList.remove('text-success');
+        mensajeActualizacion.classList.add('text-danger');
         mascotaInfo.innerHTML = ''; // Limpia la lista de información
     }
 }
 
 // Función para mostrar la información de la mascota
 function mostrarMascota(mascota) {
-    // Extrae los datos de la mascota, y si no existe alguna propiedad, asigna un valor por defecto
     const id = mascota.id || 'No especificado';
     const nombreApodo = mascota.nombreApodo || 'No especificado';
     const especie = mascota.especie || 'No especificado';
@@ -46,13 +52,14 @@ function mostrarMascota(mascota) {
 
 // Maneja el evento del botón de búsqueda cuando se hace clic
 document.getElementById('btnBuscar').addEventListener('click', () => {
-    const id = idInput.value; // Obtiene el valor del ID ingresado
-    if (id) {
-        // Si el ID es válido, se llama a la función para buscar la mascota
+    const id = idInput.value.trim();
+    
+    if (id && /^\d+$/.test(id)) { // Verifica si el ID es válido (solo números)
         buscarMascota(id);
     } else {
-        // Si el ID no es válido, muestra un mensaje de advertencia
-        mensajeActualizacion.textContent = 'Por favor, ingrese un ID válido.';
+        mensajeActualizacion.textContent = 'Por favor, ingrese un ID válido (solo números).';
+        mensajeActualizacion.classList.remove('text-success');
+        mensajeActualizacion.classList.add('text-danger');
         mascotaInfo.innerHTML = ''; // Limpia la lista de información
     }
 });

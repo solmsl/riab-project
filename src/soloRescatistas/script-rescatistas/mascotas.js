@@ -1,6 +1,6 @@
 async function cargarMascotas() {
     try {
-      const response = await fetch('https://riab-api.vercel.app/mascotas/registro');
+      const response = await fetch('https://riab-api.vercel.app/mascotas');
       
       if (!response.ok) {
         const errorData = await response.json();

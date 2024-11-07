@@ -59,14 +59,34 @@
       <form id="adopcionForm" >
         <h1>Formulario de Adopción</h1>
         <div class="input-box">
-          <input type="text" id="dni" placeholder="DNI" required> <br> <br>
-          <input type="text" id="nombre" placeholder="Nombre" required> <br> <br>
-          <input type="text" id="apellido" placeholder="Apellido" required> <br> <br>
-          <input type="text" id="nombreMascota" placeholder="Nombre de la Mascota" required> <br><br>
-          <input type="text" id="nombreMascota" placeholder="Domicilio" required>
+          <input type="text" id="dni" placeholder="DNI" required>
+        </div>
+        <div class="input-box">
+            <input type="text" id="nombre" placeholder="Nombre" required>
+        </div>
+        <div class="input-box">
+            <input type="text" id="apellido" placeholder="Apellido" required>
+        </div>
+        <div class="input-box">
+            <input type="number" id="telefono" placeholder="Teléfono" required>
+        </div>
+        <div class="input-box">
+            <input type="text" id="direccion" placeholder="Dirección" required>
+        </div>
+        <div class="input-box">
+            <input type="text" id="genero" placeholder="Género" required>
+        </div>
+        <div class="input-box">
+            <input type="email" id="email" placeholder="Email" required>
+        </div>
+        <div class="input-box">
+            <input type="number" id="id_mascota" placeholder="ID Mascota" required>
+        </div>
+        <div class="input-box">
+          <input type="number" id="dni_rescatista" placeholder="DNI Rescatista" required>
         </div>
 
-        <button id="btnBuscar" type="button" style="margin-top: 19em;">Enviar</button>
+        <button id="btnBuscar" type="button" style="margin-top: 20px;">Enviar</button>
         <div id="mensajeActualizacion"></div>
         <ul id="mascotaInfo"></ul>
   </section>

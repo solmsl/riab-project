@@ -694,14 +694,14 @@ article {
   border: 2px solid rgb(71, 2, 73);
   border-radius: 20px;
   font-size: 16px;
-  color: rgb(59, 5, 50);
+  color: rgb(255, 0, 200);
   padding: 20px 45px 20px 20px;
 }
 .wrapper .input-box input:hover {
   color: rgb(71, 2, 73);
 }
 .wrapper .input-box input::placeholder {
-  color: rgb(59, 5, 50);
+  color: rgb(255, 254, 255);
 }
 .wrapper .input-box select {
   width: 100%;
@@ -710,7 +710,7 @@ article {
   border: 2px solid rgb(71, 2, 73);
   border-radius: 20px;
   font-size: 16px;
-  color: rgb(71, 2, 73);
+  color: rgb(255, 0, 200);
   padding: 10px;
 }
 .wrapper .input-box i {

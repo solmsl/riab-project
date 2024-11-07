@@ -69,3 +69,16 @@
     }
 
 }
+
+
+.formularioBusc{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    margin-top: 0 auto;
+}
+
+.form-eliminar{
+    @extend .formularioBusc;
+}

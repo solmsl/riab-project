@@ -72,37 +72,19 @@
     }
 }
 
-.botones{
-    justify-content: center;
-    text-align: center;
-    
-    #btn-eliminar{
-        width: 70%;
-        margin-top: 15px;
-        height: 45px;
-        background: rgb(20, 2, 49);
-        border: none;
-        outline: none;
-        border-radius: 20px;
-        box-shadow: 0 0 10px rgb(85, 70, 95);
-        cursor: pointer;
-        font-size: 16px;
-        color: #ffffff;
-        font-weight: 600;
-    }
-
-    #btn-actualizar{
-        @extend #btn-eliminar;
-    }
-
-    #btn-buscar{
-        @extend #btn-eliminar;
-    }
-
-    #btn-ver-todas{
-        @extend #btn-eliminar;
-    }
-
+#btnEliminar{
+    width: 70%;
+    margin-top: 15px;
+    height: 45px;
+    background: rgb(20, 2, 49);
+    border: none;
+    outline: none;
+    border-radius: 20px;
+    box-shadow: 0 0 10px rgb(85, 70, 95);
+    cursor: pointer;
+    font-size: 16px;
+    color: #ffffff;
+    font-weight: 600;
 }
 
 /* ACTUALIZAR */

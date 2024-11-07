@@ -241,11 +241,7 @@ body {
   color: #fffcfc;
 }
 
-.botones {
-  justify-content: center;
-  text-align: center;
-}
-.botones #btn-eliminar, .botones #btn-ver-todas, .botones #btn-buscar, .botones #btn-actualizar {
+#btnEliminar {
   width: 70%;
   margin-top: 15px;
   height: 45px;
@@ -259,6 +255,7 @@ body {
   color: #ffffff;
   font-weight: 600;
 }
+
 /* ACTUALIZAR */
 #btnActu, #btnBuscar {
   width: 100%;
@@ -726,7 +723,7 @@ article {
   font-size: 20px;
 }
 
-.formularioBusc {
+.formularioBusc, .form-eliminar {
   display: flex;
   justify-content: center;
   align-items: center;

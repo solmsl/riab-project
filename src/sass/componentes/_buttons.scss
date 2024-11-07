@@ -92,5 +92,9 @@
 }
 
 #btnBuscar{
-    @extend #btnActu
+    @extend #btnActu;
+}
+
+#btnBuscarId{
+    @extend #btnActu;
 }

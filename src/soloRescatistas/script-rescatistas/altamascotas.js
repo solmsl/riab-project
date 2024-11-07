@@ -39,11 +39,11 @@ document.addEventListener('DOMContentLoaded', function () {
     }
 
     const mascotaData = {
-      nombreApodo: nombreApodo,
-      especie: especie,
-      raza: raza,
-      color: color,
-      anioNacimiento: anioNacimiento
+      nombreApodo,
+      especie,
+      raza,
+      color,
+      anioNacimiento
     };
 
     try {

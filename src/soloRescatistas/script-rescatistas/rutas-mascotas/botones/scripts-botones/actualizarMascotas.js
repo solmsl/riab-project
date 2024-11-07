@@ -26,7 +26,7 @@ document.addEventListener('DOMContentLoaded', () => {
     form.addEventListener('submit', async (event) => {
       event.preventDefault();
       try {
-        const response = await fetch(`http://localhost:3000/mascotas/${idMascota.value}`, {
+        const response = await fetch(`https://riab-api.vercel.app/mascotas/${idMascota.value}`, {
           method: 'PUT',
           headers: { 'Content-Type': 'application/json' },
           body: JSON.stringify({

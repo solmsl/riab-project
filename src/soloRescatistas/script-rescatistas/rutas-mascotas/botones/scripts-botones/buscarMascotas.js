@@ -7,7 +7,7 @@ const mascotaInfo = document.getElementById('mascotaInfo');
 async function buscarMascota(id) {
     try {
         // Realiza una petición GET al servidor para obtener los datos de la mascota
-        const response = await fetch(`http://localhost:3000/mascotas/${id}`);
+        const response = await fetch(`https://riab-api.vercel.app/mascotas/${id}`);
         const data = await response.json();
         
         // Si la respuesta es exitosa y se encuentra la mascota

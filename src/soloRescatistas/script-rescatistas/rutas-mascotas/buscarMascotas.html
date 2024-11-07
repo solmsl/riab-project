@@ -67,59 +67,6 @@
             <div id="mensajeActualizacion"></div>
             <ul id="mascotaInfo"></ul>
       </section>
-    
-    <script>
-        const idInput = document.getElementById('id-input');
-        const mensajeActualizacion = document.getElementById('mensajeActualizacion');
-        const mascotaInfo = document.getElementById('mascotaInfo');
-
-        async function buscarMascota(id) {
-            try {
-                const response = await fetch(`http://localhost:3000/mascotas/${id}`);
-                const data = await response.json();
-                if (response.ok && data) {
-                    mostrarMascota(data);
-                    mensajeActualizacion.textContent = 'Mascota encontrada';
-                } else {
-                    mensajeActualizacion.textContent = 'Mascota no encontrada.';
-                    mascotaInfo.innerHTML = '';
-                }
-            } catch (error) {
-                console.error('Error al buscar la mascota:', error);
-                mensajeActualizacion.textContent = 'Error al buscar la mascota. Inténtelo de nuevo más tarde.';
-                mascotaInfo.innerHTML = '';
-            }
-        }
-
-        function mostrarMascota(mascota) {
-            const id = mascota.id || 'No especificado';
-            const nombreApodo = mascota.nombreApodo || 'No especificado';
-            const especie = mascota.especie || 'No especificado';
-            const raza = mascota.raza || 'No especificado';
-            const color = mascota.color || 'No especificado';
-            const anioNacimiento = mascota.anioNacimiento || 'No especificado';
-
-            mascotaInfo.innerHTML = `
-                <li><strong>ID:</strong> ${id}</li>
-                <li><strong>Nombre/Apodo:</strong> ${nombreApodo}</li>
-                <li><strong>Especie:</strong> ${especie}</li>
-                <li><strong>Raza:</strong> ${raza}</li>
-                <li><strong>Color:</strong> ${color}</li>
-                <li><strong>Año de Nacimiento:</strong> ${anioNacimiento}</li>
-            `;
-        }
-
-        document.getElementById('btnBuscar').addEventListener('click', () => {
-            const id = idInput.value;
-            if (id) {
-                buscarMascota(id);
-            } else {
-                mensajeActualizacion.textContent = 'Por favor, ingrese un ID válido.';
-                mascotaInfo.innerHTML = '';
-            }
-        });
-    </script>
-
     <hr class="linea-divisor">
 
     

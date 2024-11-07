@@ -1,48 +1,60 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Mascotas Registradas</title>
-    <style>
-        .mascota-card {
-            border: 1px solid #ccc;
-            padding: 15px;
-            margin: 10px;
-            border-radius: 10px;
-            max-width: 300px;
-        }
-    </style>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Listado de Mascotas</title>
+  <style>
+    .mascota-card {
+      border: 1px solid #ddd;
+      border-radius: 10px;
+      padding: 20px;
+      margin: 10px;
+      max-width: 300px;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    }
+    .mascota-card h3 {
+      margin: 0;
+      font-size: 1.5em;
+    }
+    .mascota-card p {
+      margin: 5px 0;
+    }
+  </style>
 </head>
 <body>
-    <h1>Lista de Mascotas Registradas</h1>
-    <div id="mascotas-container"></div>
+  <h1>Listado de Mascotas</h1>
+  <div id="mascotas-container"></div>
 
-    <script>
-        document.addEventListener('DOMContentLoaded', function () {
-            const mascotasContainer = document.getElementById('mascotas-container');
-            
-            // Recuperamos las mascotas desde el localStorage
-            const mascotas = JSON.parse(localStorage.getItem('mascotas')) || [];
+  <script>
+    document.addEventListener('DOMContentLoaded', function () {
+      // Obtener las mascotas desde localStorage
+      const mascotas = JSON.parse(localStorage.getItem('mascotas')) || [];
+      const mascotasContainer = document.getElementById('mascotas-container');
 
-            if (mascotas.length > 0) {
-                mascotas.forEach(mascota => {
-                    const mascotaCard = document.createElement('div');
-                    mascotaCard.classList.add('mascota-card');
-                    mascotaCard.innerHTML = `
-                        <h3>${mascota.nombreApodo}</h3>
-                        <p><strong>ID:</strong> ${mascota.id}</p> <!-- Muestra el ID aquí -->
-                        <p><strong>Especie:</strong> ${mascota.especie}</p>
-                        <p><strong>Raza:</strong> ${mascota.raza}</p>
-                        <p><strong>Color:</strong> ${mascota.color}</p>
-                        <p><strong>Año de Nacimiento:</strong> ${mascota.anioNacimiento}</p>
-                    `;
-                    mascotasContainer.appendChild(mascotaCard);
-                });
-            } else {
-                mascotasContainer.innerHTML = '<p>No hay mascotas registradas.</p>';
-            }
-        });
-    </script>
+      // Si no hay mascotas, mostrar un mensaje
+      if (mascotas.length === 0) {
+        mascotasContainer.innerHTML = '<p>No hay mascotas registradas.</p>';
+        return;
+      }
+
+      // Crear cartas para cada mascota
+      mascotas.forEach(mascota => {
+        const mascotaDiv = document.createElement('div');
+        mascotaDiv.classList.add('mascota-card');
+
+        mascotaDiv.innerHTML = `
+          <h3>Nombre: ${mascota.nombreApodo}</h3>
+          <p>Especie: ${mascota.especie}</p>
+          <p>Raza: ${mascota.raza}</p>
+          <p>Color: ${mascota.color}</p>
+          <p>Año de nacimiento: ${mascota.anioNacimiento}</p>
+          <p>ID: ${mascota.id}</p> <!-- Mostrar el ID largo -->
+        `;
+
+        mascotasContainer.appendChild(mascotaDiv);
+      });
+    });
+  </script>
 </body>
 </html>

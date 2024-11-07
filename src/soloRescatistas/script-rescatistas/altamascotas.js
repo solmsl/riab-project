@@ -47,7 +47,6 @@ document.addEventListener('DOMContentLoaded', function () {
     };
 
     try {
-      // Intentamos registrar la mascota en la base de datos
       const response = await fetch('https://riab-api.vercel.app/mascotas/registro', {
         method: 'POST',
         headers: {
@@ -56,22 +55,24 @@ document.addEventListener('DOMContentLoaded', function () {
         body: JSON.stringify(mascotaData)
       });
 
-      if (response.ok) {
-        const result = await response.json();
+      const data = await response.json();
+      
+      if (data.success) {
+        const mascota = data.data;
+        const mascotasGuardadas = JSON.parse(localStorage.getItem('mascotas')) || [];
+        
+        // Almacenar la mascota con el id largo como string
+        mascotasGuardadas.push({
+          ...mascota,
+          id: mascota.id.toString() // Convertir el id largo a string
+        });
+
+        localStorage.setItem('mascotas', JSON.stringify(mascotasGuardadas));
+
         alert('Mascota registrada exitosamente');
         form.reset();
-
-        // El servidor debería devolver un objeto con un campo 'id' (autoincrementable)
-        const mascotaConId = { ...mascotaData, id: result.id };
-
-        // Guardamos los datos con el ID en localStorage
-        let mascotas = JSON.parse(localStorage.getItem('mascotas')) || [];
-        mascotas.push(mascotaConId);
-        localStorage.setItem('mascotas', JSON.stringify(mascotas));
-
       } else {
-        const error = await response.json();
-        alert(`Error: ${error.message}`);
+        alert('Error al registrar la mascota');
       }
     } catch (error) {
       console.error('Error al enviar los datos:', error);

@@ -1,4 +1,3 @@
-// Referencias a los elementos HTML
 const idInput = document.getElementById('id-input');
 const mensajeActualizacion = document.getElementById('mensajeActualizacion');
 const mascotaInfo = document.getElementById('mascotaInfo');

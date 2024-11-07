@@ -43,6 +43,9 @@ body {
     left: unset;
     right: 50px;
   }
+  .image-res {
+    width: 80%; /* Reduce el tamaño al 80% del contenedor en pantallas pequeñas */
+  }
 }
 @media (min-width: 992px) {
   footer {
@@ -83,6 +86,9 @@ body {
   #next {
     left: unset;
     right: 50px;
+  }
+  .image-res {
+    width: 80%; /* Reduce el tamaño al 80% del contenedor en pantallas pequeñas */
   }
 }
 @media (min-width: 992px) {
@@ -175,7 +181,7 @@ body {
 }
 
 /*LOGIN-BUTTON*/
-.wrapper .btn, .wrapper .btn-volver {
+.wrapper .btn, .wrapper .btn-volver, .wrapper .btn-confirmar {
   width: 100%;
   height: 45px;
   background: white;
@@ -188,7 +194,7 @@ body {
   color: #333;
   font-weight: 600;
 }
-.wrapper .btn a, .wrapper .btn-volver a {
+.wrapper .btn a, .wrapper .btn-volver a, .wrapper .btn-confirmar a {
   text-decoration: none;
   color: #333;
 }
@@ -216,6 +222,58 @@ body {
   transform: translateY(-3%);
 }
 
+/*BOTON DE CERRAR SESIÓN*/
+.btn-cerrar {
+  padding: 6px 18px;
+  margin-bottom: 20px;
+  background: white;
+  border: none;
+  outline: none;
+  border-radius: 20px;
+  box-shadow: 0 0 10px rgb(109, 59, 138);
+  cursor: pointer;
+  font-size: 16px;
+  color: #ffffff;
+  background-color: rgb(87, 9, 117);
+}
+.btn-cerrar a {
+  text-decoration: none;
+  color: #fffcfc;
+}
+
+.botones {
+  justify-content: center;
+  text-align: center;
+}
+.botones #btn-eliminar, .botones #btn-ver-todas, .botones #btn-buscar, .botones #btn-actualizar {
+  width: 70%;
+  margin-top: 15px;
+  height: 45px;
+  background: rgb(20, 2, 49);
+  border: none;
+  outline: none;
+  border-radius: 20px;
+  box-shadow: 0 0 10px rgb(85, 70, 95);
+  cursor: pointer;
+  font-size: 16px;
+  color: #ffffff;
+  font-weight: 600;
+}
+/* ACTUALIZAR */
+#btnActu, #btnBuscar {
+  width: 100%;
+  height: 45px;
+  background: white;
+  border: none;
+  outline: none;
+  border-radius: 40px;
+  box-shadow: 0 0 10px black;
+  cursor: pointer;
+  font-size: 16px;
+  color: #333;
+  font-weight: 600;
+}
+
 @media (max-width: 991px) {
   footer {
     font-size: 12px;
@@ -232,6 +290,9 @@ body {
   #next {
     left: unset;
     right: 50px;
+  }
+  .image-res {
+    width: 80%; /* Reduce el tamaño al 80% del contenedor en pantallas pequeñas */
   }
 }
 @media (min-width: 992px) {
@@ -364,6 +425,9 @@ article {
     left: unset;
     right: 50px;
   }
+  .image-res {
+    width: 80%; /* Reduce el tamaño al 80% del contenedor en pantallas pequeñas */
+  }
 }
 @media (min-width: 992px) {
   footer {
@@ -388,6 +452,7 @@ article {
   align-items: center;
   margin: 89px 30px 80px 18px;
   min-height: 100px;
+  padding-bottom: 2px;
   text-align: center;
   font-family: "letras-grandes";
   background-color: white;
@@ -446,7 +511,7 @@ article {
 
 .accordion-item, .accordion-button {
   border: none;
-  background-color: rgba(201, 113, 161, 0.568);
+  background-color: rgba(49, 3, 28, 0.568);
   color: white;
   font-family: "letras-grandes";
 }
@@ -594,6 +659,79 @@ article {
   top: 50%;
   transform: translateY(-50%);
   font-size: 20px;
+}
+
+@font-face {
+  font-family: "letras-grandes";
+  src: url("/src/fonts/Arima/Arima-VariableFont_wght.ttf");
+}
+.formulario {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  margin-top: 72px;
+}
+
+.wrapper {
+  width: 420px;
+  background: transparent;
+  border: 2px solid rgba(50, 4, 61, 0.26);
+  border-radius: 3px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+  backdrop-filter: blur(20px);
+  padding: 30px 40px;
+  font-family: "letras-grandes";
+}
+.wrapper h1 {
+  font-size: 36px;
+  text-align: center;
+  color: white;
+}
+.wrapper .input-box {
+  position: relative;
+  width: 100%;
+  height: 50px;
+  margin: 30px 0;
+}
+.wrapper .input-box input {
+  width: 100%;
+  height: 100%;
+  background: transparent;
+  outline: none;
+  border: 2px solid rgb(71, 2, 73);
+  border-radius: 20px;
+  font-size: 16px;
+  color: rgb(59, 5, 50);
+  padding: 20px 45px 20px 20px;
+}
+.wrapper .input-box input:hover {
+  color: rgb(71, 2, 73);
+}
+.wrapper .input-box select {
+  width: 100%;
+  height: 100%;
+  background: transparent;
+  border: 2px solid rgb(71, 2, 73);
+  border-radius: 20px;
+  font-size: 16px;
+  color: rgb(71, 2, 73);
+  padding: 10px;
+}
+.wrapper .input-box i {
+  position: absolute;
+  right: 20px;
+  top: 50%;
+  transform: translateY(-50%);
+  font-size: 20px;
+}
+
+.formularioBusc {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  margin-top: 0 auto;
 }
 
 /*# sourceMappingURL=main.css.map */

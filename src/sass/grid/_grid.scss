@@ -19,6 +19,10 @@
         right: 50px;
     }
 
+    .image-res {
+        width: 80%;  /* Reduce el tamaño al 80% del contenedor en pantallas pequeñas */
+      }
+
 }
 
 @media (min-width: 992px) {

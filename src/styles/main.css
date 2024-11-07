@@ -181,7 +181,7 @@ body {
 }
 
 /*LOGIN-BUTTON*/
-.wrapper .btn, .wrapper .btn-volver, .wrapper .btn-confirmar {
+.wrapper .btn, .wrapper #btnEliminar, .wrapper .btn-volver, .wrapper .btn-confirmar {
   width: 100%;
   height: 45px;
   background: white;
@@ -194,7 +194,7 @@ body {
   color: #333;
   font-weight: 600;
 }
-.wrapper .btn a, .wrapper .btn-volver a, .wrapper .btn-confirmar a {
+.wrapper .btn a, .wrapper #btnEliminar a, .wrapper .btn-volver a, .wrapper .btn-confirmar a {
   text-decoration: none;
   color: #333;
 }
@@ -241,26 +241,8 @@ body {
   color: #fffcfc;
 }
 
-.botones {
-  justify-content: center;
-  text-align: center;
-}
-.botones #btn-eliminar, .botones #btn-ver-todas, .botones #btn-buscar, .botones #btn-actualizar {
-  width: 70%;
-  margin-top: 15px;
-  height: 45px;
-  background: rgb(20, 2, 49);
-  border: none;
-  outline: none;
-  border-radius: 20px;
-  box-shadow: 0 0 10px rgb(85, 70, 95);
-  cursor: pointer;
-  font-size: 16px;
-  color: #ffffff;
-  font-weight: 600;
-}
 /* ACTUALIZAR */
-#btnActu, #btnBuscar {
+#btnActu, #btnBuscarId, #btnBuscar {
   width: 100%;
   height: 45px;
   background: white;
@@ -661,6 +643,14 @@ article {
   font-size: 20px;
 }
 
+.login_title {
+  color: white;
+  font-family: "letras-grandes";
+  justify-content: center;
+  text-align: center;
+  margin-top: 19px;
+}
+
 @font-face {
   font-family: "letras-grandes";
   src: url("/src/fonts/Arima/Arima-VariableFont_wght.ttf");
@@ -726,7 +716,7 @@ article {
   font-size: 20px;
 }
 
-.formularioBusc {
+.formularioBusc, .formularioEliminar {
   display: flex;
   justify-content: center;
   align-items: center;

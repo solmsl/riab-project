@@ -1,4 +1,3 @@
-// Referencias a los elementos HTML
 const idInput = document.getElementById('id-input');
 const mensajeActualizacion = document.getElementById('mensajeActualizacion');
 const mascotaInfo = document.getElementById('mascotaInfo');
@@ -6,18 +5,15 @@ const mascotaInfo = document.getElementById('mascotaInfo');
 // Función para buscar la mascota
 async function buscarMascota(id) {
     try {
-        // Realiza una petición GET al servidor para obtener los datos de la mascota
-        const response = await fetch(`http://localhost:3000/mascotas/${id}`);
+        const response = await fetch(`https://riab-api.vercel.app/mascotas/${id}`);
         const data = await response.json();
-        
-        // Si la respuesta es exitosa y se encuentra la mascota
+
         if (response.ok && data) {
-            mostrarMascota(data); // Muestra la información de la mascota
+            mostrarMascota(data); 
             mensajeActualizacion.textContent = 'Mascota encontrada';
         } else {
-            // Si no se encuentra la mascota, muestra un mensaje de error
             mensajeActualizacion.textContent = 'Mascota no encontrada.';
-            mascotaInfo.innerHTML = ''; // Limpia la lista de información
+            mascotaInfo.innerHTML = ''; 
         }
     } catch (error) {
         // Si ocurre un error en la solicitud, muestra un mensaje de error

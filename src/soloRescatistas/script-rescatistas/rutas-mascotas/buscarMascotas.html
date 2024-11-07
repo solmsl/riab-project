@@ -8,56 +8,62 @@
     <link rel="shortcut icon" href="./src/img/icon.png">
     <title>RIAB</title>
 </head>
-<body>
-    <header>
-        <nav class="navbar navbar-expand-lg fixed-top" data-bs-theme="dark">
-            <div class="container-fluid"> 
-              <a class="navbar-brand">RIAB</a>
-              <button class="navbar-toggler custom-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasNavbar" aria-controls="offcanvasNavbar" aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
-              </button>
-              <div class="offcanvas offcanvas-top" tabindex="-1" id="offcanvasNavbar" aria-labelledby="offcanvasNavbarLabel">
-                <div class="offcanvas-header">
-          
-                  <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
-                </div>
-                <div class="offcanvas-body text-center">
-                  <ul class="navbar-nav justify-content-center flex-grow-1 pe-3">
-                    <li class="nav-item">
-                      <a class="nav-link mx-lg-2" aria-current="page" href="/src/soloRescatistas/inicio-res.html">Inicio</a>
-                    </li>
-                    <li class="nav-item">
-                      <a class="nav-link mx-lg-2" href="/src/soloRescatistas/mascotas.html">Mascotas</a>
-                    </li>
-                    <li class="nav-item">
-                      <a class="nav-link mx-lg-2" href="/src/soloRescatistas/centros.html">Centros</a>
-                    </li>
-                    <li class="nav-item">
-                      <a class="nav-link mx-lg-2" href="/src/soloRescatistas/adopcion.html">Crear Adopción</a>
-                    </li>
-                    <li class="nav-item"></li>
-                      <a class="nav-link mx-lg-2" href="/src/soloRescatistas/añadirMascotas.html">CRUD Mascotas</a>
-                    </li>
-                    <li class="nav-item"></li>
-                      <a class="nav-link mx-lg-2" href="/src/soloRescatistas/cerrarsesion.html">Cerrar Sesión</a>
-                    </li>
-                  </ul>
-                </div>
-              </div>
+<body> 
+  <header>
+    <nav class="navbar navbar-expand-lg fixed-top" data-bs-theme="dark">
+        <div class="container-fluid"> 
+          <a class="navbar-brand">RIAB</a>
+          <button class="navbar-toggler custom-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasNavbar" aria-controls="offcanvasNavbar" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="offcanvas offcanvas-top" tabindex="-1" id="offcanvasNavbar" aria-labelledby="offcanvasNavbarLabel">
+            <div class="offcanvas-header">
+      
+              <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
             </div>
-          </nav>
-    </header>
+            <div class="offcanvas-body text-center">
+              <ul class="navbar-nav justify-content-center flex-grow-1 pe-3">
+                <li class="nav-item">
+                  <a class="nav-link mx-lg-2" aria-current="page" href="/src/soloRescatistas/inicio-res.html">Inicio</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link mx-lg-2" href="/src/soloRescatistas/mascotas.html">Mascotas</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link mx-lg-2" href="/src/soloRescatistas/adopcion.html">Crear Adopción</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link mx-lg-2" href="/src/soloRescatistas/añadirMascotas.html">Añadir Mascotas</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link mx-lg-2" href="actualizarMascotas.html">Actualizar Mascota</a>
+                </li>
+                <li class="nav-item"></li>
+                  <a class="nav-link mx-lg-2" href="eliminarMascota.html">Eliminar Mascota</a>
+                </li>
+                <li class="nav-item"></li>
+                  <a class="nav-link mx-lg-2" href="buscarMascotas.html">Buscar Mascota</a>
+                </li>
+                <li class="nav-item"></li>
+                  <a class="nav-link mx-lg-2" href="/src/soloRescatistas/cerrarsesion.html">Cerrar Sesión</a>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </nav>
+  </header>
 
     <section class="formularioBusc">
         <div class="wrapper">
           <form id="mascotasForm">
-            <h1>Buscar Mascota, <b>se deben llenar todos los campos</b></h1>
-    
+            <h1>Buscar Mascota</h1>
+            <h2>Debe de ingresar el id de la mascota</h2>
             <div class="input-box">
                 <input id="id-input" type="text" placeholder="Ingrese el id (solo números)" pattern="\d+" required><br>
             </div>
     
-            <button id="btnBuscar" type="button">Buscar Mascota</button>
+            <button id="btnBuscar" type="button">Buscar</button>
             <div id="mensajeActualizacion"></div>
             <ul id="mascotaInfo"></ul>
       </section>
@@ -116,16 +122,19 @@
 
     <hr class="linea-divisor">
 
-    <footer>
-
+    
+  <footer>
     <div class="paginas_footer">
-        <a href="/src/soloRescatistas/inicio-res.html">Inicio</a> &nbsp; &nbsp; 
-        <a href="/src/soloRescatistas/mascotas.html">Mascotas</a> &nbsp;  &nbsp; 
-        <a href="/src/soloRescatistas/centros.html">Centros</a> &nbsp;  &nbsp; 
-        <a href="/src/soloRescatistas/adopcion.html">Crear Adopción</a> &nbsp;  
-        <a href="/src/soloRescatistas/añadirMascotas.html">Añadir Mascotas</a>  &nbsp; 
-        <a href="/src/soloRescatistas/cerrarsesion.html">Cerrar Sesión</a> 
+      <a href="/src/soloRescatistas/inicio-res.html">Inicio</a> &nbsp; &nbsp; 
+      <a href="/src/soloRescatistas/mascotas.html">Mascotas</a> &nbsp;  &nbsp; 
+      <a href="/src/soloRescatistas/adopcion.html">Crear Adopción</a> &nbsp;  &nbsp; 
+      <a href="/src/soloRescatistas/añadirMascotas.html">Añadir Mascotas</a> &nbsp;  &nbsp; 
+      <a href="actualizarMascotas.html">Actualizar Mascotas</a> &nbsp;  &nbsp; 
+      <a href="eliminarMascota.html">Eliminar Mascotas</a> &nbsp;  &nbsp;
+      <a href="buscarMascotas.html">Buscar Mascotas</a> &nbsp;  &nbsp;
+      <a href="/src/soloRescatistas/cerrarsesion.html">Cerrar Sesión</a> 
     </div> <br>
+
 
     2024 &nbsp; &nbsp; | &nbsp; &nbsp; Todos los derechos reservados
 

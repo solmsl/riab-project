@@ -6,7 +6,7 @@ const mensajeEliminar = document.getElementById('mensajeEliminar');
 async function eliminarMascota(id) {
     try {
         // Realiza una petición DELETE al servidor para eliminar la mascota
-        const response = await fetch(`http://localhost:3000/mascotas/${id}`, {
+        const response = await fetch(`https://riab-api.vercel.app/mascotas/${id}`, {
             method: 'DELETE',
         });
 

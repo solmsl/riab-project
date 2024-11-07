@@ -8,6 +8,8 @@ async function buscarMascota(id) {
         const response = await fetch(`https://riab-api.vercel.app/mascotas/${id}`);
         const data = await response.json();
 
+        console.log(data);
+
         if (response.ok && data) {
             mostrarMascota(data);
             mensajeActualizacion.textContent = 'Mascota encontrada';

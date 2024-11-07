@@ -698,6 +698,9 @@ article {
 .wrapper .input-box input:hover {
   color: rgb(71, 2, 73);
 }
+.wrapper .input-box input::placeholder {
+  color: rgb(59, 5, 50);
+}
 .wrapper .input-box select {
   width: 100%;
   height: 100%;
@@ -716,7 +719,7 @@ article {
   font-size: 20px;
 }
 
-.formularioBusc, .formularioEliminar {
+.formularioBusc, .formularioAdop, .formularioEliminar {
   display: flex;
   justify-content: center;
   align-items: center;

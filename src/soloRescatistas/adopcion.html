@@ -16,7 +16,7 @@
           <button class="navbar-toggler custom-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasNavbar" aria-controls="offcanvasNavbar" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
           </button>
-          <div class="offcanvas offcanvas-top" tabindex="-1" id="offcanvasNavbar" aria-labelledby="offcanvasNavbarLabel">
+          <div class="offcanvas offcanvas-half" tabindex="-1" id="offcanvasNavbar" aria-labelledby="offcanvasNavbarLabel">
             <div class="offcanvas-header">
       
               <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
@@ -54,9 +54,25 @@
       </nav>
   </header> 
 
+  <section class="formularioAdop">
+    <div class="wrapper">
+      <form id="adopcionForm" >
+        <h1>Formulario de Adopción</h1>
+        <div class="input-box">
+          <input type="text" id="dni" placeholder="DNI" required> <br> <br>
+          <input type="text" id="nombre" placeholder="Nombre" required> <br> <br>
+          <input type="text" id="apellido" placeholder="Apellido" required> <br> <br>
+          <input type="text" id="nombreMascota" placeholder="Nombre de la Mascota" required>
+        </div>
+
+        <button id="btnBuscar" type="button" style="margin-top: 225px;">Enviar</button>
+        <div id="mensajeActualizacion"></div>
+        <ul id="mascotaInfo"></ul>
+  </section>
+
     <hr class="linea-divisor">
 
-    <footer>
+  <footer>
 
         <div class="paginas_footer">
           <a href="inicio-res.html">Inicio</a> &nbsp; &nbsp; 
@@ -71,7 +87,7 @@
     
           2024 &nbsp; &nbsp; | &nbsp; &nbsp; Todos los derechos reservados
     
-    </footer>
+  </footer>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
 </body>
 </html>

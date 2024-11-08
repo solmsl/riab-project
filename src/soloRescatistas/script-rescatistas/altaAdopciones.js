@@ -18,7 +18,7 @@ document.addEventListener('DOMContentLoaded', function () {
         return;
       }
   
-      const mascotaData = {
+      const adopData = {
         dni,
         nombre,
         apellido,
@@ -36,11 +36,11 @@ document.addEventListener('DOMContentLoaded', function () {
           headers: {
             'Content-Type': 'application/json'
           },
-          body: JSON.stringify(mascotaData)
+          body: JSON.stringify(adopData)
         });
   
         if (response.ok) {
-          const result = await response.json();
+          // const result = await response.json();
           alert('Adopcion registrada exitosamente');
           form.reset();
         } else {

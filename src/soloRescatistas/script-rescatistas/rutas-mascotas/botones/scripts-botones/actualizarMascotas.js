@@ -93,6 +93,19 @@ document.addEventListener('DOMContentLoaded', () => {
             localStorage.setItem('mascotas', JSON.stringify(mascotas));
           }
 
+          // Actualizar la vista en mascotas.html (si está abierto en el navegador)
+          const mascotasHTML = document.querySelector('#mascotas-list');
+          if (mascotasHTML) {
+            const mascotaElement = mascotasHTML.querySelector(`#mascota-${id}`);
+            if (mascotaElement) {
+              mascotaElement.querySelector('.nombre-apodo').textContent = nombreApodoInput.value;
+              mascotaElement.querySelector('.especie').textContent = especieSelect.value;
+              mascotaElement.querySelector('.raza').textContent = razaSelect.value;
+              mascotaElement.querySelector('.color').textContent = colorSelect.value;
+              mascotaElement.querySelector('.anio-nacimiento').textContent = anioNacimientoSelect.value;
+            }
+          }
+
           form.reset();
         } else {
           alert(data.message || 'Error al actualizar la mascota.');
@@ -106,5 +119,3 @@ document.addEventListener('DOMContentLoaded', () => {
     }
   });
 });
-
-  

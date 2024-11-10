@@ -13,11 +13,11 @@
       border-radius: 10px;
       padding: 20px;
       margin: 10px;
+      max-width: 300px;
       box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-      background-color: #ffffff;
     }
     .mascota-card h3 {
-      margin-top: 0;
+      margin: 0;
       font-size: 1.5em;
     }
     .mascota-card p {
@@ -28,53 +28,51 @@
 <body>
 
   <header>
-    <nav class="navbar navbar-expand-lg fixed-top navbar-dark bg-dark">
-        <div class="container-fluid"> 
-          <a class="navbar-brand">RIAB</a>
-          <button class="navbar-toggler custom-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasNavbar" aria-controls="offcanvasNavbar" aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
-          </button>
-          <div class="offcanvas offcanvas-half" tabindex="-1" id="offcanvasNavbar" aria-labelledby="offcanvasNavbarLabel">
-            <div class="offcanvas-header">
-              <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
-            </div>
-            <div class="offcanvas-body text-center">
-              <ul class="navbar-nav justify-content-center flex-grow-1 pe-3">
-                <li class="nav-item">
-                  <a class="nav-link mx-lg-2" aria-current="page" href="inicio-res.html">Inicio</a>
-                </li>
-                <li class="nav-item">
-                  <a class="nav-link mx-lg-2" href="mascotas.html">Mascotas</a>
-                </li>
-                <li class="nav-item">
-                  <a class="nav-link mx-lg-2" href="adopcion.html">Crear Adopción</a>
-                </li>
-                <li class="nav-item">
-                  <a class="nav-link mx-lg-2" href="añadirMascotas.html">Añadir Mascotas</a>
-                </li>
-                <li class="nav-item">
-                  <a class="nav-link mx-lg-2" href="./script-rescatistas/rutas-mascotas/actualizarMascotas.html">Actualizar Mascota</a>
-                </li>
-                <li class="nav-item">
-                  <a class="nav-link mx-lg-2" href="./script-rescatistas/rutas-mascotas/eliminarMascota.html">Eliminar Mascota</a>
-                </li>
-                <li class="nav-item">
-                  <a class="nav-link mx-lg-2" href="./script-rescatistas/rutas-mascotas/buscarMascotas.html">Buscar Mascota</a>
-                </li>
-                <li class="nav-item">
-                  <a class="nav-link mx-lg-2" href="cerrarsesion.html">Cerrar Sesión</a>
-                </li>
-              </ul>
-            </div>
+    <nav class="navbar navbar-expand-lg fixed-top" data-bs-theme="dark">
+      <div class="container-fluid"> 
+        <a class="navbar-brand">RIAB</a>
+        <button class="navbar-toggler custom-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasNavbar" aria-controls="offcanvasNavbar" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="offcanvas offcanvas-half" tabindex="-1" id="offcanvasNavbar" aria-labelledby="offcanvasNavbarLabel">
+          <div class="offcanvas-header">
+            <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+          </div>
+          <div class="offcanvas-body text-center">
+            <ul class="navbar-nav justify-content-center flex-grow-1 pe-3">
+              <li class="nav-item">
+                <a class="nav-link mx-lg-2" href="inicio-res.html">Inicio</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link mx-lg-2" href="mascotas.html">Mascotas</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link mx-lg-2" href="adopcion.html">Crear Adopción</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link mx-lg-2" href="añadirMascotas.html">Añadir Mascotas</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link mx-lg-2" href="./script-rescatistas/rutas-mascotas/actualizarMascotas.html">Actualizar Mascota</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link mx-lg-2" href="./script-rescatistas/rutas-mascotas/eliminarMascota.html">Eliminar Mascota</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link mx-lg-2" href="./script-rescatistas/rutas-mascotas/buscarMascotas.html">Buscar Mascota</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link mx-lg-2" href="cerrarsesion.html">Cerrar Sesión</a>
+              </li>
+            </ul>
           </div>
         </div>
-      </nav>
+      </div>
+    </nav>
   </header>
 
-  <main class="container mt-5 pt-5">
-    <h1 class="text-center mb-4">Listado de Mascotas</h1>
-    <div id="mascotas-container" class="row justify-content-center"></div>
-  </main>
+  <h1 class="titulo_mascotas">Listado de Mascotas</h1>
+  <div id="mascotas-container" class="row"></div>
 
   <script>
     document.addEventListener('DOMContentLoaded', function () {
@@ -84,36 +82,34 @@
 
       // Si no hay mascotas, mostrar un mensaje
       if (mascotas.length === 0) {
-        mascotasContainer.innerHTML = '<p class="text-center">No hay mascotas registradas.</p>';
+        mascotasContainer.innerHTML = '<p>No hay mascotas registradas.</p>';
         return;
       }
 
       // Crear cartas para cada mascota
       mascotas.forEach(mascota => {
-        const mascotaCol = document.createElement('div');
-        mascotaCol.classList.add('col-md-4', 'col-lg-3', 'mb-4');
+        const mascotaDiv = document.createElement('div');
+        mascotaDiv.classList.add('col-md-4');
 
-        const mascotaCard = document.createElement('div');
-        mascotaCard.classList.add('mascota-card', 'text-center');
-
-        mascotaCard.innerHTML = `
-          <h3>${mascota.nombreApodo}</h3>
-          <p><strong>Especie:</strong> ${mascota.especie}</p>
-          <p><strong>Raza:</strong> ${mascota.raza}</p> 
-          <p><strong>Color:</strong> ${mascota.color}</p>
-          <p><strong>Año de nacimiento:</strong> ${mascota.anioNacimiento}</p>
-          <p><strong>ID:</strong> ${mascota.id}</p>
+        mascotaDiv.innerHTML = `
+          <div class="mascota-card">
+            <h3>Nombre: ${mascota.nombreApodo}</h3>
+            <p>Especie: ${mascota.especie}</p>
+            <p>Raza: ${mascota.raza}</p> 
+            <p>Color: ${mascota.color}</p>
+            <p>Año de nacimiento: ${mascota.anioNacimiento}</p>
+            <p>ID: ${mascota.id}</p> <!-- Mostrar el ID largo -->
+          </div>
         `;
 
-        mascotaCol.appendChild(mascotaCard);
-        mascotasContainer.appendChild(mascotaCol);
+        mascotasContainer.appendChild(mascotaDiv);
       });
     });
   </script>
 
   <hr class="linea-divisor">
 
-  <footer class="text-center py-3">
+  <footer>
     <div class="paginas_footer">
       <a href="inicio-res.html">Inicio</a> &nbsp; &nbsp; 
       <a href="mascotas.html">Mascotas</a> &nbsp;  &nbsp; 
@@ -124,6 +120,7 @@
       <a href="./script-rescatistas/rutas-mascotas/buscarMascotas.html">Buscar Mascotas</a> &nbsp;  &nbsp;
       <a href="cerrarsesion.html">Cerrar Sesión</a>  
     </div> <br>
+
     2024 &nbsp; &nbsp; | &nbsp; &nbsp; Todos los derechos reservados
   </footer>
 

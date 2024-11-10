@@ -47,6 +47,7 @@ document.addEventListener('DOMContentLoaded', function () {
     };
 
     try {
+      // Enviar los datos al servidor para guardarlos en la base de datos
       const response = await fetch('https://riab-api.vercel.app/mascotas/registro', {
         method: 'POST',
         headers: {
@@ -58,6 +59,7 @@ document.addEventListener('DOMContentLoaded', function () {
       const data = await response.json();
       
       if (data.success) {
+        // Guardamos la mascota registrada en localStorage
         const mascota = data.data;
         const mascotasGuardadas = JSON.parse(localStorage.getItem('mascotas')) || [];
         
@@ -80,4 +82,5 @@ document.addEventListener('DOMContentLoaded', function () {
     }
   });
 });
+
 

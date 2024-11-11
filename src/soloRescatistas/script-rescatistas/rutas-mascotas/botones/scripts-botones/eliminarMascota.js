@@ -1,56 +1,40 @@
 const idInput = document.getElementById('id-input');
 const mensajeEliminar = document.getElementById('mensajeEliminar');
 
-// async function obtenerMascota(id) {
-//     try {
-//         // Hacer la solicitud para obtener los datos de la mascota
-//         const response = await fetch(`https://riab-api.vercel.app/mascotas/${id}`);
+async function obtenerMascota(id) {
+    try {
+        const response = await fetch(`https://riab-api.vercel.app/mascotas/${id}`);
+        if (!response.ok) throw new Error('No se pudo obtener los datos de la mascota');
         
-//         // Si la respuesta no es exitosa, lanzar un error
-//         if (!response.ok) {
-//             throw new Error('No se pudo obtener los datos de la mascota');
-//         }
-
-//         const data = await response.json();
-//         console.log('Datos de la mascota:', data); // Verificamos qué datos estamos recibiendo
+        const data = await response.json();
+        console.log('Datos de la mascota obtenidos:', data); 
+        return data ? `${data.nombreApodo} (${data.especie}, ${data.raza}, ${data.color}, Año de Nacimiento: ${data.anioNacimiento})` : null;
         
-//         if (data) {
-//             const { nombreApodo, especie, raza, color, anioNacimiento } = data;
-//             return `${nombreApodo} (${especie}, ${raza}, ${color}, Año de Nacimiento: ${anioNacimiento})`;
-//         } else {
-//             return null; // Si no encontramos datos, devolvemos null
-//         }
-//     } catch (error) {
-//         console.error('Error al obtener los datos de la mascota:', error);
-//         return null;
-//     }
-// }
+    } catch (error) {
+        console.error('Error al obtener los datos de la mascota:', error);
+        return null;
+    }
+}
 
 async function eliminarMascota(id) {
-    // Obtener los datos de la mascota antes de mostrar el cartel
     const datosMascota = await obtenerMascota(id);
     
     if (datosMascota) {
-        const confirmarEliminacion = confirm(`¿Seguro que quieres eliminar a la mascota con el id: ${idInput}?`);
+        const confirmarEliminacion = confirm(`¿Seguro que quieres eliminar a la mascota: ${datosMascota}?`);
         
         if (confirmarEliminacion) {
             try {
-                const response = await fetch(`https://riab-api.vercel.app/mascotas/${id}`, {
-                    method: 'DELETE',
-                });
-
+                const response = await fetch(`https://riab-api.vercel.app/mascotas/${id}`, { method: 'DELETE' });
                 if (response.ok) {
                     mensajeEliminar.textContent = 'Mascota eliminada correctamente';
-
-                    // Actualizar el listado de mascotas en localStorage
-                    const mascotas = JSON.parse(localStorage.getItem('mascotas')) || [];
+                    
+                    let mascotas = JSON.parse(localStorage.getItem('mascotas')) || [];
                     const index = mascotas.findIndex(m => m.id === id);
                     if (index !== -1) {
-                        mascotas.splice(index, 1); // Eliminar la mascota del array
+                        mascotas.splice(index, 1);
                         localStorage.setItem('mascotas', JSON.stringify(mascotas));
                     }
-                    
-                    // Aquí puedes agregar código para actualizar las cartas en la página de mascotas si es necesario.
+                    // Aquí llama a la función para actualizar la vista si es necesario
                 } else {
                     mensajeEliminar.textContent = 'No se pudo eliminar la mascota. Verifique el ID.';
                 }
@@ -66,10 +50,10 @@ async function eliminarMascota(id) {
 
 document.getElementById('btnEliminar').addEventListener('click', () => {
     const id = idInput.value.trim();
-    
     if (id) {
         eliminarMascota(id);
     } else {
         mensajeEliminar.textContent = 'Por favor, ingrese un ID válido.';
     }
 });
+

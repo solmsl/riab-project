@@ -1,37 +1,37 @@
 const idInput = document.getElementById('id-input');
 const mensajeEliminar = document.getElementById('mensajeEliminar');
 
-async function obtenerMascota(id) {
-    try {
-        // Hacer la solicitud para obtener los datos de la mascota
-        const response = await fetch(`https://riab-api.vercel.app/mascotas/${id}`);
+// async function obtenerMascota(id) {
+//     try {
+//         // Hacer la solicitud para obtener los datos de la mascota
+//         const response = await fetch(`https://riab-api.vercel.app/mascotas/${id}`);
         
-        // Si la respuesta no es exitosa, lanzar un error
-        if (!response.ok) {
-            throw new Error('No se pudo obtener los datos de la mascota');
-        }
+//         // Si la respuesta no es exitosa, lanzar un error
+//         if (!response.ok) {
+//             throw new Error('No se pudo obtener los datos de la mascota');
+//         }
 
-        const data = await response.json();
-        console.log('Datos de la mascota:', data); // Verificamos qué datos estamos recibiendo
+//         const data = await response.json();
+//         console.log('Datos de la mascota:', data); // Verificamos qué datos estamos recibiendo
         
-        if (data) {
-            const { nombreApodo, especie, raza, color, anioNacimiento } = data;
-            return `${nombreApodo} (${especie}, ${raza}, ${color}, Año de Nacimiento: ${anioNacimiento})`;
-        } else {
-            return null; // Si no encontramos datos, devolvemos null
-        }
-    } catch (error) {
-        console.error('Error al obtener los datos de la mascota:', error);
-        return null;
-    }
-}
+//         if (data) {
+//             const { nombreApodo, especie, raza, color, anioNacimiento } = data;
+//             return `${nombreApodo} (${especie}, ${raza}, ${color}, Año de Nacimiento: ${anioNacimiento})`;
+//         } else {
+//             return null; // Si no encontramos datos, devolvemos null
+//         }
+//     } catch (error) {
+//         console.error('Error al obtener los datos de la mascota:', error);
+//         return null;
+//     }
+// }
 
 async function eliminarMascota(id) {
     // Obtener los datos de la mascota antes de mostrar el cartel
     const datosMascota = await obtenerMascota(id);
     
     if (datosMascota) {
-        const confirmarEliminacion = confirm(`¿Seguro que quieres eliminar a la mascota: ${datosMascota}?`);
+        const confirmarEliminacion = confirm(`¿Seguro que quieres eliminar a la mascota con el id: ${idInput}?`);
         
         if (confirmarEliminacion) {
             try {

@@ -1,59 +1,66 @@
 const idInput = document.getElementById('id-input');
 const mensajeEliminar = document.getElementById('mensajeEliminar');
-const nombreApodoInput = document.getElementById('nombreApodo');
-const especieInput = document.getElementById('especie');
-const razaInput = document.getElementById('raza');
-const colorInput = document.getElementById('color');
-const anioNacimientoInput = document.getElementById('anio_nacimiento');
 
-// Función para eliminar la mascota
-async function eliminarMascota(id) {
+async function obtenerMascota(id) {
     try {
-        // Buscar los detalles de la mascota
         const response = await fetch(`https://riab-api.vercel.app/mascotas/${id}`);
         const data = await response.json();
 
         if (data) {
-            // Mostrar cartel de confirmación
-            const confirmDelete = confirm(`¿Seguro que quieres eliminar a la mascota?\nNombre o Apodo: ${data.nombreApodo}\nEspecie: ${data.especie}\nRaza: ${data.raza}\nColor: ${data.color}\nAño de nacimiento: ${data.anioNacimiento}`);
-
-            if (confirmDelete) {
-                // Realizar la eliminación en la base de datos
-                const deleteResponse = await fetch(`https://riab-api.vercel.app/mascotas/${id}`, {
-                    method: 'DELETE',
-                });
-
-                if (deleteResponse.ok) {
-                    mensajeEliminar.textContent = 'Mascota eliminada correctamente';
-
-                    // Actualizar localStorage
-                    let mascotas = JSON.parse(localStorage.getItem('mascotas')) || [];
-                    mascotas = mascotas.filter(mascota => mascota.id !== id);
-                    localStorage.setItem('mascotas', JSON.stringify(mascotas));
-
-                    // Eliminar la carta correspondiente en mascotas.html
-                    const mascotaToRemove = document.querySelector(`.card[data-id="${id}"]`);
-                    if (mascotaToRemove) {
-                        mascotaToRemove.remove();
-                    }
-                } else {
-                    mensajeEliminar.textContent = 'No se pudo eliminar la mascota. Verifique el ID.';
-                }
-            } else {
-                mensajeEliminar.textContent = 'No se eliminó la mascota.';
-            }
+            // Mostrar los datos de la mascota en el mensaje de confirmación
+            const { nombreApodo, especie, raza, color, anioNacimiento } = data;
+            return `${nombreApodo} (${especie}, ${raza}, ${color}, Año de Nacimiento: ${anioNacimiento})`;
         } else {
-            mensajeEliminar.textContent = 'Mascota no encontrada.';
+            return null;
         }
     } catch (error) {
-        console.error('Error al eliminar la mascota:', error);
-        mensajeEliminar.textContent = 'Error al eliminar la mascota. Inténtelo de nuevo más tarde.';
+        console.error('Error al obtener los datos de la mascota:', error);
+        return null;
     }
 }
 
-// Evento de clic en el botón de eliminación
+async function eliminarMascota(id) {
+    // Obtener los datos de la mascota antes de mostrar el cartel
+    const datosMascota = await obtenerMascota(id);
+    
+    if (datosMascota) {
+        const confirmarEliminacion = confirm(`¿Seguro que quieres eliminar a la mascota: ${datosMascota}?`);
+        
+        if (confirmarEliminacion) {
+            try {
+                const response = await fetch(`https://riab-api.vercel.app/mascotas/${id}`, {
+                    method: 'DELETE',
+                });
+
+                if (response.ok) {
+                    mensajeEliminar.textContent = 'Mascota eliminada correctamente';
+
+                    // Actualizar el listado de mascotas en mascotas.html
+                    const mascotas = JSON.parse(localStorage.getItem('mascotas')) || [];
+                    const index = mascotas.findIndex(m => m.id === id);
+                    if (index !== -1) {
+                        mascotas.splice(index, 1); // Eliminar la mascota del array
+                        localStorage.setItem('mascotas', JSON.stringify(mascotas));
+                    }
+                    
+                    // Actualizar la visualización en mascotas.html
+                    // Aquí necesitas agregar código para refrescar el DOM en mascotas.html si es necesario
+                } else {
+                    mensajeEliminar.textContent = 'No se pudo eliminar la mascota. Verifique el ID.';
+                }
+            } catch (error) {
+                console.error('Error al eliminar la mascota:', error);
+                mensajeEliminar.textContent = 'Error al eliminar la mascota. Inténtelo de nuevo más tarde.';
+            }
+        }
+    } else {
+        mensajeEliminar.textContent = 'No se pudo obtener los datos de la mascota.';
+    }
+}
+
 document.getElementById('btnEliminar').addEventListener('click', () => {
-    const id = idInput.value.trim(); 
+    const id = idInput.value.trim();
+    
     if (id) {
         eliminarMascota(id);
     } else {

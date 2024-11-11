@@ -3,15 +3,22 @@ const mensajeEliminar = document.getElementById('mensajeEliminar');
 
 async function obtenerMascota(id) {
     try {
+        // Hacer la solicitud para obtener los datos de la mascota
         const response = await fetch(`https://riab-api.vercel.app/mascotas/${id}`);
-        const data = await response.json();
+        
+        // Si la respuesta no es exitosa, lanzar un error
+        if (!response.ok) {
+            throw new Error('No se pudo obtener los datos de la mascota');
+        }
 
+        const data = await response.json();
+        console.log('Datos de la mascota:', data); // Verificamos qué datos estamos recibiendo
+        
         if (data) {
-            // Mostrar los datos de la mascota en el mensaje de confirmación
             const { nombreApodo, especie, raza, color, anioNacimiento } = data;
             return `${nombreApodo} (${especie}, ${raza}, ${color}, Año de Nacimiento: ${anioNacimiento})`;
         } else {
-            return null;
+            return null; // Si no encontramos datos, devolvemos null
         }
     } catch (error) {
         console.error('Error al obtener los datos de la mascota:', error);
@@ -35,7 +42,7 @@ async function eliminarMascota(id) {
                 if (response.ok) {
                     mensajeEliminar.textContent = 'Mascota eliminada correctamente';
 
-                    // Actualizar el listado de mascotas en mascotas.html
+                    // Actualizar el listado de mascotas en localStorage
                     const mascotas = JSON.parse(localStorage.getItem('mascotas')) || [];
                     const index = mascotas.findIndex(m => m.id === id);
                     if (index !== -1) {
@@ -43,8 +50,7 @@ async function eliminarMascota(id) {
                         localStorage.setItem('mascotas', JSON.stringify(mascotas));
                     }
                     
-                    // Actualizar la visualización en mascotas.html
-                    // Aquí necesitas agregar código para refrescar el DOM en mascotas.html si es necesario
+                    // Aquí puedes agregar código para actualizar las cartas en la página de mascotas si es necesario.
                 } else {
                     mensajeEliminar.textContent = 'No se pudo eliminar la mascota. Verifique el ID.';
                 }
@@ -67,4 +73,3 @@ document.getElementById('btnEliminar').addEventListener('click', () => {
         mensajeEliminar.textContent = 'Por favor, ingrese un ID válido.';
     }
 });
-

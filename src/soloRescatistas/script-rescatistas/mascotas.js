@@ -7,7 +7,6 @@ document.addEventListener('DOMContentLoaded', async () => {
     const data = await response.json();
 
     if (data.success && Array.isArray(data.mascotas)) {
-      mascotasList.innerHTML = ''; // Limpiar la lista antes de agregar nuevas tarjetas
       data.mascotas.forEach(mascota => {
         // Crear una tarjeta para cada mascota
         const card = document.createElement('div');

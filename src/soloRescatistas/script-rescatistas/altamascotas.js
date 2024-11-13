@@ -47,25 +47,23 @@ document.addEventListener('DOMContentLoaded', function () {
     const raza = document.getElementById('raza').value;
     const color = document.getElementById('color').value;
     const anioNacimiento = document.getElementById('anio_nacimiento').value;
-    const centro = localStorage.getItem('centro');  // Obtener el valor del centro desde localStorage
 
     // Validar los campos del formulario
-    if (!nombreApodo || !especie || !raza || !color || !anioNacimiento || !centro) {
+    if (!nombreApodo || !especie || !raza || !color || !anioNacimiento ) {
       alert('Por favor, complete todos los campos.');
       return;
     }
 
-    // Crear un objeto con los datos de la mascota, EXCLUYENDO el centro (porque ya lo agregamos desde localStorage)
     const nuevaMascota = {
       nombreApodo,
       especie,
       raza,
       color,
-      anioNacimiento
+      anioNacimiento,
     };
 
     try {
-      // Enviar los datos a la API SIN el campo centro
+      // Enviar los datos a la API
       const response = await fetch('https://riab-api.vercel.app/mascotas/registro', {
         method: 'POST',
         headers: {
@@ -77,23 +75,6 @@ document.addEventListener('DOMContentLoaded', function () {
       const data = await response.json();
 
       if (data.success) {
-        // Si la API responde exitosamente, obtener el id de la nueva mascota
-        const idMascota = data.data.id;
-
-        // Crear un objeto de la nueva mascota con el id y el centro
-        const nuevaMascotaConCentro = { 
-          ...data.data, 
-          centro, 
-          id: idMascota // Agregar el id aquí
-        };
-
-        // Guardar la nueva mascota en localStorage (con el id y el centro)
-        let mascotas = JSON.parse(localStorage.getItem('mascotas')) || [];
-        mascotas.push(nuevaMascotaConCentro);
-        localStorage.setItem('mascotas', JSON.stringify(mascotas));
-
-        alert('¡Mascota registrada correctamente!');
-
         // Limpiar el formulario después de enviar los datos
         form.reset();
       } else {
@@ -106,3 +87,4 @@ document.addEventListener('DOMContentLoaded', function () {
     }
   });
 });
+

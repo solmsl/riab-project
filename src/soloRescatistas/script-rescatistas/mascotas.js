@@ -1,44 +1,44 @@
-document.addEventListener('DOMContentLoaded', async function () {
+// archivo: mascotas.js
+document.addEventListener('DOMContentLoaded', async () => {
   const mascotasList = document.getElementById('mascotas-list');
 
   try {
-    // Obtener las mascotas desde el localStorage
-    const mascotas = JSON.parse(localStorage.getItem('mascotas')) || [];
+    // Solicitar los datos de la API
+    const response = await fetch('https://riab-api.vercel.app/mascotas');
+    const data = await response.json();
 
-    // Limpiar la lista antes de mostrar las nuevas mascotas
-    mascotasList.innerHTML = '';
+    if (data.success && Array.isArray(data.mascotas)) {
+      data.mascotas.forEach(mascota => {
+        // Crear una tarjeta para cada mascota
+        const card = document.createElement('div');
+        card.classList.add('col-md-4', 'mb-4');
 
-    // Verificar si se recibieron mascotas
-    if (mascotas && mascotas.length > 0) {
-      mascotas.forEach(function (mascota) {
-        const mascotaDiv = document.createElement('div');
-        mascotaDiv.classList.add('col-12', 'col-md-6', 'col-lg-4', 'mb-4');
-        mascotaDiv.classList.add('mascota');
-        mascotaDiv.id = `mascota-${mascota.id}`; // Asignar un id único a cada mascota
-
-        mascotaDiv.innerHTML = `
+        card.innerHTML = `
           <div class="card">
             <div class="card-body">
               <h5 class="card-title">${mascota.nombreApodo}</h5>
-              <p class="card-text"><strong>Especie:</strong> ${mascota.especie}</p>
-              <p class="card-text"><strong>Raza:</strong> ${mascota.raza}</p>
-              <p class="card-text"><strong>Color:</strong> ${mascota.color}</p>
-              <p class="card-text"><strong>Año de Nacimiento:</strong> ${mascota.anioNacimiento}</p>
-              <p class="card-text"><strong>Centro:</strong> ${mascota.centro || 'No especificado'}</p>
-              <p class="card-text"><strong>ID:</strong> ${mascota.id}</p>
+              <p class="card-text">
+                <strong>ID:</strong> ${mascota.id} <br>
+                <strong>Especie:</strong> ${mascota.especie} <br>
+                <strong>Raza:</strong> ${mascota.raza} <br>
+                <strong>Color:</strong> ${mascota.color} <br>
+                <strong>Año de Nacimiento:</strong> ${mascota.anioNacimiento}
+              </p>
             </div>
           </div>
         `;
 
-        mascotasList.appendChild(mascotaDiv);
+        // Agregar la tarjeta al contenedor de la lista de mascotas
+        mascotasList.appendChild(card);
       });
     } else {
-      mascotasList.innerHTML = '<p>No se encontraron mascotas.</p>';
+      mascotasList.innerHTML = `<p>No se encontraron mascotas registradas.</p>`;
     }
   } catch (error) {
-    console.error('Error al cargar las mascotas:', error);
-    mascotasList.innerHTML = '<p>Hubo un problema al cargar las mascotas. Inténtelooo de nuevo más tarde.</p>';
+    console.error('Error al obtener las mascotas:', error);
+    mascotasList.innerHTML = `<p>Hubo un problema al cargar la lista de mascotas.</p>`;
   }
 });
+
 
   

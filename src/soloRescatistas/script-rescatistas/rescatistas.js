@@ -1,6 +1,6 @@
 const token = document.cookie; 
 
-const app = "http://localhost:3000";
+const app = "https://riab-api.vercel.app";
 
 function verificar(){
     if (!token) {

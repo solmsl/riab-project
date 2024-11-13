@@ -10,7 +10,7 @@ document.addEventListener('DOMContentLoaded', function() {
     const raza = document.getElementById('raza').value;
     const color = document.getElementById('color').value;
     const anioNacimiento = document.getElementById('anio_nacimiento').value;
-    const centro = document.getElementById('centro').value;
+    const centro = document.getElementById('centro').value; // Obtener el valor del centro
 
     // Validar los campos del formulario
     if (!nombreApodo || !especie || !raza || !color || !anioNacimiento || !centro) {
@@ -18,18 +18,17 @@ document.addEventListener('DOMContentLoaded', function() {
       return;
     }
 
-    // Crear un objeto con los datos de la mascota
+    // Crear un objeto con los datos de la mascota SIN el campo centro
     const nuevaMascota = {
       nombreApodo,
       especie,
       raza,
       color,
-      anioNacimiento,
-      centro
+      anioNacimiento
     };
 
     try {
-      // Enviar los datos a la API
+      // Enviar los datos a la API sin el campo centro
       const response = await fetch('https://riab-api.vercel.app/mascotas/registro', {
         method: 'POST',
         headers: {
@@ -41,10 +40,16 @@ document.addEventListener('DOMContentLoaded', function() {
       const data = await response.json();
 
       if (data.success) {
-        // Si la API responde exitosamente, guardar los datos en el localStorage
+        // Si la API responde exitosamente, guardar los datos en localStorage (sin el campo centro)
         let mascotas = JSON.parse(localStorage.getItem('mascotas')) || [];
-        mascotas.push(data.data);  // Guardar la mascota registrada desde la API
+        // Guardar la mascota registrada desde la API, sin incluir el centro
+        mascotas.push(data.data);
+
+        // Guardar las mascotas en localStorage
         localStorage.setItem('mascotas', JSON.stringify(mascotas));
+
+        // Guardar el valor de centro en localStorage solo para mostrarlo en mascotas.html
+        localStorage.setItem('centro', centro);
 
         alert('¡Mascota registrada correctamente!');
         

@@ -47,10 +47,9 @@ document.addEventListener('DOMContentLoaded', function () {
     const raza = document.getElementById('raza').value;
     const color = document.getElementById('color').value;
     const anioNacimiento = document.getElementById('anio_nacimiento').value;
-    const centro = document.getElementById('centro').value; // Campo centro agregado en el formulario
 
     // Validar los campos del formulario
-    if (!nombreApodo || !especie || !raza || !color || !anioNacimiento || !centro) {
+    if (!nombreApodo || !especie || !raza || !color || !anioNacimiento ) {
       alert('Por favor, complete todos los campos.');
       return;
     }
@@ -61,7 +60,6 @@ document.addEventListener('DOMContentLoaded', function () {
       raza,
       color,
       anioNacimiento,
-      centro
     };
 
     try {

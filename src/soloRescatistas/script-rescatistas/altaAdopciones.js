@@ -1,7 +1,8 @@
 document.addEventListener('DOMContentLoaded', function () {
-    const form = document.querySelector('.adopcionForm')
-  
-    form.addEventListener('submit', async function (event) {
+    // const form = document.querySelector('.adopcionForm')
+    const btnEnviar = document.querySelector('#btnBuscar');
+
+    btnEnviar.addEventListener('click', async function (event) {
       event.preventDefault();
       const dni = document.getElementById('dni').value;
       const nombre = document.getElementById('nombre').value;

@@ -1,14 +1,14 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>RIAB</title>
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+  <title>Mascotas</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
   <link rel="stylesheet" href="./styles/main.css">
   <link rel="shortcut icon" href="./src/img/icon.png">
 </head>
-<body> 
+<body>
   <header> 
 
     <nav class="navbar navbar-expand-lg fixed-top">
@@ -46,147 +46,14 @@
     </nav>
 
   </header>
-
-  <section>
-
-    <article class="container">
-        <div class="wrapper1">
-          <div class="card_area">
-            <div class="card">
-              <img src="./img/animals/patito.jpg">
-              <div class="overlay">
-                <h3>Leo</h3>
-                <p>
-                  Encontrado en el Rio Hudson de Berazategui siendo un bebé. 
-                  Aproximadamente se calcula que nació en 2021. Su estado de Salud es bueno. 
-                  Es de tamaño medio.
-                </p>
-              </div>
-            </div>
-            <div class="card">
-              <img src="./img/animals/gatito-bebe.jpg">
-              <div class="overlay">
-                <h3>Katy</h3>
-                <p>
-                  La encontramos afuera de un supermercado 
-                  Hoy en día Katy se encuentra con estado de salud excelente. Se estima que nació en 2024.
-                  Aun es gatito mediano.
-                </p>
-              </div>
-            </div>
-            <div class="card">
-              <img src="./img/animals/perrito.jpg">
-              <div class="overlay">
-                <h3>Locky</h3>
-                <p>
-                  Es uno de los cachorros nacidos en el refugio. Encontramos a su madre en la calle. 
-                  Nació en 2024 y su estado de salud es estable. 
-                </p>
-              </div>
-            </div>
-            <div class="card">
-              <img src="./img/animals/gatito-blanco.jpg">
-              <div class="overlay">
-                <h3>Copito</h3>
-                <p>
-                  Encontrado en una plaza en buen estado de salud. 
-                  Su fecha de nacimiento en el 2022. Es un gatito mediano.
-                </p>
-              </div>
-            </div>
-            <div class="card">
-              <img src="./img/animals/loro_amazonas.jpg">
-              <div class="overlay">
-                <h3>Pipo</h3>
-                <p>
-                  Su estado de salud es bueno. Aproximadamente su fecha de nacimiento es en los 2000. 
-                  De tamaño mediano y le gustan las pipas.
-                </p>
-              </div>
-            </div>
-            <div class="card">
-              <img src="./img/animals/Tortuga.jpg">
-              <div class="overlay">
-                <h3>Wilson</h3>
-                <p>
-                  Tortuga de tierra que se adapta a cualquier lugar.
-                  Se estima que tiene unos 10 años de nacimiento. Cuenta con estado de salud bueno.
-                  Es de tamaño mediano.
-                </p>
-              </div>
-            </div>
-            <div class="card">
-              <img src="./img/animals/perro_chiquito.jpg">
-              <div class="overlay">
-                <h3>Oreo</h3>
-                <p>
-                  Es uno de los perritos más dulces del lugar. 
-                  Nació en 2024 y es un cachorro. 
-                  Es de tamaño mediano aún.
-                </p>
-              </div>
-            </div>
-            <div class="card">
-              <img src="./img/animals/loro.jpg">
-              <div class="overlay">
-                <h3>Louis</h3>
-                <p>
-                  Uno de los loros mas amigables del lugar. 
-                  Su gran compañia es sorprendente.
-                  Se estima que nació en 2019.
-                  Es de tamaño chiquito.
-                </p>
-              </div>
-            </div>
-            <div class="card">
-              <img src="./img/animals/rabbit.jpg">
-              <div class="overlay">
-                <h3>Violeta</h3>
-                <p>
-                  Fue uno de los primeros conejos que encontramos, su situación no fue fácil.
-                  Nació en 2023.
-                  Es de un tamaño chiquito
-                </p>
-              </div>
-            </div>
-            <div class="card">
-              <img src="./img/animals/gatitos.jpg">
-              <div class="overlay">
-                <h3>Maddy, Cleo y Luna</h3>
-                <p>
-                  Estas gatitas fueron encontradas en una caja. Las 3 juntas son muy imperactivas.
-                  Tienen 1 año de nacidad. Tamaño pequeño aun.
-                </p>
-              </div>
-            </div>
-            <div class="card">
-              <img src="./img/animals/gatito_rosa.jpg">
-              <div class="overlay">
-                <h3>Ariana</h3>
-                <p>
-                  Una de las gatitas más coquetas del lugar. Nació en 2022 y 
-                </p>
-              </div>
-            </div>
-            <div class="card">
-              <img src="./img/animals/perrito_feliz.jpg">
-              <div class="overlay">
-                <h3>Sasha</h3>
-                <p>
-                  Esta perrita es una de las más alegres del lugar. 
-                  Nació en 2020 y recibe cada uno de los animales con su sonrisa.
-                </p>
-              </div>
-            </div>
-        </div>
-    </article>
-
-  </section>
-
-  <hr class="linea-divisor">
+  <br><br><br>
+  <main class="container mt-5">
+    <div id="mascotas-list" class="row m-2">
+      <!-- Aquí se insertarán dinámicamente las tarjetas de las mascotas -->
+    </div>
+  </main>
 
   <footer>
-
     <div class="paginas_footer">
       <a href="/index.html">Inicio</a> &nbsp; &nbsp; 
       <a href="mascotas.html">Mascotas</a> &nbsp;  &nbsp; 
@@ -194,11 +61,11 @@
       <a href="centros.html">Centros</a> &nbsp;  &nbsp; 
       <a href="adoptar.html">¿Cómo Adoptar?</a> 
     </div> <br>
-
       2024 &nbsp; &nbsp; | &nbsp; &nbsp; Todos los derechos reservados
-
   </footer>
 
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+  <!-- Script de mascotas.js para cargar las tarjetas -->
+  <script src="/src/soloRescatistas/script-rescatistas/mascotas.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 </html>

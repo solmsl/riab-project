@@ -11,46 +11,46 @@
 <body> 
   <header>
     <nav class="navbar navbar-expand-lg fixed-top" data-bs-theme="dark">
-        <div class="container-fluid"> 
-          <a class="navbar-brand">RIAB</a>
-          <button class="navbar-toggler custom-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasNavbar" aria-controls="offcanvasNavbar" aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
-          </button>
-          <div class="offcanvas offcanvas-half" tabindex="-1" id="offcanvasNavbar" aria-labelledby="offcanvasNavbarLabel">
-            <div class="offcanvas-header">
-              <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
-            </div>
-            <div class="offcanvas-body text-center">
-              <ul class="navbar-nav justify-content-center flex-grow-1 pe-3">
-                <li class="nav-item">
-                  <a class="nav-link mx-lg-2" aria-current="page" href="inicio-res.html">Inicio</a>
-                </li>
-                <li class="nav-item">
-                  <a class="nav-link mx-lg-2" href="mascotas.html">Mascotas</a>
-                </li>
-                <li class="nav-item">
-                  <a class="nav-link mx-lg-2" href="adopcion.html">Crear Adopción</a>
-                </li>
-                <li class="nav-item">
-                  <a class="nav-link mx-lg-2" href="añadirMascotas.html">Añadir Mascotas</a>
-                </li>
-                <li class="nav-item">
-                  <a class="nav-link mx-lg-2" href="./script-rescatistas/rutas-mascotas/actualizarMascotas.html">Actualizar Mascota</a>
-                </li>
-                <li class="nav-item">
-                  <a class="nav-link mx-lg-2" href="./script-rescatistas/rutas-mascotas/eliminarMascota.html">Eliminar Mascota</a>
-                </li>
-                <li class="nav-item">
-                  <a class="nav-link mx-lg-2" href="./script-rescatistas/rutas-mascotas/buscarMascotas.html">Buscar Mascota</a>
-                </li>
-                <li class="nav-item">
-                  <a class="nav-link mx-lg-2" href="cerrarsesion.html">Cerrar Sesión</a>
-                </li>
-              </ul>
-            </div>
+      <div class="container-fluid"> 
+        <a class="navbar-brand">RIAB</a>
+        <button class="navbar-toggler custom-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasNavbar" aria-controls="offcanvasNavbar" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="offcanvas offcanvas-half" tabindex="-1" id="offcanvasNavbar" aria-labelledby="offcanvasNavbarLabel">
+          <div class="offcanvas-header">
+            <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+          </div>
+          <div class="offcanvas-body text-center">
+            <ul class="navbar-nav justify-content-center flex-grow-1 pe-3">
+              <li class="nav-item">
+                <a class="nav-link mx-lg-2" aria-current="page" href="inicio-res.html">Inicio</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link mx-lg-2" href="mascotas.html">Mascotas</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link mx-lg-2" href="adopcion.html">Crear Adopción</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link mx-lg-2" href="añadirMascotas.html">Añadir Mascotas</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link mx-lg-2" href="./script-rescatistas/rutas-mascotas/actualizarMascotas.html">Actualizar Mascota</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link mx-lg-2" href="./script-rescatistas/rutas-mascotas/eliminarMascota.html">Eliminar Mascota</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link mx-lg-2" href="./script-rescatistas/rutas-mascotas/buscarMascotas.html">Buscar Mascota</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link mx-lg-2" href="cerrarsesion.html">Cerrar Sesión</a>
+              </li>
+            </ul>
           </div>
         </div>
-      </nav>
+      </div>
+    </nav>
   </header>
 
   <section class="formulario">
@@ -111,24 +111,26 @@
 
         <div class="input-box">
           <select id="centro" name="centro" required>
-            <option value="" selected>Seleccione un centro</option>
-            <option value="Guarderia Canina Berazategui Pajaro Azul">Guarderia Canina Berazategui Pajaro Azul</option>
-            <option value="Hogar de Proteccion Lourdes">Hogar de Proteccion Lourdes</option>
-            <option value="Ayudacan">Ayudacan</option>
-            <option value="El campito refugio">El campito refugio</option>
-            <option value="Adopciones Quilmes">Adopciones Quilmes</option>
-            <option value="El hogar de claudia">El hogar de claudia</option>
-            <option value="Ser animal">Ser animal</option>
-            <option value="Fundacion viva la vida por el Bienestar Animal">Fundacion viva la vida por el Bienestar Animal</option>
+            <option value="">Seleccione un centro</option>
+            <option value="Guarderia Canina">Guarderia Canina</option>
+            <option value="Hogar de Proteccion">Hogar de Proteccion</option>
+            <option value="Refugio de Animales San Francisco">Refugio de Animales San Francisco</option>
+            <option value="Centro de Adopción Animal Feliz">Centro de Adopción Animal Feliz</option>
+            <option value="Refugio Santa Clara">Refugio Santa Clara</option>
+            <option value="Albergue San Bernardo">Albergue San Bernardo</option>
+            <option value="Casa de Rescate La Paz">Casa de Rescate La Paz</option>
+            <option value="Fundación Amiga Animal">Fundación Amiga Animal</option>
+            <option value="Refugio Corazón Animal">Refugio Corazón Animal</option>
+            <option value="Adopta Conmigo">Adopta Conmigo</option>
           </select>
           <span id="error_centro"></span>
         </div>        
-  
+        
         <button type="submit" class="btn-confirmar">Registrar Mascota</button> <br><br>
       </form>
     </div>
   </section> <br><br> 
-  
+
   <hr class="linea-divisor">
 
   <footer>

@@ -1,60 +1,99 @@
-form.addEventListener('submit', async function (event) {
-  event.preventDefault();
-  const nombreApodo = document.getElementById('nombreApodo').value;
-  const especie = document.getElementById('especie').value;
-  const raza = document.getElementById('raza').value;
-  const color = document.getElementById('color').value;
-  const anioNacimiento = document.getElementById('anio_nacimiento').value;
-  const centro = document.getElementById('centro').value; // Obtienes el centro seleccionado
+document.addEventListener('DOMContentLoaded', function() {
+  const form = document.getElementById('form-login');
   
-  // Verificar que todos los campos estén completos
-  if (!nombreApodo || !especie || !raza || !color || !anioNacimiento || !centro) {
-    alert('Por favor, complete todos los campos del formulario.');
-    return;
-  }
+  form.addEventListener('submit', async function(event) {
+    event.preventDefault();
 
-  // Creamos el objeto para enviar a la API sin el campo centro
-  const mascotaData = {
-    nombreApodo,
-    especie,
-    raza,
-    color,
-    anioNacimiento
-  };
+    // Obtener los valores de los campos del formulario
+    const nombreApodo = document.getElementById('nombreApodo').value;
+    const especie = document.getElementById('especie').value;
+    const raza = document.getElementById('raza').value;
+    const color = document.getElementById('color').value;
+    const anioNacimiento = document.getElementById('anio_nacimiento').value;
+    const centro = document.getElementById('centro').value;
 
-  try {
-    // Enviamos los datos a la API sin el campo centro
-    const response = await fetch('https://riab-api.vercel.app/mascotas/registro', {
-      method: 'POST',
-      headers: {
-        'Content-Type': 'application/json'
-      },
-      body: JSON.stringify(mascotaData)
-    });
+    // Validar los campos del formulario
+    if (!nombreApodo || !especie || !raza || !color || !anioNacimiento || !centro) {
+      alert('Por favor, complete todos los campos.');
+      return;
+    }
 
-    const data = await response.json();
+    // Crear un objeto con los datos de la mascota
+    const nuevaMascota = {
+      nombreApodo,
+      especie,
+      raza,
+      color,
+      anioNacimiento,
+      centro
+    };
 
-    if (data.success) {
-      const mascota = data.data;
-
-      // Guardamos los datos de la mascota en el localStorage, incluyendo el campo centro
-      const mascotasGuardadas = JSON.parse(localStorage.getItem('mascotas')) || [];
-      mascotasGuardadas.push({
-        ...mascota,
-        id: mascota.id.toString(),
-        centro // Guardamos el campo centro solo en localStorage
+    try {
+      // Enviar los datos a la API
+      const response = await fetch('https://riab-api.vercel.app/mascotas/registro', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(nuevaMascota),
       });
 
-      // Guardamos los datos actualizados en el localStorage
-      localStorage.setItem('mascotas', JSON.stringify(mascotasGuardadas));
+      const data = await response.json();
 
-      alert('Mascota registrada exitosamente');
-      form.reset();
-    } else {
-      alert('Error al registrar la mascota');
+      if (data.success) {
+        // Si la API responde exitosamente, guardar los datos en el localStorage
+        let mascotas = JSON.parse(localStorage.getItem('mascotas')) || [];
+        mascotas.push(data.data);  // Guardar la mascota registrada desde la API
+        localStorage.setItem('mascotas', JSON.stringify(mascotas));
+
+        alert('¡Mascota registrada correctamente!');
+        
+        // Limpiar el formulario después de enviar los datos
+        form.reset();
+      } else {
+        alert('Hubo un error al registrar la mascota. Intenta de nuevo.');
+      }
+
+    } catch (error) {
+      console.error('Error al registrar la mascota:', error);
+      alert('Hubo un problema al registrar la mascota. Intenta de nuevo.');
     }
-  } catch (error) {
-    console.error('Error al enviar los datos:', error);
-    alert('Hubo un problema al registrar la mascota.');
-  }
+  });
+
+  // Llenar las razas según la especie seleccionada
+  const especieSelect = document.getElementById('especie');
+  const razaSelect = document.getElementById('raza');
+
+  especieSelect.addEventListener('change', function() {
+    const especieSeleccionada = especieSelect.value;
+
+    // Limpiar el campo de raza antes de agregar nuevas opciones
+    razaSelect.innerHTML = '<option value="">Seleccione una raza</option>';
+
+    let razas = [];
+
+    if (especieSeleccionada === 'perro') {
+      razas = ['Labrador', 'Bulldog', 'Pastor Alemán', 'Beagle', 'Poodle'];
+    } else if (especieSeleccionada === 'gato') {
+      razas = ['Persa', 'Siamés', 'Bengalí', 'Ragdoll', 'Maine Coon'];
+    } else if (especieSeleccionada === 'loro') {
+      razas = ['Amazona', 'Cacatúa', 'Guacamayo', 'Perico'];
+    } else if (especieSeleccionada === 'tortuga') {
+      razas = ['Tortuga Marina', 'Tortuga de Tierra', 'Tortuga Leopardo'];
+    } else if (especieSeleccionada === 'conejo') {
+      razas = ['Mini Rex', 'Holland Lop', 'Angora', 'Chinchilla'];
+    } else if (especieSeleccionada === 'pato') {
+      razas = ['Pato Pekín', 'Pato Rouen', 'Pato Mandarín'];
+    } else if (especieSeleccionada === 'otro') {
+      razas = ['Otra'];
+    }
+
+    // Agregar las nuevas opciones al campo de raza
+    razas.forEach(function(raza) {
+      const option = document.createElement('option');
+      option.value = raza;
+      option.textContent = raza;
+      razaSelect.appendChild(option);
+    });
+  });
 });

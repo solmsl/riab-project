@@ -1,5 +1,5 @@
 document.addEventListener('DOMContentLoaded', function() {
-  const form = document.getElementById('form-login');
+  const form = document.getElementById('formulario');
   
   // Verificar si el formulario existe
   if (!form) {

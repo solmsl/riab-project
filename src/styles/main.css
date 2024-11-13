@@ -741,6 +741,13 @@ article {
 }
 
 /*PAGES - ADMINS*/
+@font-face {
+  font-family: "letras-grandes";
+  src: url("/src/fonts/Arima/Arima-VariableFont_wght.ttf");
+}
+.links h3 {
+  font-family: "letras-grandes";
+}
 .links a {
   color: white;
   text-decoration: none;

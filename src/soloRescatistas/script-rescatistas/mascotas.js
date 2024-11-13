@@ -1,17 +1,27 @@
 document.addEventListener('DOMContentLoaded', async () => {
+  console.log("Intentando cargar la lista de mascotas...");
   const mascotasList = document.getElementById('mascotas-list');
+  if (!mascotasList) {
+    console.error("Error: Contenedor de lista de mascotas no encontrado.");
+    return;
+  }
 
   try {
-    // Solicitar los datos de la API
     const response = await fetch('https://riab-api.vercel.app/mascotas');
-    const data = await response.json();
+    
+    // Validar la respuesta de la API
+    if (!response.ok) {
+      throw new Error(`Error en la respuesta de la API: ${response.status} ${response.statusText}`);
+    }
 
-    if (data.success && Array.isArray(data.mascotas)) {
+    const data = await response.json();
+    console.log("Datos recibidos de la API:", data);
+
+    if (data.success && Array.isArray(data.mascotas) && data.mascotas.length > 0) {
       data.mascotas.forEach(mascota => {
-        // Crear una tarjeta para cada mascota
         const card = document.createElement('div');
         card.classList.add('col-md-4', 'mb-4');
-
+        
         card.innerHTML = `
           <div class="card">
             <div class="card-body">
@@ -26,15 +36,15 @@ document.addEventListener('DOMContentLoaded', async () => {
             </div>
           </div>
         `;
-
-        // Agregar la tarjeta al contenedor de la lista de mascotas
+        
         mascotasList.appendChild(card);
       });
     } else {
+      console.warn("No se encontraron mascotas registradas o el formato de los datos es incorrecto.");
       mascotasList.innerHTML = `<p>No se encontraron mascotas registradas.</p>`;
     }
   } catch (error) {
-    console.error('Error al obtener las mascotas:', error);
+    console.error("Error al obtener las mascotas:", error);
     mascotasList.innerHTML = `<p>Hubo un problema al cargar la lista de mascotas.</p>`;
   }
 });

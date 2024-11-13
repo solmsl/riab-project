@@ -55,30 +55,40 @@
 
     <section class="formularioEliminar">
         <div class="wrapper">
-          <form id="form-eliminar">
-            <h1>Eliminar Mascota, <b>se debe llenar el campo ID</b></h1>
+            <form id="form-eliminar">
+                <h1>Eliminar Mascota, <b>se debe llenar el campo ID</b></h1>
     
-            <div class="input-box">
-                <input id="id-input" type="text" placeholder="Ingrese el ID de la mascota (solo números)" pattern="\d+" required><br>
-            </div>
+                <div class="input-box">
+                    <input id="id-input" type="text" placeholder="Ingrese el ID de la mascota (solo números)" pattern="\d+" required><br>
+                </div>
+
+                <div id="mensajeDetalles" style="display:none;">
+                    <h4>Detalles de la Mascota:</h4>
+                    <p><strong>Nombre o Apodo:</strong> <span id="nombreApodo"></span></p>
+                    <p><strong>Especie:</strong> <span id="especie"></span></p>
+                    <p><strong>Raza:</strong> <span id="raza"></span></p>
+                    <p><strong>Color:</strong> <span id="color"></span></p>
+                    <p><strong>Año de Nacimiento:</strong> <span id="anio_nacimiento"></span></p>
+                </div>
     
-            <button id="btnEliminar" type="button">Eliminar Mascota</button>
-            <div id="mensajeEliminar"></div>
+                <button id="btnEliminar" type="button">Eliminar Mascota</button>
+                <div id="mensajeEliminar"></div>
+            </form>
         </div>
     </section>
     
 
     <footer>
-      <div class="paginas_footer">
-        <a href="/src/soloRescatistas/inicio-res.html">Inicio</a> &nbsp; &nbsp; 
-        <a href="/src/soloRescatistas/mascotas.html">Mascotas</a> &nbsp;  &nbsp; 
-        <a href="/src/soloRescatistas/adopcion.html">Crear Adopción</a> &nbsp;  &nbsp; 
-        <a href="/src/soloRescatistas/añadirMascotas.html">Añadir Mascotas</a> &nbsp;  &nbsp; 
-        <a href="actualizarMascotas.html">Actualizar Mascotas</a> &nbsp;  &nbsp; 
-        <a href="eliminarMascota.html">Eliminar Mascotas</a> &nbsp;  &nbsp;
-        <a href="buscarMascotas.html">Buscar Mascotas</a> &nbsp;  &nbsp;
-        <a href="/src/soloRescatistas/cerrarsesion.html">Cerrar Sesión</a> 
-      </div> <br>
+        <div class="paginas_footer">
+            <a href="/src/soloRescatistas/inicio-res.html">Inicio</a> &nbsp; &nbsp; 
+            <a href="/src/soloRescatistas/mascotas.html">Mascotas</a> &nbsp;  &nbsp; 
+            <a href="/src/soloRescatistas/adopcion.html">Crear Adopción</a> &nbsp;  &nbsp; 
+            <a href="/src/soloRescatistas/añadirMascotas.html">Añadir Mascotas</a> &nbsp;  &nbsp; 
+            <a href="actualizarMascotas.html">Actualizar Mascotas</a> &nbsp;  &nbsp; 
+            <a href="eliminarMascota.html">Eliminar Mascotas</a> &nbsp;  &nbsp;
+            <a href="buscarMascotas.html">Buscar Mascotas</a> &nbsp;  &nbsp;
+            <a href="/src/soloRescatistas/cerrarsesion.html">Cerrar Sesión</a> 
+        </div> <br>
         2024 &nbsp; &nbsp; | &nbsp; &nbsp; Todos los derechos reservados
     </footer>
 

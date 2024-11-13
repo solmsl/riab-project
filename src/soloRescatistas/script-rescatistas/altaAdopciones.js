@@ -1,21 +1,8 @@
 document.addEventListener('DOMContentLoaded', function () {
-    const form = document.getElementById('form-adopciones');
-    // const especieSelect = document.getElementById("especie");
-    // const razaSelect = document.getElementById("raza");
-  
-    // especieSelect.addEventListener("change", function () {
-    //   const especieSeleccionada = especieSelect.value;
-    //   const razas = razasPorEspecie[especieSeleccionada] || ["Otro"];
-    //   razaSelect.innerHTML = '<option value="">Seleccione una raza</option>';
-    //   razas.forEach((raza) => {
-    //     const option = document.createElement("option");
-    //     option.value = raza.toLowerCase();
-    //     option.textContent = raza;
-    //     razaSelect.appendChild(option);
-    //   });
-    // });
-  
-    form.addEventListener('submit', async function (event) {
+    // const form = document.querySelector('.adopcionForm')
+    const btnEnviar = document.querySelector('#btnBuscar');
+
+    btnEnviar.addEventListener('click', async function (event) {
       event.preventDefault();
       const dni = document.getElementById('dni').value;
       const nombre = document.getElementById('nombre').value;
@@ -25,14 +12,14 @@ document.addEventListener('DOMContentLoaded', function () {
       const genero = document.getElementById('genero').value;
       const email = document.getElementById('email').value;
       const id_mascota = document.getElementById('id_mascota').value;
-      const dni_rescatistas = document.getElementById('dni_rescatistas').value;
+      const dni_rescatista = document.getElementById('dni_rescatista').value;
   
-      if (!dni || !nombre || !apellido || !telefono|| !direccion || !genero || !email || !id_mascota || !dni_rescatistas ) {
+      if (!dni || !nombre || !apellido || !telefono|| !direccion || !genero || !email || !id_mascota || !dni_rescatista ) {
         alert('Por favor, complete todos los campos del formulario.');
         return;
       }
   
-      const mascotaData = {
+      const adopData = {
         dni,
         nombre,
         apellido,
@@ -41,7 +28,7 @@ document.addEventListener('DOMContentLoaded', function () {
         genero,
         email,
         id_mascota,
-        dni_rescatistas
+        dni_rescatista
       };
   
       try {
@@ -50,13 +37,13 @@ document.addEventListener('DOMContentLoaded', function () {
           headers: {
             'Content-Type': 'application/json'
           },
-          body: JSON.stringify(mascotaData)
+          body: JSON.stringify(adopData)
         });
   
         if (response.ok) {
-          const result = await response.json();
+          // const result = await response.json();
           alert('Adopcion registrada exitosamente');
-          form.reset();
+          // form.reset();
         } else {
           const error = await response.json();
           alert(`Error: ${error.message}`);

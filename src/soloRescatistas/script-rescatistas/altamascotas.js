@@ -47,7 +47,7 @@ document.addEventListener('DOMContentLoaded', function () {
     const raza = document.getElementById('raza').value;
     const color = document.getElementById('color').value;
     const anioNacimiento = document.getElementById('anio_nacimiento').value;
-    const centro = document.getElementById('centro').value; // Obtener el valor del centro
+    const centro = localStorage.getItem('centro');  // Obtener el valor del centro desde localStorage
 
     // Validar los campos del formulario
     if (!nombreApodo || !especie || !raza || !color || !anioNacimiento || !centro) {
@@ -55,7 +55,7 @@ document.addEventListener('DOMContentLoaded', function () {
       return;
     }
 
-    // Crear un objeto con los datos de la mascota, EXCLUYENDO el centro
+    // Crear un objeto con los datos de la mascota, EXCLUYENDO el centro (porque ya lo agregamos desde localStorage)
     const nuevaMascota = {
       nombreApodo,
       especie,
@@ -77,12 +77,19 @@ document.addEventListener('DOMContentLoaded', function () {
       const data = await response.json();
 
       if (data.success) {
-        // Si la API responde exitosamente, guardar los datos en localStorage
-        let mascotas = JSON.parse(localStorage.getItem('mascotas')) || [];
-        const nuevaMascotaConCentro = { ...data.data, centro }; // Incluir el centro solo en localStorage
-        mascotas.push(nuevaMascotaConCentro);
+        // Si la API responde exitosamente, obtener el id de la nueva mascota
+        const idMascota = data.data.id;
 
-        // Guardar las mascotas en localStorage (incluyendo el centro)
+        // Crear un objeto de la nueva mascota con el id y el centro
+        const nuevaMascotaConCentro = { 
+          ...data.data, 
+          centro, 
+          id: idMascota // Agregar el id aquí
+        };
+
+        // Guardar la nueva mascota en localStorage (con el id y el centro)
+        let mascotas = JSON.parse(localStorage.getItem('mascotas')) || [];
+        mascotas.push(nuevaMascotaConCentro);
         localStorage.setItem('mascotas', JSON.stringify(mascotas));
 
         alert('¡Mascota registrada correctamente!');

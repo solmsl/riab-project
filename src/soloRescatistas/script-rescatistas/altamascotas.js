@@ -55,18 +55,17 @@ document.addEventListener('DOMContentLoaded', function () {
       return;
     }
 
-    // Crear un objeto con los datos de la mascota, incluyendo el centro
+    // Crear un objeto con los datos de la mascota, EXCLUYENDO el centro
     const nuevaMascota = {
       nombreApodo,
       especie,
       raza,
       color,
-      anioNacimiento,
-      centro  // Añadir el centro aquí
+      anioNacimiento
     };
 
     try {
-      // Enviar los datos a la API
+      // Enviar los datos a la API SIN el campo centro
       const response = await fetch('https://riab-api.vercel.app/mascotas/registro', {
         method: 'POST',
         headers: {
@@ -80,13 +79,11 @@ document.addEventListener('DOMContentLoaded', function () {
       if (data.success) {
         // Si la API responde exitosamente, guardar los datos en localStorage
         let mascotas = JSON.parse(localStorage.getItem('mascotas')) || [];
-        mascotas.push(data.data);
+        const nuevaMascotaConCentro = { ...data.data, centro }; // Incluir el centro solo en localStorage
+        mascotas.push(nuevaMascotaConCentro);
 
-        // Guardar las mascotas en localStorage
+        // Guardar las mascotas en localStorage (incluyendo el centro)
         localStorage.setItem('mascotas', JSON.stringify(mascotas));
-
-        // Guardar el valor de centro en localStorage solo para mostrarlo en mascotas.html
-        localStorage.setItem('centro', centro);
 
         alert('¡Mascota registrada correctamente!');
 

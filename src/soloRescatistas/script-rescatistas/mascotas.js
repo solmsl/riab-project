@@ -1,4 +1,4 @@
-document.addEventListener('DOMContentLoaded', function() {
+document.addEventListener('DOMContentLoaded', function () {
     // Obtener las mascotas almacenadas en localStorage
     const mascotasGuardadas = JSON.parse(localStorage.getItem('mascotas')) || [];
   
@@ -17,8 +17,7 @@ document.addEventListener('DOMContentLoaded', function() {
             <p class="card-text">Raza: ${mascota.raza}</p>
             <p class="card-text">Color: ${mascota.color}</p>
             <p class="card-text">Año de Nacimiento: ${mascota.anioNacimiento}</p>
-            <!-- Mostrar el centro de la mascota dentro de su tarjeta -->
-            <p class="card-text">Centro: ${mascota.centro}</p>
+            <p class="card-text">Centro: ${mascota.centro}</p> <!-- Aquí se muestra el centro específico de la mascota -->
           </div>
         </div>
       `;
@@ -26,4 +25,5 @@ document.addEventListener('DOMContentLoaded', function() {
       // Agregar la tarjeta al contenedor
       mascotasContainer.appendChild(mascotaCard);
     });
-});
+  });
+  

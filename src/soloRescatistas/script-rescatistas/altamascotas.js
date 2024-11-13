@@ -1,17 +1,11 @@
-document.addEventListener('DOMContentLoaded', function() {
-  const form = document.getElementById('formulario');
-  
-  // Verificar si el formulario existe
-  if (!form) {
-    console.error('Formulario no encontrado');
-    return; // Detener el script si no se encuentra el formulario
-  }
+document.addEventListener('DOMContentLoaded', function () {
+  const form = document.getElementById('form-login');
 
   // Llenar las razas según la especie seleccionada
   const especieSelect = document.getElementById('especie');
   const razaSelect = document.getElementById('raza');
 
-  especieSelect.addEventListener('change', function() {
+  especieSelect.addEventListener('change', function () {
     const especieSeleccionada = especieSelect.value;
 
     // Limpiar el campo de raza antes de agregar nuevas opciones
@@ -36,7 +30,7 @@ document.addEventListener('DOMContentLoaded', function() {
     }
 
     // Agregar las nuevas opciones al campo de raza
-    razas.forEach(function(raza) {
+    razas.forEach(function (raza) {
       const option = document.createElement('option');
       option.value = raza;
       option.textContent = raza;
@@ -44,8 +38,7 @@ document.addEventListener('DOMContentLoaded', function() {
     });
   });
 
-  // Manejo del submit del formulario
-  form.addEventListener('submit', async function(event) {
+  form.addEventListener('submit', async function (event) {
     event.preventDefault();
 
     // Obtener los valores de los campos del formulario
@@ -95,7 +88,7 @@ document.addEventListener('DOMContentLoaded', function() {
         localStorage.setItem('centro', centro);
 
         alert('¡Mascota registrada correctamente!');
-        
+
         // Limpiar el formulario después de enviar los datos
         form.reset();
       } else {

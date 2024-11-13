@@ -740,4 +740,11 @@ article {
   text-align: center;
 }
 
+/*PAGES - ADMINS*/
+.links a {
+  color: white;
+  text-decoration: none;
+  padding: 60px;
+}
+
 /*# sourceMappingURL=main.css.map */

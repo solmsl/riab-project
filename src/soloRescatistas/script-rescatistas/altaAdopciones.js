@@ -12,9 +12,9 @@ document.addEventListener('DOMContentLoaded', function () {
       const genero = document.getElementById('genero').value;
       const email = document.getElementById('email').value;
       const id_mascota = document.getElementById('id_mascota').value;
-      const dni_rescatistas = document.getElementById('dni_rescatista').value;
+      const dni_rescatista = document.getElementById('dni_rescatista').value;
   
-      if (!dni || !nombre || !apellido || !telefono|| !direccion || !genero || !email || !id_mascota || !dni_rescatistas ) {
+      if (!dni || !nombre || !apellido || !telefono|| !direccion || !genero || !email || !id_mascota || !dni_rescatista ) {
         alert('Por favor, complete todos los campos del formulario.');
         return;
       }
@@ -28,7 +28,7 @@ document.addEventListener('DOMContentLoaded', function () {
         genero,
         email,
         id_mascota,
-        dni_rescatistas
+        dni_rescatista
       };
   
       try {

@@ -5,10 +5,10 @@ document.addEventListener('DOMContentLoaded', async () => {
   if (!mascotasList) {
     console.error("Error: Contenedor de lista de mascotas no encontrado.");
     return;
-  }
+  }v
 
   try {
-    const response = await fetch('https://riab-api.vercel.app/mascotas/registro');
+    const response = await fetch('https://riab-api.vercel.app/mascotas');
     if (!response.ok) throw new Error("Error en la respuesta de la API.");
 
     const data = await response.json();

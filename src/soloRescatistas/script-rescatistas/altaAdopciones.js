@@ -43,7 +43,7 @@ document.addEventListener('DOMContentLoaded', function () {
         if (response.ok) {
           // const result = await response.json();
           alert('Adopcion registrada exitosamente');
-          form.reset();
+          // form.reset();
         } else {
           const error = await response.json();
           alert(`Error: ${error.message}`);

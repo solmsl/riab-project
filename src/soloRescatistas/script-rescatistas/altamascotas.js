@@ -50,10 +50,10 @@ document.addEventListener('DOMContentLoaded', function () {
     const centro = localStorage.getItem('centro');  // Obtener el valor del centro desde localStorage
 
     // Validar los campos del formulario
-    if (!nombreApodo || !especie || !raza || !color || !anioNacimiento || !centro) {
-      alert('Por favor, complete todos los campos.');
-      return;
-    }
+    // if (!nombreApodo || !especie || !raza || !color || !anioNacimiento || !centro) {
+    //   alert('Por favor, complete todos los campos.');
+    //   return;
+    // }
 
     // Crear un objeto con los datos de la mascota, EXCLUYENDO el centro (porque ya lo agregamos desde localStorage)
     const nuevaMascota = {

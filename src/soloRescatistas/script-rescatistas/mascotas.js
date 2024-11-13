@@ -37,7 +37,7 @@ document.addEventListener('DOMContentLoaded', async function () {
     }
   } catch (error) {
     console.error('Error al cargar las mascotas:', error);
-    mascotasList.innerHTML = '<p>Hubo un problema al cargar las mascotas. Inténtelo de nuevo más tarde.</p>';
+    mascotasList.innerHTML = '<p>Hubo un problema al cargar las mascotas. Inténtelooo de nuevo más tarde.</p>';
   }
 });
 

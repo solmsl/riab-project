@@ -1,5 +1,5 @@
 document.addEventListener('DOMContentLoaded', function () {
-  const form = document.getElementById('form-login');
+  const form = document.getElementById('formulario');
 
   // Llenar las razas según la especie seleccionada
   const especieSelect = document.getElementById('especie');

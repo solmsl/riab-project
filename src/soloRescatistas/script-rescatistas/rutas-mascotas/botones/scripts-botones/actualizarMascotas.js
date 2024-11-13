@@ -1,5 +1,4 @@
 document.addEventListener('DOMContentLoaded', () => {
-  // Referencias a los elementos del formulario
   const form = document.getElementById('form-actualizar');
   const idMascota = document.getElementById('idMascota');
   const nombreApodoInput = document.getElementById('nombreApodo');
@@ -8,7 +7,7 @@ document.addEventListener('DOMContentLoaded', () => {
   const colorSelect = document.getElementById('color');
   const anioNacimientoSelect = document.getElementById('anio_nacimiento');
 
-  // Raza por especie
+  // Cargar razas dinámicamente por especie
   const razasPorEspecie = {
     perro: ["Labrador", "Poodle", "Bulldog", "Chihuahua", "Otro"],
     gato: ["Siamés", "Persa", "Maine Coon", "Sphynx", "Otro"],
@@ -19,7 +18,6 @@ document.addEventListener('DOMContentLoaded', () => {
     otro: ["Otro"]
   };
 
-  // Cambiar las razas disponibles según la especie seleccionada
   especieSelect.addEventListener("change", function () {
     const especieSeleccionada = especieSelect.value;
     const razas = razasPorEspecie[especieSeleccionada] || ["Otro"];
@@ -32,20 +30,17 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   });
 
-  // Detecta cuando se cambia el valor en el campo de ID
+  // Buscar mascota por ID y cargar sus datos
   idMascota.addEventListener('input', async () => {
     const id = idMascota.value.trim();
     if (id) {
       try {
-        // Realiza la solicitud para obtener los datos de la mascota
         const response = await fetch(`https://riab-api.vercel.app/mascotas/${id}`);
         const data = await response.json();
-
         if (data) {
-          // Rellena los campos del formulario con los datos de la mascota
           nombreApodoInput.value = data.nombreApodo || '';
           especieSelect.value = data.especie || '';
-          especieSelect.dispatchEvent(new Event("change")); // Para cargar razas dinámicas
+          especieSelect.dispatchEvent(new Event("change"));
           razaSelect.value = data.raza || '';
           colorSelect.value = data.color || '';
           anioNacimientoSelect.value = data.anioNacimiento || '';
@@ -58,19 +53,16 @@ document.addEventListener('DOMContentLoaded', () => {
         alert('Hubo un problema al buscar la mascota. Inténtelo de nuevo más tarde.');
       }
     } else {
-      // Si el campo de ID está vacío, resetea el formulario
       form.reset();
     }
   });
 
-  // Maneja el envío del formulario para actualizar los datos de la mascota
+  // Enviar actualización de mascota y actualizar localStorage
   form.addEventListener('submit', async (event) => {
     event.preventDefault();
     const id = idMascota.value.trim();
-
     if (id) {
       try {
-        // Realiza la solicitud PUT para actualizar los datos de la mascota
         const response = await fetch(`https://riab-api.vercel.app/mascotas/${id}`, {
           method: 'PUT',
           headers: { 'Content-Type': 'application/json' },
@@ -82,11 +74,38 @@ document.addEventListener('DOMContentLoaded', () => {
             anioNacimiento: anioNacimientoSelect.value
           })
         });
-
         const data = await response.json();
-
         if (response.ok) {
           alert(data.message || 'Mascota actualizada con éxito.');
+          
+          // Actualizar localStorage
+          let mascotas = JSON.parse(localStorage.getItem('mascotas')) || [];
+          const index = mascotas.findIndex(m => m.id === id);
+          if (index !== -1) {
+            mascotas[index] = {
+              id,
+              nombreApodo: nombreApodoInput.value,
+              especie: especieSelect.value,
+              raza: razaSelect.value,
+              color: colorSelect.value,
+              anioNacimiento: anioNacimientoSelect.value
+            };
+            localStorage.setItem('mascotas', JSON.stringify(mascotas));
+          }
+
+          // Actualizar la vista en mascotas.html (si está abierto en el navegador)
+          const mascotasHTML = document.querySelector('#mascotas-list');
+          if (mascotasHTML) {
+            const mascotaElement = mascotasHTML.querySelector(`#mascota-${id}`);
+            if (mascotaElement) {
+              mascotaElement.querySelector('.nombre-apodo').textContent = nombreApodoInput.value;
+              mascotaElement.querySelector('.especie').textContent = especieSelect.value;
+              mascotaElement.querySelector('.raza').textContent = razaSelect.value;
+              mascotaElement.querySelector('.color').textContent = colorSelect.value;
+              mascotaElement.querySelector('.anio-nacimiento').textContent = anioNacimientoSelect.value;
+            }
+          }
+
           form.reset();
         } else {
           alert(data.message || 'Error al actualizar la mascota.');
@@ -100,6 +119,3 @@ document.addEventListener('DOMContentLoaded', () => {
     }
   });
 });
-
-
-  

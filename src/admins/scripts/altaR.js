@@ -43,6 +43,7 @@ const form={
     re_passw
 };
 document.getElementById("formulario").addEventListener("submit",(e)=>{
+    e.preventDefault();
     async function crearRescatista() {
         try {
           //luego cambiar el localhost a riab-api.vercel.app, por el momento dejarlo asi

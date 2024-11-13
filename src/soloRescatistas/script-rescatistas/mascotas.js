@@ -9,7 +9,6 @@ document.addEventListener('DOMContentLoaded', async () => {
   try {
     const response = await fetch('https://riab-api.vercel.app/mascotas');
     
-    // Validar la respuesta de la API
     if (!response.ok) {
       throw new Error(`Error en la respuesta de la API: ${response.status} ${response.statusText}`);
     }
@@ -17,8 +16,9 @@ document.addEventListener('DOMContentLoaded', async () => {
     const data = await response.json();
     console.log("Datos recibidos de la API:", data);
 
-    if (data.success && Array.isArray(data.mascotas) && data.mascotas.length > 0) {
-      data.mascotas.forEach(mascota => {
+    // Accede a los datos de las mascotas desde `data.data`
+    if (data.success && Array.isArray(data.data) && data.data.length > 0) {
+      data.data.forEach(mascota => {
         const card = document.createElement('div');
         card.classList.add('col-md-4', 'mb-4');
         

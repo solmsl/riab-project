@@ -1,5 +1,44 @@
 document.addEventListener('DOMContentLoaded', function() {
   const form = document.getElementById('form-login');
+
+  
+  // Llenar las razas según la especie seleccionada
+  const especieSelect = document.getElementById('especie');
+  const razaSelect = document.getElementById('raza');
+
+  especieSelect.addEventListener('change', function() {
+    const especieSeleccionada = especieSelect.value;
+
+    // Limpiar el campo de raza antes de agregar nuevas opciones
+    razaSelect.innerHTML = '<option value="">Seleccione una raza</option>';
+
+    let razas = [];
+
+    if (especieSeleccionada === 'perro') {
+      razas = ['Labrador', 'Bulldog', 'Pastor Alemán', 'Beagle', 'Poodle'];
+    } else if (especieSeleccionada === 'gato') {
+      razas = ['Persa', 'Siamés', 'Bengalí', 'Ragdoll', 'Maine Coon'];
+    } else if (especieSeleccionada === 'loro') {
+      razas = ['Amazona', 'Cacatúa', 'Guacamayo', 'Perico'];
+    } else if (especieSeleccionada === 'tortuga') {
+      razas = ['Tortuga Marina', 'Tortuga de Tierra', 'Tortuga Leopardo'];
+    } else if (especieSeleccionada === 'conejo') {
+      razas = ['Mini Rex', 'Holland Lop', 'Angora', 'Chinchilla'];
+    } else if (especieSeleccionada === 'pato') {
+      razas = ['Pato Pekín', 'Pato Rouen', 'Pato Mandarín'];
+    } else if (especieSeleccionada === 'otro') {
+      razas = ['Otra'];
+    }
+
+    // Agregar las nuevas opciones al campo de raza
+    razas.forEach(function(raza) {
+      const option = document.createElement('option');
+      option.value = raza;
+      option.textContent = raza;
+      razaSelect.appendChild(option);
+    });
+  });
+});
   
   form.addEventListener('submit', async function(event) {
     event.preventDefault();
@@ -64,40 +103,3 @@ document.addEventListener('DOMContentLoaded', function() {
     }
   });
 
-  // Llenar las razas según la especie seleccionada
-  const especieSelect = document.getElementById('especie');
-  const razaSelect = document.getElementById('raza');
-
-  especieSelect.addEventListener('change', function() {
-    const especieSeleccionada = especieSelect.value;
-
-    // Limpiar el campo de raza antes de agregar nuevas opciones
-    razaSelect.innerHTML = '<option value="">Seleccione una raza</option>';
-
-    let razas = [];
-
-    if (especieSeleccionada === 'perro') {
-      razas = ['Labrador', 'Bulldog', 'Pastor Alemán', 'Beagle', 'Poodle'];
-    } else if (especieSeleccionada === 'gato') {
-      razas = ['Persa', 'Siamés', 'Bengalí', 'Ragdoll', 'Maine Coon'];
-    } else if (especieSeleccionada === 'loro') {
-      razas = ['Amazona', 'Cacatúa', 'Guacamayo', 'Perico'];
-    } else if (especieSeleccionada === 'tortuga') {
-      razas = ['Tortuga Marina', 'Tortuga de Tierra', 'Tortuga Leopardo'];
-    } else if (especieSeleccionada === 'conejo') {
-      razas = ['Mini Rex', 'Holland Lop', 'Angora', 'Chinchilla'];
-    } else if (especieSeleccionada === 'pato') {
-      razas = ['Pato Pekín', 'Pato Rouen', 'Pato Mandarín'];
-    } else if (especieSeleccionada === 'otro') {
-      razas = ['Otra'];
-    }
-
-    // Agregar las nuevas opciones al campo de raza
-    razas.forEach(function(raza) {
-      const option = document.createElement('option');
-      option.value = raza;
-      option.textContent = raza;
-      razaSelect.appendChild(option);
-    });
-  });
-});

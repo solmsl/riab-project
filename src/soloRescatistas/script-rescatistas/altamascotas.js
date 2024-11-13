@@ -1,4 +1,5 @@
 form.addEventListener('submit', async function (event) {
+  const form = document.getElementById('formulario');
   event.preventDefault();
   
   // Recoger valores del formulario

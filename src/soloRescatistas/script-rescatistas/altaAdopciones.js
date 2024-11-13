@@ -1,5 +1,5 @@
 document.addEventListener('DOMContentLoaded', function () {
-    const form = document.querySelector('.formularioAdop')
+    const form = document.querySelector('.adopcionForm')
   
     form.addEventListener('submit', async function (event) {
       event.preventDefault();

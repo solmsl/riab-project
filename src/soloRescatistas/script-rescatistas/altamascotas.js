@@ -1,6 +1,5 @@
 document.addEventListener('DOMContentLoaded', function() {
   const form = document.getElementById('form-login');
-
   
   // Llenar las razas según la especie seleccionada
   const especieSelect = document.getElementById('especie');
@@ -38,8 +37,8 @@ document.addEventListener('DOMContentLoaded', function() {
       razaSelect.appendChild(option);
     });
   });
-});
-  
+
+  // Manejo del submit del formulario
   form.addEventListener('submit', async function(event) {
     event.preventDefault();
 
@@ -102,4 +101,6 @@ document.addEventListener('DOMContentLoaded', function() {
       alert('Hubo un problema al registrar la mascota. Intenta de nuevo.');
     }
   });
+});
+
 

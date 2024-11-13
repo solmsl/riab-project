@@ -1,6 +1,12 @@
 document.addEventListener('DOMContentLoaded', function() {
   const form = document.getElementById('form-login');
   
+  // Verificar si el formulario existe
+  if (!form) {
+    console.error('Formulario no encontrado');
+    return; // Detener el script si no se encuentra el formulario
+  }
+
   // Llenar las razas según la especie seleccionada
   const especieSelect = document.getElementById('especie');
   const razaSelect = document.getElementById('raza');
@@ -102,5 +108,3 @@ document.addEventListener('DOMContentLoaded', function() {
     }
   });
 });
-
-

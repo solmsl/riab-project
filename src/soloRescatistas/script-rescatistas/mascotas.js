@@ -18,6 +18,7 @@ document.addEventListener('DOMContentLoaded', async () => {
             <div class="card-body">
               <h5 class="card-title">${mascota.nombreApodo}</h5>
               <p class="card-text">
+                <strong>ID:</strong> ${mascota.id} <br>
                 <strong>Especie:</strong> ${mascota.especie} <br>
                 <strong>Raza:</strong> ${mascota.raza} <br>
                 <strong>Color:</strong> ${mascota.color} <br>
@@ -38,5 +39,6 @@ document.addEventListener('DOMContentLoaded', async () => {
     mascotasList.innerHTML = `<p>Hubo un problema al cargar la lista de mascotas.</p>`;
   }
 });
+
 
   

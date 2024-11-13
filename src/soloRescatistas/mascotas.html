@@ -1,132 +1,75 @@
 <!DOCTYPE html>
 <html lang="es">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Listado de Mascotas</title>
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+  <title>RIAB - Mascotas</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
   <link rel="stylesheet" href="../styles/main.css">
   <link rel="shortcut icon" href="./src/img/icon.png">
 </head>
+
 <body>
+
   <header>
     <nav class="navbar navbar-expand-lg fixed-top" data-bs-theme="dark">
-        <div class="container-fluid"> 
-          <a class="navbar-brand">RIAB</a>
-          <button class="navbar-toggler custom-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasNavbar" aria-controls="offcanvasNavbar" aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
-          </button>
-          <div class="offcanvas offcanvas-half" tabindex="-1" id="offcanvasNavbar" aria-labelledby="offcanvasNavbarLabel">
-            <div class="offcanvas-header">
-              <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
-            </div>
-            <div class="offcanvas-body text-center">
-              <ul class="navbar-nav justify-content-center flex-grow-1 pe-3">
-                <li class="nav-item">
-                  <a class="nav-link mx-lg-2" aria-current="page" href="inicio-res.html">Inicio</a>
-                </li>
-                <li class="nav-item">
-                  <a class="nav-link mx-lg-2" href="mascotas.html">Mascotas</a>
-                </li>
-                <li class="nav-item">
-                  <a class="nav-link mx-lg-2" href="adopcion.html">Crear Adopción</a>
-                </li>
-                <li class="nav-item">
-                  <a class="nav-link mx-lg-2" href="añadirMascotas.html">Añadir Mascotas</a>
-                </li>
-                <li class="nav-item">
-                  <a class="nav-link mx-lg-2" href="./script-rescatistas/rutas-mascotas/actualizarMascotas.html">Actualizar Mascota</a>
-                </li>
-                <li class="nav-item">
-                  <a class="nav-link mx-lg-2" href="./script-rescatistas/rutas-mascotas/eliminarMascota.html">Eliminar Mascota</a>
-                </li>
-                <li class="nav-item">
-                  <a class="nav-link mx-lg-2" href="./script-rescatistas/rutas-mascotas/buscarMascotas.html">Buscar Mascota</a>
-                </li>
-                <li class="nav-item">
-                  <a class="nav-link mx-lg-2" href="cerrarsesion.html">Cerrar Sesión</a>
-                </li>
-              </ul>
-            </div>
+      <div class="container-fluid">
+        <a class="navbar-brand">RIAB</a>
+        <button class="navbar-toggler custom-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasNavbar" aria-controls="offcanvasNavbar" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="offcanvas offcanvas-half" tabindex="-1" id="offcanvasNavbar" aria-labelledby="offcanvasNavbarLabel">
+          <div class="offcanvas-header">
+            <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+          </div>
+          <div class="offcanvas-body text-center">
+            <ul class="navbar-nav justify-content-center flex-grow-1 pe-3">
+              <li class="nav-item">
+                <a class="nav-link mx-lg-2" href="inicio-res.html">Inicio</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link mx-lg-2" href="mascotas.html">Mascotas</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link mx-lg-2" href="adopcion.html">Crear Adopción</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link mx-lg-2" href="añadirMascotas.html">Añadir Mascotas</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link mx-lg-2" href="cerrarsesion.html">Cerrar Sesión</a>
+              </li>
+            </ul>
           </div>
         </div>
-      </nav>
+      </div>
+    </nav>
   </header>
 
-  <main>
-    <!-- Mostrar el centro donde se registraron las mascotas -->
-    <section id="centro-section" class="container mt-5 pt-5">
-      <h2>Centro de Adopción</h2>
-      <p id="centro-mascotas" class="alert alert-info">
-        <!-- El centro se mostrará aquí -->
-      </p>
-    </section>
+  <section class="container mt-5 pt-5">
+    <h1 class="text-center mb-4">Mascotas Registradas</h1>
 
-    <!-- Mostrar las mascotas -->
-    <section id="mascotas-section" class="container mt-5">
-      <h2>Lista de Mascotas</h2>
-      <div id="mascotas-lista" class="row">
-        <!-- Las mascotas se cargarán dinámicamente aquí -->
-      </div>
-    </section>
-  </main>
+    <div class="row" id="mascotas-container">
+      <!-- Las tarjetas de las mascotas se llenarán aquí dinámicamente -->
+    </div>
+  </section>
 
   <footer>
     <div class="paginas_footer text-center">
-      <a href="inicio-res.html">Inicio</a> &nbsp; &nbsp; 
-      <a href="mascotas.html">Mascotas</a> &nbsp;  &nbsp; 
-      <a href="adopcion.html">Crear Adopción</a> &nbsp;  &nbsp; 
-      <a href="añadirMascotas.html">Añadir Mascotas</a> &nbsp;  &nbsp; 
-      <a href="./script-rescatistas/rutas-mascotas/actualizarMascotas.html">Actualizar Mascotas</a> &nbsp;  &nbsp; 
-      <a href="./script-rescatistas/rutas-mascotas/eliminarMascota.html">Eliminar Mascotas</a> &nbsp;  &nbsp;
-      <a href="./script-rescatistas/rutas-mascotas/buscarMascotas.html">Buscar Mascotas</a> &nbsp;  &nbsp;
-      <a href="cerrarsesion.html">Cerrar Sesión</a> 
-    </div> <br>
-
-    2024 &nbsp; &nbsp; | &nbsp; &nbsp; Todos los derechos reservados
+      <a href="inicio-res.html">Inicio</a> &nbsp; &nbsp;
+      <a href="mascotas.html">Mascotas</a> &nbsp;  &nbsp;
+      <a href="adopcion.html">Crear Adopción</a> &nbsp;  &nbsp;
+      <a href="añadirMascotas.html">Añadir Mascotas</a> &nbsp;  &nbsp;
+      <a href="cerrarsesion.html">Cerrar Sesión</a>
+    </div>
+    <p class="text-center mt-3">2024 | Todos los derechos reservados</p>
   </footer>
 
-  <script>
-    document.addEventListener('DOMContentLoaded', function() {
-      // Recuperar las mascotas del localStorage
-      const mascotas = JSON.parse(localStorage.getItem('mascotas')) || [];
-      const centro = localStorage.getItem('centro'); // Recuperar el centro desde localStorage
-
-      const mascotasContainer = document.getElementById('mascotas-lista');
-      
-      // Mostrar las mascotas
-      if (mascotas.length > 0) {
-        mascotas.forEach(mascota => {
-          const mascotaElement = document.createElement('div');
-          mascotaElement.classList.add('col-md-4', 'mascota');
-          mascotaElement.innerHTML = `
-            <div class="card">
-              <div class="card-body">
-                <h5 class="card-title">${mascota.nombreApodo}</h5>
-                <p class="card-text">Especie: ${mascota.especie}</p>
-                <p class="card-text">Raza: ${mascota.raza}</p>
-                <p class="card-text">Color: ${mascota.color}</p>
-                <p class="card-text">Año de Nacimiento: ${mascota.anioNacimiento}</p>
-              </div>
-            </div>
-          `;
-          mascotasContainer.appendChild(mascotaElement);
-        });
-      } else {
-        mascotasContainer.innerHTML = '<p>No hay mascotas registradas.</p>';
-      }
-
-      // Mostrar el centro si existe
-      const centroElement = document.getElementById('centro-mascotas');
-      if (centroElement && centro) {
-        centroElement.textContent = `Centro: ${centro}`;
-      } else {
-        centroElement.textContent = 'No se ha registrado un centro.';
-      }
-    });
-  </script>
-
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+  <script src="./script-rescatistas/mascotas.js"></script>
 </body>
-</html>
 
+</html>

@@ -38,7 +38,7 @@ document.addEventListener('DOMContentLoaded', function () {
     const raza = razaSelect.value;
     const color = document.getElementById('color').value;
     const anioNacimiento = document.getElementById('anio_nacimiento').value;
-    const centro = document.getElementById('centrosme o').value;
+    const centro = document.getElementById('centros').value;
     
     // Validación de campos
     if (!nombreApodo || !especie || !raza || !color || !anioNacimiento || !centro) {

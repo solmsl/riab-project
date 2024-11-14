@@ -32,6 +32,7 @@ document.addEventListener('DOMContentLoaded', async () => {
                 <strong>Raza:</strong> ${mascota.raza} <br>
                 <strong>Color:</strong> ${mascota.color} <br>
                 <strong>Año de Nacimiento:</strong> ${mascota.anioNacimiento}
+                <strong>Centro:</strong> ${mascota.centro}
               </p>
             </div>
           </div>

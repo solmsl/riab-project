@@ -1,5 +1,3 @@
-const token = document.cookie; 
-
 const app = "https://riab-api.vercel.app";
 
 function verificar(){
@@ -24,7 +22,12 @@ const getDniFromToken = (token) => {
         return null;
     }
 };
-
+function getCookie(name) {
+    const value = `; ${document.cookie}`;
+    const parts = value.split(`; ${name}=`);
+    if (parts.length === 2) return parts.pop().split(';').shift();
+}
+const token=getCookie("userInfo");
 async function traerDatos() {
     try {
       //luego cambiar el localhost a riab-api.vercel.app, por el momento dejarlo asi

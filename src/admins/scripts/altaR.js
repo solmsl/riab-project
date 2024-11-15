@@ -15,28 +15,28 @@ function verificar(){
     }
     console.log("Cookie verificada correctamente")
 }
-const dni=document.getElementById("dni");
-const nombre=document.getElementById("nombre");
-const apellido=document.getElementById("apellido");
-const telefono=document.getElementById("telefono");
-const direccion=document.getElementById("direccion");
-const genero=document.getElementById("genero");
-const email=document.getElementById("email");
-const passw=document.getElementById("passw");
-const re_passw=document.getElementById("re_passw");
-const form={
-    dni,
-    nombre,
-    apellido,
-    telefono,
-    direccion,
-    genero,
-    email,
-    passw
-};
-console.log(form);
 document.getElementById("formulario").addEventListener("submit",async (e)=>{
     e.preventDefault();
+    const dni=document.getElementById("dni");
+    const nombre=document.getElementById("nombre");
+    const apellido=document.getElementById("apellido");
+    const telefono=document.getElementById("telefono");
+    const direccion=document.getElementById("direccion");
+    const genero=document.getElementById("genero");
+    const email=document.getElementById("email");
+    const passw=document.getElementById("passw");
+    const re_passw=document.getElementById("re_passw");
+    const form={
+        dni,
+        nombre,
+        apellido,
+        telefono,
+        direccion,
+        genero,
+        email,
+        passw
+    };
+    console.log(form);
         try {
           //luego cambiar el localhost a riab-api.vercel.app, por el momento dejarlo asi
             const response = await fetch(`${app}/rescatistas/registro`, {

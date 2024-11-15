@@ -6,7 +6,7 @@ document.addEventListener('DOMContentLoaded', () => {
   const razaSelect = document.getElementById('raza');
   const colorSelect = document.getElementById('color');
   const anioNacimientoSelect = document.getElementById('anio_nacimiento');
-  const centro = document.getElementById('center');
+  const centro = document.getElementById('centro');
 
   // Cargar razas dinámicamente por especie
   const razasPorEspecie = {
@@ -108,7 +108,7 @@ document.addEventListener('DOMContentLoaded', () => {
               mascotaElement.querySelector('.raza').textContent = razaSelect.value;
               mascotaElement.querySelector('.color').textContent = colorSelect.value;
               mascotaElement.querySelector('.anio-nacimiento').textContent = anioNacimientoSelect.value;
-              mascotaElement.querySelector('.centro').textContent = centro.value;
+              mascotaElement.querySelector('.centros').textContent = centro.value;
             }
           }
 

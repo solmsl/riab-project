@@ -31,8 +31,7 @@ const form={
     direccion,
     genero,
     email,
-    passw,
-    re_passw
+    passw
 };
 document.getElementById("formulario").addEventListener("submit",async (e)=>{
     e.preventDefault();
@@ -43,7 +42,7 @@ document.getElementById("formulario").addEventListener("submit",async (e)=>{
                 headers: {
                     'Content-Type': 'application/json',
                     'Authorization': `Bearer ${token}`,
-                    "Access-Control-Allow-Origin": "https://riab-project.vercel.app",
+                    "Access-Control-Allow-Origin": "https://riab-api.vercel.app",
                     "Access-Control-Allow-Credentials": true,
                 },
                 body:JSON.stringify(form)

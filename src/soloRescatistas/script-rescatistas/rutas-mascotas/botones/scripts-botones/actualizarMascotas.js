@@ -108,7 +108,7 @@ document.addEventListener('DOMContentLoaded', () => {
               mascotaElement.querySelector('.raza').textContent = razaSelect.value;
               mascotaElement.querySelector('.color').textContent = colorSelect.value;
               mascotaElement.querySelector('.anio-nacimiento').textContent = anioNacimientoSelect.value;
-              mascotaElement.querySelector('.centro').textContent = centro.value;
+              mascotaElement.querySelector('.centros').textContent = centro.value;
             }
           }
 

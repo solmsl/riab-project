@@ -43,7 +43,7 @@ document.getElementById("formulario").addEventListener("submit",async (e)=>{
                 headers: {
                     'Content-Type': 'application/json',
                     'Authorization': `Bearer ${token}`,
-                    "Access-Control-Allow-Origin": `${app}`,
+                    "Access-Control-Allow-Origin": "https://riab-api.vercel.app",
                     "Access-Control-Allow-Credentials": true,
                 },
                 body:JSON.stringify(form)

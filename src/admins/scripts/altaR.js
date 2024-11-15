@@ -18,14 +18,14 @@ function verificar(){
 document.getElementById("formulario").addEventListener("submit",async (e)=>{
     e.preventDefault();
     const dni=document.getElementById("dni");
-    const nombre=document.getElementById("nombre");
-    const apellido=document.getElementById("apellido");
-    const telefono=document.getElementById("telefono");
-    const direccion=document.getElementById("direccion");
-    const genero=document.getElementById("genero");
-    const email=document.getElementById("email");
-    const passw=document.getElementById("passw");
-    const re_passw=document.getElementById("re_passw");
+    const nombre=document.getElementById("nombre").value;
+    const apellido=document.getElementById("apellido").value;
+    const telefono=document.getElementById("telefono").value;
+    const direccion=document.getElementById("direccion").value;
+    const genero=document.getElementById("genero").value;
+    const email=document.getElementById("email").value;
+    const passw=document.getElementById("passw").value;
+    const re_passw=document.getElementById("re_passw").value;
     const form={
         dni,
         nombre,

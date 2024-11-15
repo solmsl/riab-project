@@ -31,7 +31,8 @@ document.addEventListener('DOMContentLoaded', async () => {
                 <strong>Especie:</strong> ${mascota.especie} <br>
                 <strong>Raza:</strong> ${mascota.raza} <br>
                 <strong>Color:</strong> ${mascota.color} <br>
-                <strong>Año de Nacimiento:</strong> ${mascota.anioNacimiento}
+                <strong>Año de Nacimiento:</strong> ${mascota.anioNacimiento} <br>
+                <strong>Centro:</strong> ${mascota.centro} <br>
               </p>
             </div>
           </div>

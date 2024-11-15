@@ -1,5 +1,9 @@
-const token = document.cookie; 
-
+function getCookie(name) {
+    const value = `; ${document.cookie}`;
+    const parts = value.split(`; ${name}=`);
+    if (parts.length === 2) return parts.pop().split(';').shift();
+}
+const token=getCookie("userInfo");
 const app = "https://riab-api.vercel.app";
 
 function verificar(){
@@ -9,19 +13,6 @@ function verificar(){
         return;
     }
 }
-
-//Decodifica el token y toma el sector donde se encuentra el DNI
-const getDniFromToken = (token) => {
-    try {
-        const payload = token.split('.')[1];
-        const decodedPayload = JSON.parse(atob(payload));
-
-        return decodedPayload.dni;
-    } catch (error) {
-        console.error('Error decodificando el token:', error);
-        return null;
-    }
-};
 const dni=document.getElementById("dni");
 const nombre=document.getElementById("nombre");
 const apellido=document.getElementById("apellido");
@@ -51,7 +42,7 @@ document.getElementById("formulario").addEventListener("submit",async (e)=>{
                 headers: {
                     'Content-Type': 'application/json',
                     'Authorization': `Bearer ${token}`,
-                    // "Access-Control-Allow-Origin": "https://localhost:5500",
+                    "Access-Control-Allow-Origin": `${app}`,
                     "Access-Control-Allow-Credentials": true,
                 },
                 body:JSON.stringify(form)

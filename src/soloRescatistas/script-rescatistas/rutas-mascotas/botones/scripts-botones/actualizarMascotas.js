@@ -6,7 +6,7 @@ document.addEventListener('DOMContentLoaded', () => {
   const razaSelect = document.getElementById('raza');
   const colorSelect = document.getElementById('color');
   const anioNacimientoSelect = document.getElementById('anio_nacimiento');
-  const centro = document.getElementById('center');
+  const centro = document.getElementById('centro');
 
   // Cargar razas dinámicamente por especie
   const razasPorEspecie = {

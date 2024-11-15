@@ -17,6 +17,7 @@ function verificar(){
 }
 document.getElementById("botonListar").addEventListener("click",async (e)=>{
     e.preventDefault();
+    console.log(token);
         try {
           //luego cambiar el localhost a riab-api.vercel.app, por el momento dejarlo asi
             const response = await fetch(`${app}/rescatistas/`, {

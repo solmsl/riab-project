@@ -13,6 +13,7 @@ function verificar(){
         window.location.href = 'https://riab-project.vercel.app';
         return;
     }
+    console.log("Cookie verificada correctamente")
 }
 const dni=document.getElementById("dni");
 const nombre=document.getElementById("nombre");
@@ -33,6 +34,7 @@ const form={
     email,
     passw
 };
+console.log(form);
 document.getElementById("formulario").addEventListener("submit",async (e)=>{
     e.preventDefault();
         try {

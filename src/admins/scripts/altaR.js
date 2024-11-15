@@ -17,7 +17,7 @@ function verificar(){
 }
 document.getElementById("formulario").addEventListener("submit",async (e)=>{
     e.preventDefault();
-    const dni=document.getElementById("dni");
+    const dni=document.getElementById("dni").value;
     const nombre=document.getElementById("nombre").value;
     const apellido=document.getElementById("apellido").value;
     const telefono=document.getElementById("telefono").value;
@@ -34,7 +34,8 @@ document.getElementById("formulario").addEventListener("submit",async (e)=>{
         direccion,
         genero,
         email,
-        passw
+        passw,
+        re_passw
     };
     console.log(form);
         try {

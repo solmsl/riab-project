@@ -6,6 +6,7 @@ document.addEventListener('DOMContentLoaded', () => {
   const razaSelect = document.getElementById('raza');
   const colorSelect = document.getElementById('color');
   const anioNacimientoSelect = document.getElementById('anio_nacimiento');
+  const centro = document.getElementById('center');
 
   // Cargar razas dinámicamente por especie
   const razasPorEspecie = {
@@ -44,6 +45,7 @@ document.addEventListener('DOMContentLoaded', () => {
           razaSelect.value = data.raza || '';
           colorSelect.value = data.color || '';
           anioNacimientoSelect.value = data.anioNacimiento || '';
+          centro.value = data.centro || '';
         } else {
           alert('Mascota no encontrada.');
           form.reset();
@@ -71,7 +73,8 @@ document.addEventListener('DOMContentLoaded', () => {
             especie: especieSelect.value,
             raza: razaSelect.value,
             color: colorSelect.value,
-            anioNacimiento: anioNacimientoSelect.value
+            anioNacimiento: anioNacimientoSelect.value,
+            centro: centro.value
           })
         });
         const data = await response.json();
@@ -88,7 +91,9 @@ document.addEventListener('DOMContentLoaded', () => {
               especie: especieSelect.value,
               raza: razaSelect.value,
               color: colorSelect.value,
-              anioNacimiento: anioNacimientoSelect.value
+              anioNacimiento: anioNacimientoSelect.value,
+              centro: centro.value
+
             };
             localStorage.setItem('mascotas', JSON.stringify(mascotas));
           }
@@ -103,6 +108,7 @@ document.addEventListener('DOMContentLoaded', () => {
               mascotaElement.querySelector('.raza').textContent = razaSelect.value;
               mascotaElement.querySelector('.color').textContent = colorSelect.value;
               mascotaElement.querySelector('.anio-nacimiento').textContent = anioNacimientoSelect.value;
+              mascotaElement.querySelector('.centro').textContent = centro.value;
             }
           }
 

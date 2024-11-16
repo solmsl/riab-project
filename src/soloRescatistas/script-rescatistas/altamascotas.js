@@ -38,14 +38,18 @@ document.addEventListener('DOMContentLoaded', function () {
     const raza = razaSelect.value;
     const color = document.getElementById('color').value;
     const anioNacimiento = document.getElementById('anio_nacimiento').value;
-    
+    const centro = document.getElementById('centros').value;
+    const imagen = new FormData()
+    const imagenMascota=document.getElementById('imagenMascota');
+    imagen.append("image",imagenMascota.files[0]);
+    console.log(imagen);
     // Validación de campos
-    if (!nombreApodo || !especie || !raza || !color || !anioNacimiento) {
+    if (!nombreApodo || !especie || !raza || !color || !anioNacimiento || !centro) {
       alert('Por favor, complete todos los campos.');
       return;
     }
     
-    const nuevaMascota = { nombreApodo, especie, raza, color, anioNacimiento };
+    const nuevaMascota = { imagen,nombreApodo, especie, raza, color, anioNacimiento, centro};
     
     try {
       const response = await fetch('https://riab-api.vercel.app/mascotas/registro', {

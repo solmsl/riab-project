@@ -2,7 +2,6 @@ const idInput = document.getElementById('id-input');
 const mensajeEliminar = document.getElementById('mensajeEliminar');
 
 async function eliminarMascota(id) {
-    // Mostrar el mensaje de confirmación personalizado con solo el ID
     const confirmarEliminacion = confirm(`ATENCION RESCATISTA: ¿Estás seguro que quieres eliminar la mascota con el ID: ${id}?`);
     
     if (confirmarEliminacion) {

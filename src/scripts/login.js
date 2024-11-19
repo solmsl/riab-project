@@ -29,7 +29,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json',
-                    // "Access-Control-Allow-Origin": "https://riab-api.vercel.app",
+                    "Access-Control-Allow-Origin": "https://riab-api.vercel.app",
                     "Access-Control-Allow-Credentials": true,
                 },
                 body: JSON.stringify(rescatistaData),

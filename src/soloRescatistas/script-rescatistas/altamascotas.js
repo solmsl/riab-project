@@ -39,7 +39,7 @@ document.addEventListener('DOMContentLoaded', function () {
     const color = document.getElementById('color').value;
     const anioNacimiento = document.getElementById('anio_nacimiento').value;
     const centro = document.getElementById('centros').value;
-    const imagenMascota=document.getElementbyId('imagenMascota');
+    const imagenMascota=document.getElementById('imagenMascota');
     // Validación de campos
     if (!nombreApodo || !especie || !raza || !color || !anioNacimiento || !centro) {
       alert('Por favor, complete todos los campos.');

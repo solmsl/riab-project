@@ -40,14 +40,27 @@ document.addEventListener('DOMContentLoaded', function () {
           body: JSON.stringify(adopData)
         });
   
-        if (response.ok) {
+        // if (response.ok) {
           // const result = await response.json();
-          alert('Adopcion registrada exitosamente');
+          // alert('Adopcion registrada exitosamente');
           // form.reset();
-        } else {
+        // } else {
+        //   const error = await response.json();
+        //   alert(`Error: ${error.message}`);
+        // }
+
+        if (!response.ok) {
           const error = await response.json();
-          alert(`Error: ${error.message}`);
+          if (error.errors) {
+            alert(`Errores: ${error.errors.join(', ')}`);
+          } else {
+            alert(`Error: ${error.message}`);
+          }
+          return;
         }
+
+        alert('Adopcion registrada exitosamente');
+        
       } catch (error) {
         console.error('Error al enviar los datos:', error);
         alert('Hubo un problema al crear la adopción');

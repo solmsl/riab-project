@@ -701,7 +701,7 @@ article {
   color: rgb(71, 2, 73);
 }
 .wrapper .input-box input::placeholder {
-  color: rgb(255, 254, 255);
+  color: black;
 }
 .wrapper .input-box select {
   width: 100%;
@@ -710,7 +710,7 @@ article {
   border: 2px solid rgb(71, 2, 73);
   border-radius: 20px;
   font-size: 16px;
-  color: rgb(255, 0, 200);
+  color: rgb(17, 6, 19);
   padding: 10px;
 }
 .wrapper .input-box i {

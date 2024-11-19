@@ -11,121 +11,126 @@
 <body>
   <header>
     <nav class="navbar navbar-expand-lg fixed-top" data-bs-theme="dark">
-        <div class="container-fluid"> 
-          <a class="navbar-brand">RIAB</a>
-          <button class="navbar-toggler custom-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasNavbar" aria-controls="offcanvasNavbar" aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
-          </button>
-          <div class="offcanvas offcanvas-half" tabindex="-1" id="offcanvasNavbar" aria-labelledby="offcanvasNavbarLabel">
-            <div class="offcanvas-header">
-      
-              <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
-            </div>
-            <div class="offcanvas-body">
-              <ul class="navbar-nav justify-content-center flex-grow-1 pe-3">
-                <li class="nav-item">
-                  <a class="nav-link mx-lg-2" aria-current="page" href="inicio-res.html">Inicio</a>
-                </li>
-                <li class="nav-item">
-                  <a class="nav-link mx-lg-2" href="mascotas.html">Mascotas</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link mx-lg-2" href="adopciones.html">Adopciones</a>
-                  </li>
-                <li class="nav-item">
-                  <a class="nav-link mx-lg-2" href="adopcion.html">Crear Adopción</a>
-                </li>
-                <li class="nav-item">
-                  <a class="nav-link mx-lg-2" href="añadirMascotas.html">Añadir Mascotas</a>
-                </li>
-                <li class="nav-item">
-                  <a class="nav-link mx-lg-2" href="./script-rescatistas/rutas-mascotas/actualizarMascotas.html">Actualizar Mascota</a>
-                </li>
-                <li class="nav-item"></li>
-                  <a class="nav-link mx-lg-2" href="./script-rescatistas/rutas-mascotas/eliminarMascota.html">Eliminar Mascota</a>
-                </li>
-                <li class="nav-item"></li>
-                  <a class="nav-link mx-lg-2" href="./script-rescatistas/rutas-mascotas/buscarMascotas.html">Buscar Mascota</a>
-                </li>
-                <li class="nav-item"></li>
-                  <a class="nav-link mx-lg-2" href="cerrarsesion.html">Cerrar Sesión</a>
-                </li>
-              </ul>
-            </div>
+      <div class="container-fluid"> 
+        <a class="navbar-brand">RIAB</a>
+        <button class="navbar-toggler custom-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasNavbar" aria-controls="offcanvasNavbar" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="offcanvas offcanvas-half" tabindex="-1" id="offcanvasNavbar" aria-labelledby="offcanvasNavbarLabel">
+          <div class="offcanvas-header">
+            <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+          </div>
+          <div class="offcanvas-body text-center">
+            <ul class="navbar-nav justify-content-center flex-grow-1 pe-3">
+              <li class="nav-item">
+                <a class="nav-link mx-lg-2" href="inicio-res.html">Inicio</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link mx-lg-2" href="mascotas.html">Mascotas</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link mx-lg-2" href="adopciones.html">Adopciones</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link mx-lg-2" href="adopcion.html">Crear Adopción</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link mx-lg-2" href="añadirMascotas.html">Añadir Mascotas</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link mx-lg-2" href="./script-rescatistas/rutas-mascotas/actualizarMascotas.html">Actualizar Mascota</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link mx-lg-2" href="./script-rescatistas/rutas-mascotas/eliminarMascota.html">Eliminar Mascota</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link mx-lg-2" href="./script-rescatistas/rutas-mascotas/buscarMascotas.html">Buscar Mascota</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link mx-lg-2" href="cerrarsesion.html">Cerrar Sesión</a>
+              </li>
+            </ul>
           </div>
         </div>
-      </nav>
+      </div>
+    </nav>
   </header>
 
-  <section class="formularioAdop">
-    <div class="wrapper">
-      <form id="formulario" >
-        <h1>Añadir Mascotas</h1>
-        <div class="">
-          <input type="file" class="form-control" name="imagen" id="imagenMascota"required>
-        </div>
-        <div class="input-box">
-          <input type="text" class="" id="nombreApodo" name="nombreApodo" placeholder="Nombre o Apodo" required>
-        </div>
-        <div class="input-box">
-          <select class="form-select" id="especie" name="especie" required>
-            <option value="">Especie</option>
-            <option value="perro">Perro</option>
-            <option value="gato">Gato</option>
-            <option value="loro">Loro</option>
-            <option value="tortuga">Tortuga</option>
-            <option value="conejo">Conejo</option>
-            <option value="pato">Pato</option>
-            <option value="otro">Otro</option>
-          </select>
-        </div>
-        <div class="input-box">
-          <select class="form-select" id="raza" name="raza" required>
-            <option value="">Seleccionar raza</option>
-            <!-- Opciones de razas se agregarán dinámicamente -->
-          </select>
-        </div>
-        <div class="input-box">
-          <select class="form-select" id="color" name="color" required>
-            <option value="">Color</option>
-            <option value="blanco">Blanco</option>
-            <option value="negro">Negro</option>
-            <option value="marron">Marrón</option>
-            <option value="gris">Gris</option>
-            <option value="amarillo">Amarillo</option>
-            <option value="otro">Otro</option>
-          </select>
-        </div>
-        <div class="input-box">
-          <select class="form-select" id="anio_nacimiento" name="anio_nacimiento" required>
-            <option value="">Año de Nacimiento</option>
-            <option value="2000-2003">2000-2003</option>
-            <option value="2004-2007">2004-2007</option>
-            <option value="2008-2011">2008-2011</option>
-            <option value="2012-2015">2012-2015</option>
-            <option value="2016-2019">2016-2019</option>
-            <option value="2020-2023">2020-2023</option>
-            <option value="2024">2024</option>
-          </select>
-        </div>
-        <div class="input-box">
-          <select class="form-select" id="centros" name="centro" required>
-            <option value="">Centro</option>
-            <option value="Guarderia Canina Berazategui Pajaro Azul">Guarderia Canina Berazategui Pajaro Azul</option>
-            <option value="Hogar de Proteccion lourdes">Hogar de Proteccion lourdes</option>
-            <option value="ayudacan">Ayudacan</option>
-            <option value="El campito Refugio">El campito Refugio</option>
-            <option value="Adopciones Quilmes">Adopciones Quilmes</option>
-            <option value="El hogar de Claudia">El hogar de Claudia</option>
-            <option value="Ser Animal">Ser Animal</option>
-            <option value="Fundacion Viva la Vida Por El Bienestar Animal">Fundacion Viva la Vida Por El Bienestar Animal</option>
-          </select>
-        </div>
+  <div class="container mt-5">
+    <h2>Añadir Nueva Mascota</h2>
+    <form id="formulario" enctype="multipart/form-data">
+      <div class="my-3">
+        <label for="imagen" class="form-label">Imagen:</label>
+        <input type="file" class="form-control" name="imagen" id="imagenMascota" required>
+      </div>
+      <div class="mb-3">
+        <label for="nombreApodo" class="form-label">Nombre o Apodo:</label>
+        <input type="text" class="form-control" id="nombreApodo" name="nombreApodo" required>
+      </div>
+      
+      <div class="mb-3">
+        <label for="especie" class="form-label">Especie:</label>
+        <select class="form-select" id="especie" name="especie" required>
+          <option value="perro">Perro</option>
+          <option value="gato">Gato</option>
+          <option value="loro">Loro</option>
+          <option value="tortuga">Tortuga</option>
+          <option value="conejo">Conejo</option>
+          <option value="pato">Pato</option>
+          <option value="otro">Otro</option>
+        </select>
+      </div>
 
-        <button id="btnBuscar" type="button" style="margin-top: 20px;">Añadir Mascota</button>
-        <div id="mensajeActualizacion"></div>
-        <ul id="mascotaInfo"></ul>
-  </section>  
+      <div class="mb-3">
+        <label for="raza" class="form-label">Raza:</label>
+        <select class="form-select" id="raza" name="raza" required>
+          <option value="">Seleccionar raza</option>
+          <!-- Opciones de razas se agregarán dinámicamente -->
+        </select>
+      </div>
+
+      <div class="mb-3">
+        <label for="color" class="form-label">Color:</label>
+        <select class="form-select" id="color" name="color" required>
+          <option value="blanco">Blanco</option>
+          <option value="negro">Negro</option>
+          <option value="marron">Marrón</option>
+          <option value="gris">Gris</option>
+          <option value="amarillo">Amarillo</option>
+          <option value="otro">Otro</option>
+        </select>
+      </div>
+
+      <div class="mb-3">
+        <label for="anio_nacimiento" class="form-label">Año de Nacimiento:</label>
+        <select class="form-select" id="anio_nacimiento" name="anio_nacimiento" required>
+          <option value="2000-2003">2000-2003</option>
+          <option value="2004-2007">2004-2007</option>
+          <option value="2008-2011">2008-2011</option>
+          <option value="2012-2015">2012-2015</option>
+          <option value="2016-2019">2016-2019</option>
+          <option value="2020-2023">2020-2023</option>
+          <option value="2024">2024</option>
+        </select>
+      </div>
+
+      <div class="mb-3">
+        <label for="centro" class="form-label">Centro:</label>
+        <select class="form-select" id="centros" name="centro" required>
+          <option value="Guarderia Canina Berazategui Pajaro Azul">Guarderia Canina Berazategui Pajaro Azul</option>
+          <option value="Hogar de Proteccion lourdes">Hogar de Proteccion lourdes</option>
+          <option value="ayudacan">Ayudacan</option>
+          <option value="El campito Refugio">El campito Refugio</option>
+          <option value="Adopciones Quilmes">Adopciones Quilmes</option>
+          <option value="El hogar de Claudia">El hogar de Claudia</option>
+          <option value="Ser Animal">Ser Animal</option>
+          <option value="Fundacion Viva la Vida Por El Bienestar Animal">Fundacion Viva la Vida Por El Bienestar Animal</option>
+        </select>
+      </div>  
+
+      <button type="submit" class="btn btn-primary">Añadir Mascota</button>
+    </form>
+  </div>
 
   <footer>
     <div class="paginas_footer">

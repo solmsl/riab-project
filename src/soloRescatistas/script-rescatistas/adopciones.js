@@ -62,4 +62,4 @@ document.addEventListener('DOMContentLoaded', async () => {
       lista.innerHTML = `<p>Hubo un problema al cargar la lista de adopciones.</p>`;
     }
   });
-  
+verificar();

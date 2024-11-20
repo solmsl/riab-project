@@ -31,7 +31,7 @@ document.addEventListener('DOMContentLoaded', function () {
 
   form.addEventListener('submit', async function (event) {
     event.preventDefault();
-    
+  
     // Recoger valores del formulario
     const nombreApodo = document.getElementById('nombreApodo').value;
     const especie = especieSelect.value;
@@ -39,39 +39,35 @@ document.addEventListener('DOMContentLoaded', function () {
     const color = document.getElementById('color').value;
     const anioNacimiento = document.getElementById('anio_nacimiento').value;
     const centro = document.getElementById('centros').value;
-    const form = new FormData()
-    const imagenMascota=document.getElementById('imagenMascota');
-    form.append("imagen",imagenMascota.files[0]);
-    form.append("especie",especie);
-    form.append("raza",raza);
-    form.append("color",color);
-    form.append("anioNacimiento",anioNacimiento);
-    form.append("centro",centro);
-
-    console.log(form);
+    const imagenMascota = document.getElementById('imagenMascota').files[0];
+  
     // Validación de campos
-    if (!nombreApodo || !especie || !raza || !color || !anioNacimiento || !centro) {
-      alert('Por favor, complete todos los campos.');
+    if (!nombreApodo || !especie || !raza || !color || !anioNacimiento || !centro || !imagenMascota) {
+      alert('Por favor, complete todos los campos y asegúrese de subir una imagen.');
       return;
     }
-    
-    // const nuevaMascota = { imagen,nombreApodo, especie, raza, color, anioNacimiento, centro};
-    
+  
+    // Crear FormData para enviar datos
+    const formData = new FormData();
+    formData.append('imagen', imagenMascota);
+    formData.append('nombreApodo', nombreApodo);
+    formData.append('especie', especie);
+    formData.append('raza', raza);
+    formData.append('color', color);
+    formData.append('anioNacimiento', anioNacimiento);
+    formData.append('centro', centro);
+  
     try {
       const response = await fetch('https://riab-api.vercel.app/mascotas/registro', {
         method: 'POST',
-        headers: {
-          'Content-Type': 'application/json',
-          "Access-Control-Allow-Credentials": true,
-        },
-        body: JSON.stringify(form),
+        body: formData, // Enviar el FormData directamente
       });
-      
+  
       const data = await response.json();
-      
+  
       if (data.success) {
         alert('Mascota registrada exitosamente.');
-        form.reset();  // Limpiar el formulario
+        form.reset(); // Limpiar el formulario
       } else {
         alert('Hubo un error al registrar la mascota. Intenta de nuevo.');
       }
@@ -81,4 +77,3 @@ document.addEventListener('DOMContentLoaded', function () {
     }
   });
 });
-

@@ -55,7 +55,7 @@ document.addEventListener('DOMContentLoaded', function () {
       return;
     }
     
-    const nuevaMascota = { imagen,nombreApodo, especie, raza, color, anioNacimiento, centro};
+    // const nuevaMascota = { imagen,nombreApodo, especie, raza, color, anioNacimiento, centro};
     
     try {
       const response = await fetch('https://riab-api.vercel.app/mascotas/registro', {

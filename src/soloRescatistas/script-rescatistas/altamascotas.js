@@ -3,7 +3,9 @@ function getCookie(name) {
   const parts = value.split(`; ${name}=`);
   if (parts.length === 2) return parts.pop().split(';').shift();
 }
+
 const token=getCookie("userInfo");
+
 function verificar(){
   if (!token) {
       alert("Acceso Denegado. Inicia Sesión para acceder a esta ruta.");
@@ -11,6 +13,7 @@ function verificar(){
       return;
   }
 }
+
 document.addEventListener('DOMContentLoaded', function () {
   const form = document.getElementById('formulario');
   const especieSelect = document.getElementById('especie');
@@ -90,4 +93,5 @@ document.addEventListener('DOMContentLoaded', function () {
     }
   });
 });
+
 verificar();

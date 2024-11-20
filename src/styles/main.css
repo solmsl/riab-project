@@ -740,6 +740,13 @@ article {
   text-align: center;
 }
 
+.form-control {
+  background: transparent;
+  outline: none;
+  border: 2px solid rgb(71, 2, 73);
+  font-size: 16px;
+}
+
 /*PAGES - ADMINS*/
 @font-face {
   font-family: "letras-grandes";

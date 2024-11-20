@@ -1,3 +1,16 @@
+function getCookie(name) {
+  const value = `; ${document.cookie}`;
+  const parts = value.split(`; ${name}=`);
+  if (parts.length === 2) return parts.pop().split(';').shift();
+}
+const token=getCookie("userInfo");
+function verificar(){
+  if (!token) {
+      alert("Acceso Denegado. Inicia Sesión para acceder a esta ruta.");
+      window.location.href = 'https://riab-project.vercel.app';
+      return;
+  }
+}
 document.addEventListener('DOMContentLoaded', async () => {
     console.log("Intentando cargar la lista de mascotas...");
     const lista = document.getElementById('adopciones-list');

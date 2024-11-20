@@ -56,6 +56,7 @@ document.addEventListener('DOMContentLoaded', function () {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
+          "Access-Control-Allow-Credentials": true,
         },
         body: JSON.stringify(nuevaMascota),
       });

@@ -1,3 +1,16 @@
+function getCookie(name) {
+  const value = `; ${document.cookie}`;
+  const parts = value.split(`; ${name}=`);
+  if (parts.length === 2) return parts.pop().split(';').shift();
+}
+const token=getCookie("userInfo");
+function verificar(){
+  if (!token) {
+      alert("Acceso Denegado. Inicia Sesión para acceder a esta ruta.");
+      window.location.href = 'https://riab-project.vercel.app';
+      return;
+  }
+}
 document.addEventListener('DOMContentLoaded', async () => {
   console.log("Intentando cargar la lista de mascotas...");
   const mascotasList = document.getElementById('mascotas-list');
@@ -26,6 +39,7 @@ document.addEventListener('DOMContentLoaded', async () => {
           <div class="card">
             <div class="card-body">
               <h5 class="card-title">${mascota.nombreApodo}</h5>
+              <img src="${mascota.imagen}" alt="Mascota">
               <p class="card-text">
                 <strong>ID:</strong> ${mascota.id} <br>
                 <strong>Especie:</strong> ${mascota.especie} <br>
@@ -49,3 +63,4 @@ document.addEventListener('DOMContentLoaded', async () => {
     mascotasList.innerHTML = `<p>Hubo un problema al cargar la lista de mascotas.</p>`;
   }
 });
+verificar();

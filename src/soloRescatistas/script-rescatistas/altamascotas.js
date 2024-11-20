@@ -39,25 +39,32 @@ document.addEventListener('DOMContentLoaded', function () {
     const color = document.getElementById('color').value;
     const anioNacimiento = document.getElementById('anio_nacimiento').value;
     const centro = document.getElementById('centros').value;
-    const imagen = new FormData()
+    const form = new FormData()
     const imagenMascota=document.getElementById('imagenMascota');
-    imagen.append("image",imagenMascota.files[0]);
-    console.log(imagen);
+    form.append("imagen",imagenMascota.files[0]);
+    form.append("especie",especie);
+    form.append("raza",raza);
+    form.append("color",color);
+    form.append("anioNacimiento",anioNacimiento);
+    form.append("centro",centro);
+
+    console.log(form);
     // Validación de campos
     if (!nombreApodo || !especie || !raza || !color || !anioNacimiento || !centro) {
       alert('Por favor, complete todos los campos.');
       return;
     }
     
-    const nuevaMascota = { imagen,nombreApodo, especie, raza, color, anioNacimiento, centro};
+    // const nuevaMascota = { imagen,nombreApodo, especie, raza, color, anioNacimiento, centro};
     
     try {
       const response = await fetch('https://riab-api.vercel.app/mascotas/registro', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
+          "Access-Control-Allow-Credentials": true,
         },
-        body: JSON.stringify(nuevaMascota),
+        body: JSON.stringify(form),
       });
       
       const data = await response.json();

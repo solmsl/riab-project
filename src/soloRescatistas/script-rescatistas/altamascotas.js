@@ -18,7 +18,7 @@ document.addEventListener('DOMContentLoaded', function () {
   const form = document.getElementById('formulario');
   const especieSelect = document.getElementById('especie');
   const razaSelect = document.getElementById('raza');
-  especieSelect.innerHTML = '<option value="">Seleccionar Especie</option>';
+
   // Mapeo de especies a razas
   const razasPorEspecie = {
     perro: ['Labrador', 'Bulldog', 'Poodle', 'Golden Retriever','Caniche','Pekines','Salchicha', 'Bulldog Frances', 'Pitbull', 'Chihuahua', 'Pastor Aleman', 'No identifico', 'Otro'],

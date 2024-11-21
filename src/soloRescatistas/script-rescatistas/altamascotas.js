@@ -4,13 +4,13 @@ function getCookie(name) {
   if (parts.length === 2) return parts.pop().split(';').shift();
 }
 
-const token=getCookie("userInfo");
+const token = getCookie("userInfo");
 
-function verificar(){
+function verificar() {
   if (!token) {
-      alert("Acceso Denegado. Inicia Sesión para acceder a esta ruta.");
-      window.location.href = 'https://riab-project.vercel.app';
-      return;
+    alert("Acceso Denegado. Inicia Sesión para acceder a esta ruta.");
+    window.location.href = 'https://riab-project.vercel.app';
+    return;
   }
 }
 
@@ -21,29 +21,49 @@ document.addEventListener('DOMContentLoaded', function () {
 
   // Mapeo de especies a razas
   const razasPorEspecie = {
-    perro: ['Labrador', 'Bulldog', 'Poodle', 'Golden Retriever', 'Otro'],
-    gato: ['Siames', 'Persa', 'Bengala', 'Esfinge', 'Otro'],
-    loro: ['Amazónico', 'Cacatúa', 'Guacamayo', 'Perico', 'Otro'],
-    tortuga: ['Galápagos', 'Mora', 'Laúd', 'Rusa', 'Otro'],
-    conejo: ['Angora', 'Mini Lop', 'Rex', 'Cabeza de León', 'Otro'],
-    pato: ['Mallard', 'Corredor Indio', 'Rouen', 'Cayuga', 'Otro'],
+    perro: ['Labrador', 'Bulldog', 'Poodle', 'Golden Retriever','Caniche','Pekines','Salchicha', 'Bulldog Frances', 'Pitbull', 'Chihuahua', 'Pastor Aleman', 'No identifico', 'Otro'],
+    gato: ['Siames', 'Persa', 'Bengala', 'Esfinge', 'Korat', 'Chausie', 'Habana Brown', 'Ocicat', 'Toyger', 'Somalí', 'No identifico','Otro'],
+    loro: ['Amazónico', 'Cacatúa', 'Guacamayo', 'Perico', 'Rey', 'Amazonas Oratrix', 'Periquito', 'Guacamaya Azul y Amarillo', 'Frente Naranja', 'No identifico', 'Otro'],
+    tortuga: ['Galápagos', 'Mora', 'Laúd', 'Rusa', 'Marina', 'Sulcata', 'Mediterranea', 'De laguna', 'Yacaré Overo', 'No identifico','Otro'],
+    conejo: ['Angora', 'Mini Lop', 'Rex', 'Cabeza de León', 'Castillo', 'Blanco de Viena', 'No identifico', 'Otro'],
+    pato: ['Mallard', 'Corredor Indio', 'Rouen', 'Cayuga', 'Enano', 'Aylesbury', 'Ancona duck', 'Grimaud', 'No identifico', 'Otro'],
     otro: ['Desconocido'],
   };
 
-  // Actualizar opciones de raza cuando cambie la especie seleccionada
-  especieSelect.addEventListener('change', function () {
+  function cargarEspecies() {
+    // Las especies a mostrar en el select
+    const especies = Object.keys(razasPorEspecie);
+    
+    // Limpiar las opciones existentes y agregar el placeholder
+    especieSelect.innerHTML = '<option value="" disabled selected>Seleccionar especie</option>';
+    
+    // Añadir las opciones de especie correspondientes
+    especies.forEach(function(especie) {
+      const option = document.createElement('option');
+      option.value = especie;
+      option.textContent = especie;  // Simplemente lo mostramos tal como está
+      especieSelect.appendChild(option);
+    });
+  }
+
+  function actualizarRazas() {
     const especieSeleccionada = especieSelect.value;
     const razas = razasPorEspecie[especieSeleccionada] || [];
     
-    // Limpiar opciones de raza y añadir nuevas
-    razaSelect.innerHTML = '<option value="">Seleccionar raza</option>';
-    razas.forEach(raza => {
+    // Limpiar las opciones de raza y agregar el placeholder
+    razaSelect.innerHTML = '<option value="" disabled selected>Seleccionar raza</option>';
+    
+    // Añadir las opciones de raza correspondientes
+    razas.forEach(function(raza) {
       const option = document.createElement('option');
       option.value = raza;
       option.textContent = raza;
       razaSelect.appendChild(option);
     });
-  });
+  }
+  cargarEspecies();
+  
+  especieSelect.addEventListener('change', actualizarRazas);
 
   form.addEventListener('submit', async function (event) {
     event.preventDefault();

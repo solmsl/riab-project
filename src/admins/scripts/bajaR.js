@@ -5,14 +5,13 @@ document.getElementById('formulario').addEventListener("submit",async (e)=>{
     try {
         //luego cambiar el localhost a riab-api.vercel.app, por el momento dejarlo asi
         const response = await fetch(`${app}/${dni}`, {
-            method: 'POST',
+            method: 'GET',
             headers: {
                 'Content-Type': 'application/json',
                 // 'Authorization': `Bearer ${token}`,
                 "Access-Control-Allow-Origin": "https://riab-api.vercel.app",
                 "Access-Control-Allow-Credentials": true,
             },
-            body:JSON.stringify(form)
         });
 
         const data = await response.json();

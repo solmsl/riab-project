@@ -8,7 +8,7 @@ document.getElementById('formulario').addEventListener("submit",async (e)=>{
             method: 'DELETE',
             headers: {
                 'Content-Type': 'application/json',
-                // 'Authorization': `Bearer ${token}`,
+                'Authorization': `Bearer ${token}`,
                 "Access-Control-Allow-Origin": "https://riab-api.vercel.app",
                 "Access-Control-Allow-Credentials": true,
             },

@@ -5,7 +5,7 @@ document.getElementById('formulario').addEventListener("submit",async (e)=>{
     try {
         //luego cambiar el localhost a riab-api.vercel.app, por el momento dejarlo asi
         const response = await fetch(`${app}/:${dni}`, {
-            method: 'GET',
+            method: 'DELETE',
             headers: {
                 'Content-Type': 'application/json',
                 // 'Authorization': `Bearer ${token}`,

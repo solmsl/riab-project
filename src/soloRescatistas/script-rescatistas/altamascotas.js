@@ -21,17 +21,18 @@ document.addEventListener('DOMContentLoaded', function () {
 
   // Mapeo de especies a razas
   const razasPorEspecie = {
-    perro: ['Labrador', 'Bulldog', 'Poodle', 'Golden Retriever', 'Otro'],
-    gato: ['Siames', 'Persa', 'Bengala', 'Esfinge', 'Otro'],
-    loro: ['Amazónico', 'Cacatúa', 'Guacamayo', 'Perico', 'Otro'],
-    tortuga: ['Galápagos', 'Mora', 'Laúd', 'Rusa', 'Otro'],
-    conejo: ['Angora', 'Mini Lop', 'Rex', 'Cabeza de León', 'Otro'],
-    pato: ['Mallard', 'Corredor Indio', 'Rouen', 'Cayuga', 'Otro'],
+    perro: ['Labrador', 'Bulldog', 'Poodle', 'Golden Retriever','Caniche','Pekines','Salchicha', 'Bulldog Frances', 'Pitbull', 'Chihuahua', 'Pastor Aleman', 'No identifico', 'Otro'],
+    gato: ['Siames', 'Persa', 'Bengala', 'Esfinge', 'Korat', 'Chausie', 'Habana Brown', 'Ocicat', 'Toyger', 'Somalí', 'No identifico','Otro'],
+    loro: ['Amazónico', 'Cacatúa', 'Guacamayo', 'Perico', 'Rey', 'Amazonas Oratrix', 'Periquito', 'Guacamaya Azul y Amarillo', 'Frente Naranja', 'No identifico', 'Otro'],
+    tortuga: ['Galápagos', 'Mora', 'Laúd', 'Rusa', 'Marina', 'Sulcata', 'Mediterranea', 'De laguna', 'Yacaré Overo', 'No identifico','Otro'],
+    conejo: ['Angora', 'Mini Lop', 'Rex', 'Cabeza de León', 'Castillo', 'Blanco de Viena', 'No identifico', 'Otro'],
+    pato: ['Mallard', 'Corredor Indio', 'Rouen', 'Cayuga', 'Enano', 'Aylesbury', 'Ancona duck', 'Grimaud', 'No identifico', 'Otro'],
     otro: ['Desconocido'],
   };
 
   // Actualizar opciones de raza cuando cambie la especie seleccionada
   especieSelect.addEventListener('change', function () {
+    especieSelect.innerHTML = '<option value="">Seleccionar Especie</option>';
     const especieSeleccionada = especieSelect.value;
     const razas = razasPorEspecie[especieSeleccionada] || [];
     

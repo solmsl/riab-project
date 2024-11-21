@@ -4,13 +4,13 @@ function getCookie(name) {
   if (parts.length === 2) return parts.pop().split(';').shift();
 }
 
-const token=getCookie("userInfo");
+const token = getCookie("userInfo");
 
-function verificar(){
+function verificar() {
   if (!token) {
-      alert("Acceso Denegado. Inicia Sesión para acceder a esta ruta.");
-      window.location.href = 'https://riab-project.vercel.app';
-      return;
+    alert("Acceso Denegado. Inicia Sesión para acceder a esta ruta.");
+    window.location.href = 'https://riab-project.vercel.app';
+    return;
   }
 }
 
@@ -30,13 +30,13 @@ document.addEventListener('DOMContentLoaded', function () {
     otro: ['Desconocido'],
   };
 
-  especieSelect.addEventListener('change', function () {
+  function actualizarRazas() {
     const especieSeleccionada = especieSelect.value;
     const razas = razasPorEspecie[especieSeleccionada] || [];
-  
-    // Limpiar y agregar el placeholder correctamente
+    
+    // Limpiar las opciones de raza y agregar el placeholder
     razaSelect.innerHTML = '<option value="" disabled selected>Seleccionar raza</option>';
-  
+    
     // Añadir las opciones de raza correspondientes
     razas.forEach(raza => {
       const option = document.createElement('option');
@@ -44,7 +44,13 @@ document.addEventListener('DOMContentLoaded', function () {
       option.textContent = raza;
       razaSelect.appendChild(option);
     });
-  });  
+  }
+
+  // Actualizar las razas cuando se cambia la especie
+  especieSelect.addEventListener('change', actualizarRazas);
+
+  // Inicializar las razas cuando se carga la página
+  actualizarRazas();  
 
   form.addEventListener('submit', async function (event) {
     event.preventDefault();

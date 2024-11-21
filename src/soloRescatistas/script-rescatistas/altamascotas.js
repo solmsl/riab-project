@@ -30,13 +30,14 @@ document.addEventListener('DOMContentLoaded', function () {
     otro: ['Desconocido'],
   };
 
-  // Actualizar opciones de raza cuando cambie la especie seleccionada
   especieSelect.addEventListener('change', function () {
     const especieSeleccionada = especieSelect.value;
     const razas = razasPorEspecie[especieSeleccionada] || [];
+  
+    // Limpiar opciones de raza y añadir un "placeholder" simulado
+    razaSelect.innerHTML = '<option value="" disabled selected>Seleccionar raza</option>';
     
-    // Limpiar opciones de raza y añadir nuevas
-    razaSelect.innerHTML = '<option value="">Seleccionar raza</option>';
+    // Añadir las opciones de raza correspondientes
     razas.forEach(raza => {
       const option = document.createElement('option');
       option.value = raza;
@@ -44,6 +45,7 @@ document.addEventListener('DOMContentLoaded', function () {
       razaSelect.appendChild(option);
     });
   });
+  
 
   form.addEventListener('submit', async function (event) {
     event.preventDefault();

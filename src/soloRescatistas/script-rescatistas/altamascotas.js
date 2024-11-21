@@ -30,10 +30,6 @@ document.addEventListener('DOMContentLoaded', function () {
     otro: ['Desconocido'],
   };
 
-  
-  // Inicializar las razas cuando se carga la página
-  actualizarRazas();  
-
   function actualizarRazas() {
     const especieSeleccionada = especieSelect.value;
     const razas = razasPorEspecie[especieSeleccionada] || [];
@@ -103,3 +99,4 @@ document.addEventListener('DOMContentLoaded', function () {
 });
 
 verificar();
+actualizarRazas();  

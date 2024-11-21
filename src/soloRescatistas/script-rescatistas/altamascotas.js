@@ -34,16 +34,8 @@ document.addEventListener('DOMContentLoaded', function () {
     const especieSeleccionada = especieSelect.value;
     const razas = razasPorEspecie[especieSeleccionada] || [];
   
-    // Limpiar todas las opciones del selector de raza
-    razaSelect.innerHTML = '';
-  
-    // Añadir un "placeholder" como primera opción
-    const placeholderOption = document.createElement('option');
-    placeholderOption.value = '';
-    placeholderOption.textContent = 'Seleccionar raza';
-    placeholderOption.disabled = true;
-    placeholderOption.selected = true;
-    razaSelect.appendChild(placeholderOption);
+    // Limpiar y agregar el placeholder correctamente
+    razaSelect.innerHTML = '<option value="" disabled selected>Seleccionar raza</option>';
   
     // Añadir las opciones de raza correspondientes
     razas.forEach(raza => {
@@ -52,9 +44,7 @@ document.addEventListener('DOMContentLoaded', function () {
       option.textContent = raza;
       razaSelect.appendChild(option);
     });
-  });
-  
-  
+  });  
 
   form.addEventListener('submit', async function (event) {
     event.preventDefault();

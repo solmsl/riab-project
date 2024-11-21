@@ -30,9 +30,9 @@ document.addEventListener('DOMContentLoaded', function () {
     otro: ['Desconocido'],
   };
 
+  especieSelect.innerHTML = '<option value="">Seleccionar Especie</option>';
   // Actualizar opciones de raza cuando cambie la especie seleccionada
   especieSelect.addEventListener('change', function () {
-    especieSelect.innerHTML = '<option value="">Seleccionar Especie</option>';
     const especieSeleccionada = especieSelect.value;
     const razas = razasPorEspecie[especieSeleccionada] || [];
     

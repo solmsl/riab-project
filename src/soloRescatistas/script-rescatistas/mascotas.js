@@ -14,6 +14,7 @@ function verificar(){
 document.addEventListener('DOMContentLoaded', async () => {
   console.log("Intentando cargar la lista de mascotas...");
   const mascotasList = document.getElementById('mascotas-list');
+  const overlay=document.querySelector('.overlay');
   if (!mascotasList) {
     console.error("Error: Contenedor de lista de mascotas no encontrado.");
     return;
@@ -36,20 +37,24 @@ document.addEventListener('DOMContentLoaded', async () => {
         card.classList.add('col-md-4', 'mb-4');
         
         card.innerHTML = `
-          <div class="card">
-            <div class="card-body">
+        <div class="wrapper1">
+          <div class="card-area">
+            <div class="card">
               <h5 class="card-title">${mascota.nombreApodo}</h5>
-              <img src="${mascota.imagen}" alt="Mascota">
-              <p class="card-text">
-                <strong>ID:</strong> ${mascota.id} <br>
-                <strong>Especie:</strong> ${mascota.especie} <br>
-                <strong>Raza:</strong> ${mascota.raza} <br>
-                <strong>Color:</strong> ${mascota.color} <br>
-                <strong>Año de Nacimiento:</strong> ${mascota.anioNacimiento} <br>
-                <strong>Centro:</strong> ${mascota.centro} <br>
-              </p>
+              <img src="${mascota.imagen}" alt="Mascota">  
+              <div class="overlay">
+                <p class="card-text">
+                  <strong>ID:</strong> ${mascota.id} <br>
+                  <strong>Especie:</strong> ${mascota.especie} <br>
+                  <strong>Raza:</strong> ${mascota.raza} <br>
+                  <strong>Color:</strong> ${mascota.color} <br>
+                  <strong>Año de Nacimiento:</strong> ${mascota.anioNacimiento} <br>
+                  <strong>Centro:</strong> ${mascota.centro} <br>
+                </p>    
+              </div>
             </div>
           </div>
+        </div>
         `;
         
         mascotasList.appendChild(card);

@@ -7,7 +7,6 @@ document.addEventListener('DOMContentLoaded', () => {
   const colorSelect = document.getElementById('color');
   const anioNacimientoSelect = document.getElementById('anio_nacimiento');
   const centroSelect = document.getElementById('centros');
-  const imagenMascotaInput = document.getElementById('imagenMascota'); // Para la imagen
 
   // Cargar razas dinámicamente por especie
   const razasPorEspecie = {
@@ -47,14 +46,6 @@ document.addEventListener('DOMContentLoaded', () => {
           colorSelect.value = data.color || '';
           anioNacimientoSelect.value = data.anioNacimiento || '';
           centroSelect.value = data.centro || '';
-          
-          // Si hay una imagen, mostrarla en la vista previa
-          if (data.imagen) {
-            const imagenMascotaElement = document.getElementById('imagenMascotaPreview');
-            if (imagenMascotaElement) {
-              imagenMascotaElement.src = data.imagen; // Mostrar la imagen actualizada
-            }
-          }
         } else {
           alert('Mascota no encontrada.');
           form.reset();
@@ -72,48 +63,28 @@ document.addEventListener('DOMContentLoaded', () => {
   form.addEventListener('submit', async (event) => {
     event.preventDefault();
     const id = idMascota.value.trim();
-    const imagenFile = imagenMascotaInput.files[0]; // Obtener el archivo de imagen si existe
     if (id) {
       try {
-        // Crear FormData para enviar la imagen y los datos de la mascota
-        const formData = new FormData();
-        formData.append('nombreApodo', nombreApodoInput.value);
-        formData.append('especie', especieSelect.value);
-        formData.append('raza', razaSelect.value);
-        formData.append('color', colorSelect.value);
-        formData.append('anioNacimiento', anioNacimientoSelect.value);
-        formData.append('centro', centroSelect.value);
-
-        if (imagenFile) {
-          formData.append('imagen', imagenFile); // Agregar la imagen si está seleccionada
-        }
+        const datosMascota = {
+          nombreApodo: nombreApodoInput.value,
+          especie: especieSelect.value,
+          raza: razaSelect.value,
+          color: colorSelect.value,
+          anioNacimiento: anioNacimientoSelect.value,
+          centro: centroSelect.value,
+        };
 
         const response = await fetch(`https://riab-api.vercel.app/mascotas/${id}`, {
           method: 'PUT',
-          body: formData
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify(datosMascota)
         });
+
         const data = await response.json();
         if (response.ok) {
           alert(data.message || 'Mascota actualizada con éxito.');
 
-          // Actualizar en localStorage
-          let mascotas = JSON.parse(localStorage.getItem('mascotas')) || [];
-          const index = mascotas.findIndex(m => m.id === id);
-          if (index !== -1) {
-            mascotas[index] = {
-              id,
-              nombreApodo: nombreApodoInput.value,
-              especie: especieSelect.value,
-              raza: razaSelect.value,
-              color: colorSelect.value,
-              anioNacimiento: anioNacimientoSelect.value,
-              centro: centroSelect.value,
-              imagen: imagenFile ? URL.createObjectURL(imagenFile) : null // Si hay imagen nueva, actualizarla
-            };
-            localStorage.setItem('mascotas', JSON.stringify(mascotas));
-          }
-
-          // Actualizar la vista en mascotas.html (si está abierto en el navegador)
+          // Actualizar la vista en mascotas.html (si está abierta)
           const mascotasHTML = document.querySelector('#mascotas-list');
           if (mascotasHTML) {
             const mascotaElement = mascotasHTML.querySelector(`#mascota-${id}`);
@@ -124,11 +95,6 @@ document.addEventListener('DOMContentLoaded', () => {
               mascotaElement.querySelector('.color').textContent = colorSelect.value;
               mascotaElement.querySelector('.anio-nacimiento').textContent = anioNacimientoSelect.value;
               mascotaElement.querySelector('.centros').textContent = centroSelect.value;
-              // Actualizar la imagen si existe
-              const imgElement = mascotaElement.querySelector('.imagen');
-              if (imgElement && imagenFile) {
-                imgElement.src = URL.createObjectURL(imagenFile); // Actualizar la imagen en la vista
-              }
             }
           }
 

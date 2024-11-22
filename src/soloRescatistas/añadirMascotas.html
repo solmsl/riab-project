@@ -56,6 +56,44 @@
     </nav>
   </header>
 
+
+  <section class="formularioAdop">
+    <div class="wrapper">
+      <form id="formulario" >
+        <h1>Añadir Nueva Mascota</h1>
+        <div class="input-box">
+          <input type="text" id="dni" placeholder="DNI" required>
+        </div>
+        <div class="input-box">
+            <input type="text" id="nombre" placeholder="Nombre" required>
+        </div>
+        <div class="input-box">
+            <input type="text" id="apellido" placeholder="Apellido" required>
+        </div>
+        <div class="input-box">
+            <input type="number" id="telefono" placeholder="Teléfono" required>
+        </div>
+        <div class="input-box">
+            <input type="text" id="direccion" placeholder="Dirección" required>
+        </div>
+        <div class="input-box">
+            <input type="text" id="genero" placeholder="Género" required>
+        </div>
+        <div class="input-box">
+            <input type="email" id="email" placeholder="Correo eléctronico" required>
+        </div>
+        <div class="input-box">
+            <input type="number" id="id_mascota" placeholder="ID Mascota" required>
+        </div>
+        <div class="input-box">
+          <input type="number" id="dni_rescatista" placeholder="DNI Rescatista" required>
+        </div>
+
+        <button id="btnBuscar" type="button" style="margin-top: 20px;">Enviar</button>
+        <div id="mensajeActualizacion"></div>
+        <ul id="mascotaInfo"></ul>
+  </section>
+
   <div class="container mt-5">
     <h2>Añadir Nueva Mascota</h2>
     <form id="formulario" enctype="multipart/form-data">

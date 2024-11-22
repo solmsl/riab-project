@@ -36,7 +36,6 @@ document.addEventListener('DOMContentLoaded', async () => {
         card.classList.add('col-md-4', 'mb-4');
         
         card.innerHTML = `
-        <div class="wrapper1">
           <div class="card-area">
             <div class="card">
               <h5 class="card-title">${mascota.nombreApodo}</h5>
@@ -53,9 +52,8 @@ document.addEventListener('DOMContentLoaded', async () => {
               </div>
             </div>
           </div>
-        </div>
         `;
-        
+        card.className="wrapper1";
         mascotasList.appendChild(card);
       });
     } else {

@@ -38,13 +38,13 @@ document.addEventListener('DOMContentLoaded', async () => {
           card.innerHTML = `
             <div class="card">
               <div class="card-body">
-                <h5 class="card-title">${adopcion.dni}</h5>
+                <h5 class="card-title">${adopcion.id_adopcion}</h5>
                 <p class="card-text">
-                  <strong>ID:</strong> ${adopcion.nombre} <br>
-                  <strong>Especie:</strong> ${adopcion.especie} <br>
-                  <strong>Raza:</strong> ${mascota.raza} <br>
-                  <strong>Color:</strong> ${mascota.color} <br>
-                  <strong>Año de Nacimiento:</strong> ${mascota.anioNacimiento} <br>
+                  <strong>DNI-persona:</strong> ${adopcion.dni} <br>
+                  <strong>Nombre-persona:</strong> ${adopcion.nombre} <br>
+                  <strong>Apellido-persona:</strong> ${adopcion.apellido} <br>
+                  <strong>Telefono-persona:</strong> ${adopcion.telefono} <br>
+                  <strong>Direccion domiciliaria:</strong> ${adopcion.direccion} <br>
                   <strong>Centro:</strong> ${mascota.centro} <br>
                 </p>
               </div>

@@ -701,7 +701,7 @@ article {
   color: rgb(71, 2, 73);
 }
 .wrapper .input-box input::placeholder {
-  color: black;
+  color: rgb(255, 255, 255);
 }
 .wrapper .input-box select {
   width: 100%;

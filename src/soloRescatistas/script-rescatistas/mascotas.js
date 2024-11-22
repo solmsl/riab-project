@@ -14,7 +14,6 @@ function verificar(){
 document.addEventListener('DOMContentLoaded', async () => {
   console.log("Intentando cargar la lista de mascotas...");
   const mascotasList = document.getElementById('mascotas-list');
-  const overlay=document.querySelector('.overlay');
   if (!mascotasList) {
     console.error("Error: Contenedor de lista de mascotas no encontrado.");
     return;

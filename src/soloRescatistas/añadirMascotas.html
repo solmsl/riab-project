@@ -62,10 +62,10 @@
       <form id="formulario" >
         <h1>Añadir Nueva Mascota</h1>
         <div class="input-box">
-          <input type="text" id="dni" placeholder="DNI" required>
+          <input type="file" class="form-control" name="imagen" id="imagenMascota" required>
         </div>
         <div class="input-box">
-            <input type="text" id="nombre" placeholder="Nombre" required>
+          <input type="text" class="form-control" id="nombreApodo" name="nombreApodo" placeholder="Nombre o Apodo" required>
         </div>
         <div class="input-box">
             <input type="text" id="apellido" placeholder="Apellido" required>
@@ -93,18 +93,6 @@
         <div id="mensajeActualizacion"></div>
         <ul id="mascotaInfo"></ul>
   </section>
-
-  <div class="container mt-5">
-    <h2>Añadir Nueva Mascota</h2>
-    <form id="formulario" enctype="multipart/form-data">
-      <div class="my-3">
-        <label for="imagen" class="form-label">Imagen:</label>
-        <input type="file" class="form-control" name="imagen" id="imagenMascota" required>
-      </div>
-      <div class="mb-3">
-        <label for="nombreApodo" class="form-label">Nombre o Apodo:</label>
-        <input type="text" class="form-control" id="nombreApodo" name="nombreApodo" required>
-      </div>
       
       <div class="mb-3">
         <label for="especie" class="form-label">Especie:</label>

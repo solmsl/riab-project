@@ -1,5 +1,5 @@
 document.addEventListener('DOMContentLoaded', () => {
-  const form = document.getElementById('form-actualizar');
+  const form = document.getElementById('formulario');
   const idMascota = document.getElementById('idMascota');
   const nombreApodoInput = document.getElementById('nombreApodo');
   const especieSelect = document.getElementById('especie');

@@ -44,8 +44,7 @@ document.addEventListener('DOMContentLoaded', async () => {
                   <strong>Nombre-persona:</strong> ${adopcion.nombre} <br>
                   <strong>Apellido-persona:</strong> ${adopcion.apellido} <br>
                   <strong>Telefono-persona:</strong> ${adopcion.telefono} <br>
-                  <strong>Direccion domiciliaria:</strong> ${adopcion.direccion} <br>
-                  <strong>Centro:</strong> ${mascota.centro} <br>
+                  <strong>Direccion domicilio:</strong> ${adopcion.direccion} <br>
                 </p>
               </div>
             </div>

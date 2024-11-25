@@ -36,22 +36,24 @@ document.addEventListener('DOMContentLoaded', async () => {
         card.classList.add('col-md-4', 'mb-4');
         
         card.innerHTML = `
-          <div class="card">
-            <div class="card-body">
+          <div class="card-area">
+            <div class="card">
               <h5 class="card-title">${mascota.nombreApodo}</h5>
-              <img src="${mascota.imagen}" alt="Mascota">
-              <p class="card-text">
-                <strong>ID:</strong> ${mascota.id} <br>
-                <strong>Especie:</strong> ${mascota.especie} <br>
-                <strong>Raza:</strong> ${mascota.raza} <br>
-                <strong>Color:</strong> ${mascota.color} <br>
-                <strong>Año de Nacimiento:</strong> ${mascota.anioNacimiento} <br>
-                <strong>Centro:</strong> ${mascota.centro} <br>
-              </p>
+              <img src="${mascota.imagen}" alt="Mascota">  
+              <div class="overlay">
+                <p class="card-text">
+                  <strong>ID:</strong> ${mascota.id} <br>
+                  <strong>Especie:</strong> ${mascota.especie} <br>
+                  <strong>Raza:</strong> ${mascota.raza} <br>
+                  <strong>Color:</strong> ${mascota.color} <br>
+                  <strong>Año de Nacimiento:</strong> ${mascota.anioNacimiento} <br>
+                  <strong>Centro:</strong> ${mascota.centro} <br>
+                </p>    
+              </div>
             </div>
           </div>
         `;
-        
+        card.className="wrapper1";
         mascotasList.appendChild(card);
       });
     } else {

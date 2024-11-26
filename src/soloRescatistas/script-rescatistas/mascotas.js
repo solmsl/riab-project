@@ -51,7 +51,7 @@ document.addEventListener('DOMContentLoaded', async () => {
             </div>
           </div>
         `;
-        card.className="wrapper1";
+
         mascotasList.appendChild(card);
       });
     } else {

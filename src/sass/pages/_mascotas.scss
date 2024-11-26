@@ -26,14 +26,15 @@ article{
     box-shadow: 5px 5px 15px rgb(49, 17, 49);
     overflow: hidden;
     border: none;
+    display: flex;
+    flex-direction: column; /* Permite que el contenido expanda la tarjeta */
+}
 
-    img{
-        height: 350px;
-        width: 100%;
-        display: block;
-        transition: transform 0.5s;
-    }
-
+.card img{
+    width: 100%;
+    height: auto; /* Deja que la imagen se ajuste según el ancho */
+    display: block;
+    transition: transform 0.5s;
 }
 
 .overlay{

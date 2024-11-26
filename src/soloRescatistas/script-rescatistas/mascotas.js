@@ -40,7 +40,6 @@ document.addEventListener('DOMContentLoaded', async () => {
             <div class="card-body">
               <h5 class="card-title">${mascota.nombreApodo}</h5>
               <img src="${mascota.imagen}" alt="Mascota">  
-              <div class="overlay>
                 <p class="card-text">
                   <strong>ID:</strong> ${mascota.id} <br>
                   <strong>Especie:</strong> ${mascota.especie} <br>
@@ -49,7 +48,6 @@ document.addEventListener('DOMContentLoaded', async () => {
                   <strong>Año de Nacimiento:</strong> ${mascota.anioNacimiento} <br>
                   <strong>Centro:</strong> ${mascota.centro} <br>
                 </p>    
-              </div>
             </div>
           </div>
         `;

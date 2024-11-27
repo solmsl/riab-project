@@ -17,7 +17,7 @@ article{
     display: grid;
     margin-top: 50px;
     grid-gap: 20px;
-    grid-template-columns: repeat(auto-fit, minmax(210px, 1fr));
+    grid-template-columns: repeat(auto-fill, minmax(210px, 1fr)); /* Cambié auto-fit por auto-fill */
 }
 
 .card{
@@ -26,14 +26,15 @@ article{
     box-shadow: 5px 5px 15px rgb(49, 17, 49);
     overflow: hidden;
     border: none;
+    display: flex;
+    flex-direction: column; /* Permite que el contenido expanda la tarjeta */
+}
 
-    img{
-        height: 350px;
-        width: 100%;
-        display: block;
-        transition: transform 0.5s;
-    }
-
+.card img{
+    width: 100%;
+    height: auto; /* Deja que la imagen se ajuste según el ancho */
+    display: block;
+    transition: transform 0.5s;
 }
 
 .overlay{
